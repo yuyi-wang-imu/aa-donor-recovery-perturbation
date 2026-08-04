@@ -1,0 +1,15 @@
+package	recorded_version	role
+Python	3.12.5	analysis runtime
+pandas	3.0.2	tabular data handling
+numpy	2.4.4	numerical operations
+matplotlib	3.10.8	figure rendering
+Pillow	12.2.0	raster-image handling
+XlsxWriter	not_recorded	spreadsheet generation
+openpyxl	3.1.5	spreadsheet verification
+Python (Geneformer run)	3.10.20	GPU perturbation runtime on Linux
+pandas (Geneformer run)	2.2.3	tabular data handling
+numpy (Geneformer run)	1.26.4	numerical operations
+scipy (Geneformer run)	1.12.0	sparse matrices and inference statistics
+torch (Geneformer run)	2.4.1+cu118	CUDA-enabled tensor and model inference
+transformers (Geneformer run)	4.46.0	Geneformer V2 model loading
+scikit-learn (Geneformer run)	not_recorded	recovery-axis ridge model and scaling

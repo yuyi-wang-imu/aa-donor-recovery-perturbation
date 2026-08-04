@@ -1,0 +1,36 @@
+order	workflow	canonical_entry	current_scope
+1	prescription-rule extraction	scripts/prescription_mining/extract_verified_spss_association_rules.py	Recover the 12 frozen Apriori rules from the verified SPSS source
+2	prescription-rule figure	scripts/prescription_mining/plot_verified_spss_association_rules.R	Render the verified rule panel without changing rule order
+3	candidate harmonization	scripts/candidate_harmonization/build_table_s4_candidate_harmonization.py	Construct the exact standardized-symbol candidate pool and retain composite-label exclusions
+4	compound-target provenance	scripts/candidate_harmonization/build_compound_target_provenance.py	Keep archived TCMSP compounds and SwissTargetPrediction target records as distinct sources
+5	GSE165870 bulk analysis	scripts/transcriptomics_wgcna/gse165870_bulk_differential_expression.R	Independent small-cohort expression comparison
+6	strict CD34 WGCNA	scripts/transcriptomics_wgcna/strict_donor_aware_wgcna.R	42 participant-by-timepoint profiles from 23 participants
+7	Figure 2 typography rendering	scripts/transcriptomics_wgcna/build_figure2_panel_label_pvalue_geneitalic_exactcontent_20260726_v7.R	Render the accepted Figure 2 panels with aligned A-D labels and approved P-value and gene-symbol typography; no analytical recomputation
+8	bone-marrow RPCA	scripts/bone_marrow_single_cell/gse247531_bm_seurat_rpca_umap.R	Integrated marrow atlas
+9	bone-marrow module projection	scripts/bone_marrow_single_cell/strict42_top30_modules_bm_projection.R	Bone-marrow compartment projection
+10	bone-marrow figure	scripts/bone_marrow_single_cell/render_bone_marrow_figure3_gene_format_fixed_v5.py	Render current manuscript Figure 3 with approved gene-symbol and merged-category typography; frozen CSV basenames retain historical Figure4 labels
+11	priority evidence assembly	scripts/priority_evidence/assemble_priority_evidence.py	Fixed 1-30 order; docking, MD, and perturbation excluded
+12	priority weight sensitivity	scripts/priority_evidence/top30_weight_robustness.py	Reproduce the formal Top30 and evaluate 518 alternative weight scenarios
+13	docking matrix	scripts/docking/run_vina_matrix.py	Run 138 receptor-ligand combinations without target ranking
+14	computational perturbation	scripts/computational_perturbation/run_sctenifoldknk_canonical_controls_v3.R	Run 10 candidates and 200 disjoint matched controls with common seed 20260724
+15	computational perturbation validation	scripts/computational_perturbation/validate_sctenifoldknk_outputs.py	Verify the formal 210-run manifest and packaged candidate outputs
+16	matched-control calibration	scripts/computational_perturbation/summarize_sctenifoldknk_matched_calibration_v3.R	Apply the prespecified matched-control calibration gates
+17	global-unique sensitivity	scripts/computational_perturbation/summarize_sctenifoldknk_global_unique_sensitivity_v1.R	Run the secondary global-unique rematching sensitivity analysis
+18	computational perturbation figures	scripts/computational_perturbation/build_figure8_standard_and_s11_sensitivity_candidate_v5.R	Render Figure 8 and Figure S11 with approved P-value and CD34-positive HSPC typography; source tables are verified before rendering
+19	MD trajectory analysis	scripts/molecular_dynamics/run_gromacs_trajectory_analysis.py	Perform PBC-aware trajectory analysis for five completed 100 ns complexes
+20	Figure 7 molecular-dynamics rendering	scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py	Render the frozen five-complex comparison with C-alpha typography corrected; no analytical recomputation
+21	Figure 4/5 layout-only rendering	scripts/figure_packaging/build_figure4_5_layout_fixes_20260726_v1.py	Remove the verified Figure 4 spacer band and standardize Figure 5 A/B labels; no analytical recomputation
+22	Supplementary-figure packaging	scripts/figure_packaging/assemble_supplementary_figures_s1_s8_20260727_v2.py	Assemble the eight nonduplicative Supplementary Figures S1-S8 as independent PDFs, a combined PDF, and a ZIP archive; no analytical recomputation
+23	Geneformer balanced-input preparation	scripts/geneformer/70_bmc_geneformer_prepare_balanced_cd34_public_20260804_v1.R	Generate the seeded 64-cells-per-subject-timepoint sparse matrix and metadata from user-supplied GSE247531 inputs
+24	Geneformer donor-aware deletion MVP	scripts/geneformer/71_bmc_geneformer_donor_mvp_20260802_v1.py	Run one-gene-at-a-time deletion with seed 20260802; requires separately obtained Geneformer source dictionaries and V2-104M weights
+25	Geneformer donor-aware deletion full	scripts/geneformer/73_bmc_geneformer_donor_full_20260802_v1.py	Expand the donor-aware deletion run to the full prespecified candidate/control design
+26	Geneformer covariate rematching	scripts/geneformer/76_bmc_geneformer_covariate_rematch_20260802_v1.py	Construct outcome-blind expression-matched background comparisons
+27	Geneformer donor-aware overexpression MVP	scripts/geneformer/85_bmc_geneformer_overexpression_mvp_20260802_v3.py	Run one-gene-at-a-time overexpression with the recorded V2 sequence contract and seed 20260802
+28	Geneformer donor-aware overexpression full	scripts/geneformer/86_bmc_geneformer_overexpression_full_20260802_v3.py	Expand the donor-aware overexpression run to the full prespecified design
+29	Geneformer bidirectional audit	scripts/geneformer/93_bmc_geneformer_bidirectional_audit_20260802_v2.py	Combine deletion and overexpression donor effects without reranking the prespecified candidates
+30	Geneformer state labels	scripts/geneformer/104_bmc_geneformer_frozen_state_labels_20260802_v1.py	Assign the prespecified HSPC-marker-class labels used for the state-stratified analysis
+31	Geneformer state-specific perturbation	scripts/geneformer/109_bmc_geneformer_state_specific_perturbation_20260802_v1.py	Estimate state-specific single-gene effects using user-supplied state labels and separate Geneformer assets
+32	Geneformer positive-control calibration	scripts/geneformer/108_bmc_geneformer_positive_control_matched_null_20260802_v2.py	Evaluate prespecified positive controls against outcome-blind matched backgrounds
+33	Geneformer extension table builder	scripts/geneformer/113_bmc_geneformer_extension_table_builder_20260802_v1.py	Build the supplementary calibration tables from completed perturbation outputs
+34	Geneformer extension independent QC	scripts/geneformer/115_bmc_geneformer_extension_tables_independent_qc_20260802_v1.py	Validate the extension tables and emit checksums/QC without changing analysis values
+35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v1.py	Render source-backed Geneformer panels; later v6/v7 files are presentation derivatives pending final-version confirmation

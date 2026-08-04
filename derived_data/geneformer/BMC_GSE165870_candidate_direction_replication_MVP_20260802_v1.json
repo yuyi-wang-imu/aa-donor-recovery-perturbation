@@ -1,0 +1,43 @@
+{
+  "analysis_label": "Frozen 10-gene cross-cohort disease-direction MVP",
+  "decision": "DO_NOT_PROMOTE_AS_CROSS_COHORT_SUPPORT",
+  "gate_pass": false,
+  "candidate_spearman_rho": 0.41818181818181815,
+  "candidate_direction_concordance": 0.7,
+  "matched_empirical_p": 0.27372627372627373,
+  "matched_percentile": 72.7,
+  "matched_sets": 1000,
+  "internal_samples": {
+    "healthy": 4,
+    "SAA_baseline": 19
+  },
+  "external_samples": {
+    "healthy": 3,
+    "AA": 6
+  },
+  "candidate_genes": [
+    "CDK6",
+    "CA2",
+    "PARP1",
+    "KIT",
+    "SYK",
+    "GSK3B",
+    "HIF1A",
+    "TOP2A",
+    "TERT",
+    "CD38"
+  ],
+  "match_options_after_external_coverage": {
+    "CDK6": 17,
+    "CA2": 19,
+    "PARP1": 19,
+    "KIT": 18,
+    "SYK": 19,
+    "GSK3B": 18,
+    "HIF1A": 20,
+    "TOP2A": 20,
+    "TERT": 18,
+    "CD38": 20
+  },
+  "scientific_boundary": "Small-sample cross-cohort direction check only; no causal, treatment-response, or clinical-efficacy claim."
+}

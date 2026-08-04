@@ -1,0 +1,126 @@
+{
+  "analysis_label": "Frozen GSE145668 external paired-donor recovery MVP",
+  "decision": "DO_NOT_PROMOTE_AS_POSITIVE_EXTERNAL_VALIDATION",
+  "gate_pass": false,
+  "candidate_spearman_rho": -0.08571428571428573,
+  "exact_permutation_p": 0.5986111111111111,
+  "exact_permutations": 720,
+  "matched_empirical_p": 0.8421578421578422,
+  "matched_percentile": 19.3,
+  "matched_null_median_95_interval": [
+    0.4285714285714286,
+    -0.6,
+    0.942857142857143
+  ],
+  "paired_donors": [
+    "P1",
+    "P2",
+    "P3",
+    "P8",
+    "P9",
+    "P15"
+  ],
+  "candidate_genes": [
+    "CDK6",
+    "CA2",
+    "PARP1",
+    "KIT",
+    "SYK",
+    "GSK3B",
+    "HIF1A",
+    "TOP2A",
+    "TERT",
+    "CD38"
+  ],
+  "independent_axis_genes_used": 4487,
+  "matched_sets": 1000,
+  "internal_direction_diagnostics": {
+    "hd_samples": 4,
+    "saa_baseline_samples": 19,
+    "axis_genes_before_external_coverage": 5000,
+    "excluded_predictor_genes": 169
+  },
+  "external_pseudobulk_diagnostics": {
+    "untreated": {
+      "role": "untreated_aa",
+      "file": "GSE145668_AA_cells_counts.txt.gz",
+      "sha256": "0866ae0acb5c01415d9dc12ef66b3ff888b77f67437d45cc97886c721115a7e2",
+      "gene_rows_scanned": 18051,
+      "hspc_cells": 2385,
+      "donors": [
+        "P1",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9"
+      ],
+      "donor_library_sizes": {
+        "P1": 17203013.0,
+        "P10": 7858461.0,
+        "P11": 9784306.0,
+        "P12": 1927005.0,
+        "P13": 1200724.0,
+        "P14": 7412593.0,
+        "P15": 16692625.0,
+        "P2": 27832738.0,
+        "P3": 7329550.0,
+        "P4": 17217017.0,
+        "P5": 4597540.0,
+        "P6": 3732050.0,
+        "P7": 2359018.0,
+        "P8": 14331633.0,
+        "P9": 2606262.0
+      },
+      "requested_genes_found": 4793,
+      "duplicate_requested_rows_summed": 0
+    },
+    "response": {
+      "role": "post_treatment_response",
+      "file": "GSE145668_Response_cells_counts_2.txt.gz",
+      "sha256": "73a480139af64ffa1e13f12b0685330c8b6be4a3209290f6648c0ecb847f2dfc",
+      "gene_rows_scanned": 16952,
+      "hspc_cells": 1255,
+      "donors": [
+        "P1",
+        "P15",
+        "P2",
+        "P3",
+        "P8",
+        "P9"
+      ],
+      "donor_library_sizes": {
+        "P1": 5593344.0,
+        "P15": 13271360.0,
+        "P2": 2950091.0,
+        "P3": 15953947.0,
+        "P8": 11481219.0,
+        "P9": 13947617.0
+      },
+      "requested_genes_found": 4656,
+      "duplicate_requested_rows_summed": 0
+    }
+  },
+  "match_options_after_external_coverage": {
+    "CDK6": 16,
+    "CA2": 19,
+    "PARP1": 19,
+    "KIT": 18,
+    "SYK": 19,
+    "GSK3B": 18,
+    "HIF1A": 20,
+    "TOP2A": 20,
+    "TERT": 20,
+    "CD38": 20
+  },
+  "scientific_boundary": "External donor-paired transcriptomic association and matched-set specificity only; no causal or clinical-efficacy claim."
+}

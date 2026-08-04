@@ -1,0 +1,9 @@
+software	recorded_version	role
+R	4.5.1	statistical analysis
+Python	3.12.5	data processing and figure rendering
+GROMACS	2024.6	molecular-dynamics simulation and trajectory processing
+AutoDock Vina	1.2.7	molecular docking
+Cytoscape	3.10.3	network visualization
+SPSS	26	prescription association-rule and clustering workflow
+Geneformer	V2-104M	donor-aware single-gene deletion and overexpression inference
+CUDA runtime	11.8	recorded GPU environment for PyTorch 2.4.1+cu118

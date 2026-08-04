@@ -1,0 +1,54 @@
+Run time: 2026-07-15 23:21:51.840186
+R: R version 4.5.2 (2025-10-31 ucrt)
+WGCNA: 1.74
+limma: 3.64.3
+dynamicTreeCut: 1.63.1
+fastcluster: 1.3.0
+Seed: 20260715
+
+R version 4.5.2 (2025-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=Chinese (Simplified)_China.utf8 
+[2] LC_CTYPE=Chinese (Simplified)_China.utf8   
+[3] LC_MONETARY=Chinese (Simplified)_China.utf8
+[4] LC_NUMERIC=C                               
+[5] LC_TIME=Chinese (Simplified)_China.utf8    
+
+time zone: Asia/Shanghai
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] limma_3.64.3          WGCNA_1.74            fastcluster_1.3.0    
+[4] dynamicTreeCut_1.63-1
+
+loaded via a namespace (and not attached):
+ [1] generics_0.1.4        stringi_1.8.7         lattice_0.22-7       
+ [4] digest_0.6.39         magrittr_2.0.4        evaluate_1.0.5       
+ [7] grid_4.5.2            RColorBrewer_1.1-3    iterators_1.0.14     
+[10] fastmap_1.2.0         foreach_1.5.2         doParallel_1.0.17    
+[13] Matrix_1.7-4          nnet_7.3-20           backports_1.5.0      
+[16] Formula_1.2-5         survival_3.8-6        gridExtra_2.3        
+[19] preprocessCore_1.70.0 scales_1.4.0          codetools_0.2-20     
+[22] cli_3.6.5             rlang_1.1.6           Hmisc_5.2-5          
+[25] splines_4.5.2         base64enc_0.1-6       otel_0.2.0           
+[28] tools_4.5.2           parallel_4.5.2        checkmate_2.3.4      
+[31] htmlTable_2.4.3       dplyr_1.1.4           colorspace_2.1-2     
+[34] ggplot2_4.0.2         impute_1.82.0         vctrs_0.6.5          
+[37] R6_2.6.1              rpart_4.1.24          matrixStats_1.5.0    
+[40] lifecycle_1.0.5       stringr_1.6.0         htmlwidgets_1.6.4    
+[43] foreign_0.8-91        cluster_2.1.8.2       pkgconfig_2.0.3      
+[46] pillar_1.11.1         gtable_0.3.6          data.table_1.18.2.1  
+[49] glue_1.8.0            Rcpp_1.1.1            statmod_1.5.1        
+[52] xfun_0.56             tibble_3.3.0          tidyselect_1.2.1     
+[55] rstudioapi_0.18.0     knitr_1.51            farver_2.1.2         
+[58] htmltools_0.5.9       rmarkdown_2.30        compiler_4.5.2       
+[61] S7_0.2.1             

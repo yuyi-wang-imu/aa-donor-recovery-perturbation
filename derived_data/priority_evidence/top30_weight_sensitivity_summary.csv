@@ -1,0 +1,6 @@
+scenario_type,n_scenarios,minimum_overlap_count,median_overlap_count,mean_overlap_count,maximum_overlap_count,minimum_jaccard,median_jaccard,minimum_spearman_within_overlap,median_spearman_within_overlap
+all_scenarios,518,20,28.0,28.06177606177606,30,0.5,0.875,0.4646616541353384,0.9612144004802514
+deterministic_weight_jitter_pm25pct,500,26,28.0,28.148,30,0.7647058823529411,0.875,0.8357753357753357,0.9620689655172412
+experimental_network_weight_grid,10,20,25.5,24.9,30,0.5,0.7394957983193278,0.4646616541353384,0.8062393162393162
+leave_one_evidence_layer_out,7,20,27.0,26.142857142857142,29,0.5,0.8181818181818182,0.4646616541353384,0.870279146141215
+primary,1,30,30.0,30.0,30,1.0,1.0,1.0,1.0

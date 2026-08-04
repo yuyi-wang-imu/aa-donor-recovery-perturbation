@@ -1,0 +1,164 @@
+{
+  "figure": "Figure 4",
+  "version": "20260716_v2",
+  "backend": "Python/matplotlib",
+  "figure_contract": {
+    "core_conclusion": "A public marrow atlas provides descriptive compartment context for strict donor-aware CD34-derived modules and marrow-side hematopoietic-support response genes.",
+    "archetype": "asymmetric mixed-modality quantitative composite",
+    "final_size_mm": [
+      183,
+      200
+    ],
+    "formats": [
+      "SVG",
+      "PDF",
+      "PNG"
+    ],
+    "dpi_png": 600,
+    "panels": {
+      "A": "RPCA UMAP; deterministic display-only sample of the complete 768,617-cell coordinate table",
+      "B": "median cell-compartment fraction across 44 subject-by-timepoint units (24 subjects)",
+      "C": "complete 11-module x 7-compartment projection; seven links met the prespecified criteria and four did not",
+      "D": "MPL/JAK2/STAT5A/STAT5B/PIM1/BCL2L1 marrow-side expression context"
+    }
+  },
+  "analysis_counts": {
+    "genes_in_BM_matrix": 33694,
+    "cells": 768617,
+    "subjects": 24,
+    "subject_timepoint_units": 44,
+    "GEO_libraries": 45,
+    "coarse_compartments": 7,
+    "low_confidence_cells": 2807,
+    "modules": 11,
+    "sensitivity_variants_per_module": 9,
+    "formal_edges": 7,
+    "modules_not_meeting_prespecified_criteria": 4
+  },
+  "interpretation_scope": [
+    "marker-defined marrow compartment context",
+    "descriptive projection",
+    "marrow-side receptor/response expression context",
+    "seven links met prespecified sensitivity, margin and subject-by-timepoint concordance criteria"
+  ],
+  "analyses_not_performed": [
+    "cell-type-specific WGCNA",
+    "independent validation",
+    "causal localization",
+    "module-specific expression exclusivity",
+    "aplastic anemia is a liver disease",
+    "bone marrow expresses high THPO",
+    "organ-to-organ causal transmission",
+    "Top30 or core10 re-ranking"
+  ],
+  "image_integrity": {
+    "UMAP": "coordinates unchanged; deterministic downsampling only; no local contrast, geometry or label editing",
+    "third_party_graphical_elements": "none; figure newly drawn from derived public-data outputs"
+  },
+  "inputs": [
+    {
+      "role": "FULL_RPCA_99_BM_official_style_UMAP_cell_metadata.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 111723168,
+      "sha256": "37FD1C0243F2BE38B6C228FBEAAC065D19E9790AC9ADEFD56226721744E55381"
+    },
+    {
+      "role": "FULL_RPCA_98_BM_official_style_celltype_counts_by_group.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 873,
+      "sha256": "0DF5291477CFF377F09363C1291E601D63FCD465859F75288B6FE09456F362EC"
+    },
+    {
+      "role": "17_GSE247531_BM_official_style_Seurat_RPCA_UMAP_split_server.R",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 16649,
+      "sha256": "B5F7BEB28103A8323DD2558CF82B6503267ED70353CEC137072E37D780610D0E"
+    },
+    {
+      "role": "FULL_RPCA_97_BM_official_style_Seurat_RPCA_UMAP_run_log.txt",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 5249,
+      "sha256": "B64C62F76B9D41EE09221AACFA656602F5943666032A1D396F01DCB8632E9CA4"
+    },
+    {
+      "role": "GSE247531_BMcounts.Rdata.gz",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 1821662122,
+      "sha256": "7E7F1D281599B99A1BBE025669636D1C52BB296B6E0782D5A86D15BCBF81C8F6"
+    },
+    {
+      "role": "93_strict42_Top30modules_BM_projection_20260716_sensitivity_long.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 112374,
+      "sha256": "D4BE5C5DDC031F9BC4C4B5FF5C0518B3F82E7632207D4F4B31E249BFBC1532E2"
+    },
+    {
+      "role": "93_strict42_Top30modules_BM_projection_20260716_edge_decisions.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 3559,
+      "sha256": "2969DC744004710200AD8DE2F4AE01306A26182BE2A07BA668F5C331EBF9A3F6"
+    },
+    {
+      "role": "93_strict42_Top30modules_BM_projection_20260716.R",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 24214,
+      "sha256": "A2E87783E08440BAB35EA86A695C3799C9A1EC4CF01526B698668A9C57917628"
+    },
+    {
+      "role": "81_BM_sample_metadata_from_GEO.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 3821,
+      "sha256": "CB4791B38645AEF43CC1AD06C0D3E9759EFDC051BAD0396DDD4DB63D37F861BA"
+    },
+    {
+      "role": "62_BM_liver_response_gene_expression_by_celltype_long.csv",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 12232,
+      "sha256": "85ADB139F460CC4C97C1F5D5724DBD591B59E9F6E9498EDF3346F13187CC8DB0"
+    }
+  ],
+  "outputs": [
+    {
+      "role": "Figure4A_bone_marrow_UMAP_display_source_data_20260716_v2.csv",
+      "relative_path": "derived_data/bone_marrow/Figure4A_bone_marrow_UMAP_display_source_data_20260716_v2.csv",
+      "bytes": 4644143,
+      "sha256": "A2E42173D788FDCD80CC66869E131F6D3DBD7F118655E69B8D94CAF5D572EA16"
+    },
+    {
+      "role": "Figure4B_subject_timepoint_composition_source_data_20260716_v2.csv",
+      "relative_path": "derived_data/bone_marrow/Figure4B_subject_timepoint_composition_source_data_20260716_v2.csv",
+      "bytes": 58377,
+      "sha256": "A681D0283133BB56C25A449C09AD4144BEB20785D7487829B39F1A49C72786E4"
+    },
+    {
+      "role": "Figure4C_strict_module_compartment_projection_source_data_20260716_v2.csv",
+      "relative_path": "derived_data/bone_marrow/Figure4C_strict_module_compartment_projection_source_data_20260716_v2.csv",
+      "bytes": 16762,
+      "sha256": "96A63F6780885CDC5CC9A3C626A5D803A6C1BB053889A84BBFAE11C0919A4B4D"
+    },
+    {
+      "role": "Figure4D_marrow_support_response_source_data_20260716_v2.csv",
+      "relative_path": "derived_data/bone_marrow/Figure4D_marrow_support_response_source_data_20260716_v2.csv",
+      "bytes": 6442,
+      "sha256": "8A0ED6E414AFA602DC93F883B54BA4D2D7F1407A04E11D630A8ACAA7C37667E5"
+    },
+    {
+      "role": "Figure_4_bone_marrow_atlas_module_projection_support_context_20260716_v2.svg",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 1904964,
+      "sha256": "F346356CD162527E3158BF04AE739C1D1B1FA527F565F4E6434E34F38D53ACFF"
+    },
+    {
+      "role": "Figure_4_bone_marrow_atlas_module_projection_support_context_20260716_v2.pdf",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 1315511,
+      "sha256": "882BBC4A6030E4D7539B262A29AFAFF4F9B6238F472BB98BEA7E31AA42729374"
+    },
+    {
+      "role": "Figure_4_bone_marrow_atlas_module_projection_support_context_20260716_v2.png",
+      "availability": "Not redistributed; identified by file role, byte size, and SHA-256.",
+      "bytes": 2176270,
+      "sha256": "11B7D7054B8A43C2FFB38B44743085AEE3D360A681CF70009F3B05DDDD354B8A"
+    }
+  ]
+}
