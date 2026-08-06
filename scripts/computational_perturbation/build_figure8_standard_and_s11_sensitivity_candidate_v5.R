@@ -14,6 +14,7 @@ suppressPackageStartupMessages({
   library(ragg)
   library(dplyr)
   library(tidyr)
+  library(png)
 })
 
 args <- commandArgs(trailingOnly = TRUE)
@@ -894,6 +895,30 @@ save_figure <- function(plot_object, stem, width_in, height_in) {
 
 save_figure(main_figure, main_stem, 7.205, 7.1)
 save_figure(supp_figure, supp_stem, 7.205, 8.9)
+
+# BMC Genomics requires the overall figure title and legend in the manuscript
+# caption rather than duplicated inside the raster. This publication-only
+# postprocess erases rows 1:270 of the main PNG and verifies that all panel
+# pixels below the title band remain byte-for-byte unchanged in decoded space.
+main_png <- paste0(main_stem, ".png")
+main_before_title_erase <- readPNG(main_png)
+main_after_title_erase <- main_before_title_erase
+main_after_title_erase[seq_len(270L), , 1:3] <- 1
+if (dim(main_after_title_erase)[3] == 4) {
+  main_after_title_erase[seq_len(270L), , 4] <- 1
+}
+writePNG(main_after_title_erase, target = main_png, dpi = c(600, 600))
+main_title_erase_check <- readPNG(main_png)
+if (!isTRUE(all.equal(
+  main_title_erase_check[271L:dim(main_title_erase_check)[1], , ],
+  main_before_title_erase[271L:dim(main_before_title_erase)[1], , ],
+  tolerance = 0
+))) {
+  stop("Figure 8 title-band postprocess changed panel pixels")
+}
+if (!all(main_title_erase_check[seq_len(270L), , 1:3] == 1)) {
+  stop("Figure 8 title-band postprocess did not produce a pure-white band")
+}
 
 cat("FIGURE8_STANDARD_AND_S11_SENSITIVITY_CANDIDATE_COMPLETE\n")
 cat(paste(c(main_outputs, supp_outputs, source_paths), collapse = "\n"), "\n")

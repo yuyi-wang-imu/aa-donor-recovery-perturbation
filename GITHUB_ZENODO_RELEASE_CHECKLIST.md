@@ -18,6 +18,9 @@ unpublishing, overwriting or DOI withdrawal for the historical repository.
       exports are absent and that only permissible derived tables remain.
 - [x] Rebuild Figure 1-9 and Figure S8-S10 and verify exact hashes or documented
       pixel tolerances against the frozen BMC submission references.
+- [x] Align the frozen BMC references with the V7 compliance fixes: Figure 5
+      and Figure 8 top-title bands erased only, and Additional file 4's repaired
+      workbook hash recorded without redistributing the journal workbook.
 
 ## Local static checks
 

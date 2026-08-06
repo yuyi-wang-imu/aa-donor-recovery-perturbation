@@ -16,6 +16,9 @@ import shutil
 import subprocess
 import sys
 
+import numpy as np
+from PIL import Image
+
 from assemble_static_publication_figures import align_panel_letters, default_font
 
 
@@ -30,6 +33,27 @@ def copy(source: Path, destination: Path) -> None:
     if destination.exists():
         raise FileExistsError(destination)
     shutil.copy2(source, destination)
+
+
+def erase_top_title_band(path: Path, rows: int) -> None:
+    """Erase only a frozen top title band while preserving all lower pixels."""
+
+    with Image.open(path) as image:
+        dpi = image.info.get("dpi", (600, 600))
+        original = np.asarray(image.convert("RGB"), dtype=np.uint8).copy()
+    modified = original.copy()
+    modified[:rows, :, :] = 255
+    temporary = path.with_name(path.stem + ".title-band.tmp.png")
+    Image.fromarray(modified, mode="RGB").save(temporary, dpi=dpi)
+    with Image.open(temporary) as image:
+        verified = np.asarray(image.convert("RGB"), dtype=np.uint8)
+    if verified.shape != original.shape:
+        raise RuntimeError(f"Title-band postprocess changed canvas dimensions: {path}")
+    if not np.array_equal(verified[rows:, :, :], original[rows:, :, :]):
+        raise RuntimeError(f"Title-band postprocess changed panel pixels: {path}")
+    if not np.all(verified[:rows, :, :] == 255):
+        raise RuntimeError(f"Title-band postprocess did not produce a pure-white band: {path}")
+    os.replace(temporary, path)
 
 
 def main() -> int:
@@ -69,6 +93,7 @@ def main() -> int:
     )
     for number in (1, 2, 4, 5, 6):
         copy(static_dir / f"Figure_{number}.png", main_dir / f"Figure_{number}.png")
+    erase_top_title_band(main_dir / "Figure_5.png", 300)
 
     figure3_raw = work_dir / "figure3_raw"
     run(
