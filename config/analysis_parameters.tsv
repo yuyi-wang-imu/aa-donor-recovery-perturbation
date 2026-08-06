@@ -1,0 +1,33 @@
+workflow	parameter	value	unit_or_scope
+prescription_mining	prescription_records	390	prescription-level records
+prescription_mining	minimum_support	0.10	fraction
+prescription_mining	minimum_confidence	0.88	fraction
+candidate_harmonization	compound_inventory_records	34	herb-compound records
+candidate_harmonization	single_gene_symbol_entities	472	entities eligible for exact matching
+candidate_harmonization	composite_entities	9	retained but not decomposed
+candidate_harmonization	AA_resource_genes	1529	exact standardized symbols
+candidate_harmonization	candidate_pool	126	exact matches
+strict_wgcna	input_profiles	42	participant-by-timepoint profiles
+strict_wgcna	participants	23	participants
+strict_wgcna	network_type	signed	bicor network
+strict_wgcna	soft_threshold_power	18	fixed power
+strict_wgcna	min_module_size	30	genes
+strict_wgcna	merge_cut_height	0.25	dissimilarity
+strict_wgcna	modules_including_grey	27	modules
+docking	receptors	6	proteins
+docking	ligands	23	compounds
+docking	matrix_runs	138	receptor-ligand combinations
+molecular_dynamics	systems	5	representative complexes
+molecular_dynamics	duration	100	ns per system
+scTenifoldKnk	candidates	10	prespecified genes
+scTenifoldKnk	matched_controls	200	20 per candidate
+scTenifoldKnk	total_runs	210	completed runs
+scTenifoldKnk	common_seed	20260724	all formal runs
+geneformer	model	Geneformer-V2-104M	104386867 parameters
+geneformer	balanced_cells	2688	cells in recorded run
+geneformer	geneformer_mapped_genes	18121	genes after model mapping
+geneformer	common_seed	20260802	perturbation and bootstrap workflows
+geneformer	bootstrap_replicates	2000	donor bootstrap
+geneformer	device	CUDA	GPU used in recorded run
+geneformer	torch_version	2.4.1+cu118	recorded server runtime
+molecular_dynamics	total_duration	500	ns across five 100 ns systems

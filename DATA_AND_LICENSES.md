@@ -10,6 +10,9 @@ author-controlled clinical/design metadata.
 - Selected derived numerical tables required to inspect or rerender manuscript
   figures, where the table does not reproduce a restricted raw database export.
 - Aggregated and model-derived outputs for the Geneformer calibration panels.
+- Derived public-study tables may retain pseudonymous subject labels (for
+  example, UPN codes) and single-cell barcodes solely for traceable provenance;
+  they contain no names, contact details, or private design table.
 
 ## Obtain separately
 
@@ -37,8 +40,9 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 - TCMSP, SwissTargetPrediction, OMIM, GeneCards, TTD, DisGeNET, bibliographic,
   or other licensed/raw database exports. Derived associations must be reviewed
   case by case and cannot be treated as permission to republish the source dump.
-- Participant-level design metadata until the author confirms that only public
-  GEO identifiers and non-sensitive fields remain.
+- Private participant-level design metadata. Users must reconstruct required
+  metadata from the cited public GEO studies and review it under applicable
+  data-use and privacy requirements.
 - Prepared receptor/ligand structures and exact pose-visualization project files.
 - Raw molecular-dynamics topology, checkpoint, energy and trajectory files
   (`*.tpr`, `*.cpt`, `*.edr`, `*.xtc`, `*.trr`, `*.dcd`, `*.nc`).

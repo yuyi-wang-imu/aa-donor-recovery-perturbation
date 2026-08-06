@@ -1,0 +1,19 @@
+key	required_by	description	example_path	distribution_status
+prescription_source_workbook	prescription-rule extraction	Author-curated 390-record prescription workbook	/path/to/prescription_records.xlsx	author-controlled; not redistributed
+spss_association_rule_export	prescription-rule extraction	Verified SPSS association-rule export	/path/to/spss_rules.xlsx	author-controlled; not redistributed
+tcmsp_compound_inventory	candidate harmonization; compound-target provenance	Archived TCMSP compound inventory for the three herbal materials	/path/to/tcmsp_compounds.xlsx	database terms apply; not redistributed
+swisstargetprediction_raw	candidate harmonization; compound-target provenance	Archived SwissTargetPrediction target records	/path/to/swisstargetprediction_targets.csv	database terms apply; not redistributed
+AA_database_gene_lists	candidate harmonization	Archived OMIM GeneCards TTD and DisGeNET gene-symbol lists	/path/to/aa_database_gene_lists.csv	database terms apply; not redistributed
+GSE165870_counts	GSE165870 bulk analysis	Public Lin-CD34+ bulk count matrix	/path/to/GSE165870_counts.tsv	public GEO input
+GSE165870_metadata	GSE165870 bulk analysis	Public sample metadata	/path/to/GSE165870_metadata.tsv	public GEO input
+GSE247531_CD34_counts	strict CD34 WGCNA	CD34+ HSPC count matrix staged from GSE247531	/path/to/GSE247531_CD34_counts.tsv	public GEO input
+GSE247531_CD34_metadata	strict CD34 WGCNA	Participant and timepoint metadata	/path/to/GSE247531_CD34_metadata.tsv	public GEO input
+GSE247531_BM_counts	bone-marrow RPCA; computational perturbation	Bone-marrow single-cell counts staged from GSE247531	/path/to/GSE247531_BMcounts.Rdata.gz	public GEO input
+docking_receptors	docking matrix	Prepared receptor PDBQT directory	/path/to/receptors	author-prepared; not redistributed
+docking_ligands	docking matrix	Prepared ligand PDBQT directory	/path/to/ligands	author-prepared; not redistributed
+md_trajectories	MD trajectory analysis	Five topology and trajectory sets	/path/to/md_systems	large author-generated files; not redistributed
+GSE247531_CD34_double_gzip	Geneformer balanced-input preparation	Public GSE247531 CD34 count archive used by the public preparation script	/path/to/GSE247531_CD34counts.Rdata.gz	public GEO input; not redistributed
+GSE247531_CD34_design	Geneformer balanced-input preparation	Participant/timepoint design table with the required documented columns	/path/to/GSE247531_CD34_design_table.tsv	derived metadata; release only after author privacy review
+geneformer_source_dir	Geneformer perturbation	Official Geneformer source snapshot containing V2 dictionaries	/path/to/Geneformer	third-party Apache-2.0 source; obtain from official repository
+geneformer_model_dir	Geneformer perturbation	Geneformer-V2-104M model directory containing model.safetensors	/path/to/Geneformer-V2-104M	418 MB third-party model; download separately; not redistributed
+geneformer_balanced_input_dir	Geneformer perturbation	Output from the balanced-input preparation workflow	/path/to/balanced_cd34_inputs	generated locally; not redistributed

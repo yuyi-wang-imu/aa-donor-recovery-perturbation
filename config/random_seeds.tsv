@@ -1,0 +1,9 @@
+workflow	seed	scope	verification_status	note
+strict_wgcna	20260715	strict participant-aware WGCNA	verified	Recorded in the packaged script and session information
+bone_marrow_projection	20260716	strict42 marrow module projection	verified	Recorded in the packaged script
+bone_marrow_figure	20260716	UMAP display sampling	verified	Recorded in the source table and rendering workflow
+bone_marrow_projection_sensitivity	20260519	projection sensitivity analysis	recorded	Used only for the documented sensitivity analysis
+docking	not_predefined	AutoDock Vina runs	not_recorded	Table S7 contains no seed field; no seed is imputed
+sctenifold_formal	20260724	10 candidate and 200 matched-control runs	verified	All 210 rows in run_manifest_210.csv carry the same common seed
+geneformer_balanced_sampling	20260802	64 cells per subject-timepoint	verified	Recorded in the preparation script
+geneformer_perturbation	20260802	deletion overexpression and donor bootstrap	verified	Recorded execution manifests report the same seed and 2000 bootstrap replicates

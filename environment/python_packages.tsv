@@ -1,11 +1,11 @@
 package	recorded_version	role
-Python	3.12.5	analysis runtime
-pandas	3.0.2	tabular data handling
-numpy	2.4.4	numerical operations
-matplotlib	3.10.8	figure rendering
-Pillow	12.2.0	raster-image handling
-XlsxWriter	not_recorded	spreadsheet generation
-openpyxl	3.1.5	spreadsheet verification
+Python (repository audit host)	3.12.5	static validation host; not the reference workflow lock
+pandas (repository audit host)	3.0.2	static validation host; not the reference workflow lock
+numpy (repository audit host)	2.4.4	static validation host; not the reference workflow lock
+matplotlib (repository audit host)	3.10.8	static validation and figure inspection host
+Pillow (repository audit host)	12.2.0	raster-image inspection host
+XlsxWriter (repository audit host)	not_recorded	spreadsheet support on the audit host
+openpyxl (repository audit host)	3.1.5	spreadsheet verification host
 Python (Geneformer run)	3.10.20	GPU perturbation runtime on Linux
 pandas (Geneformer run)	2.2.3	tabular data handling
 numpy (Geneformer run)	1.26.4	numerical operations

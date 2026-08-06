@@ -15,10 +15,11 @@ not experimental target validation.
 
 ## Release status
 
-This directory is an **unpublished candidate**. It is not a GitHub release and
-has no new DOI. The historical repository and historical Zenodo DOI are not
-modified or withdrawn by this work and must not be reused as the citation for
-this candidate. See `UPLOAD_READINESS_AUDIT_20260804_v1.md` before uploading.
+This repository is currently a **private, pre-release candidate** at
+<https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. It is not a
+GitHub release and has no Zenodo DOI. The historical repository and historical
+DOI are not modified or withdrawn by this work and must not be reused as the
+citation for this repository.
 
 ## Repository map
 
@@ -29,14 +30,25 @@ this candidate. See `UPLOAD_READINESS_AUDIT_20260804_v1.md` before uploading.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
 - `FIGURE_SOURCE_MAP.tsv`: Figure 1-9 and supplementary mapping, including gaps.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
-- `PROPOSED_UPLOAD_MANIFEST_20260804_v1.tsv`: upload/include decision by path group.
+- `CITATION.cff`: citation metadata without a guessed DOI.
+- `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
 
 ## Quick structural checks
 
+Python 3.10 or newer is required. On Linux/macOS, run:
+
 ```bash
-python scripts/run_workflow.py --list
-python scripts/run_workflow.py --check
-python scripts/validate_repository.py
+python3 scripts/run_workflow.py --list
+python3 scripts/run_workflow.py --check
+python3 scripts/validate_repository.py
+```
+
+On Windows, where `python` may resolve to a legacy interpreter, use:
+
+```powershell
+py -3 -B scripts/run_workflow.py --list
+py -3 -B scripts/run_workflow.py --check
+py -3 -B scripts/validate_repository.py
 ```
 
 These checks verify repository structure; they do not download licensed data,
@@ -45,8 +57,11 @@ the scientific analyses.
 
 ## Environment
 
-The original non-Geneformer workflows use `environment/requirements.txt` and
-the R packages in `environment/r_packages.tsv`. The recorded GPU Geneformer run
+The supported non-Geneformer package ranges are in
+`environment/requirements.txt`; R dependencies are in
+`environment/r_packages.tsv`. The host snapshot in
+`environment/python_packages.tsv` is provenance, not a dependency lock. See
+`environment/README.md` for the distinction. The recorded GPU Geneformer run
 used Python 3.10.20, NumPy 1.26.4, pandas 2.2.3, SciPy 1.12.0,
 PyTorch 2.4.1+cu118, Transformers 4.46.0, and CUDA. A reproducible starting
 specification is provided in
@@ -86,9 +101,11 @@ The recorded model SHA-256 was
 
 Author-curated prescription records, licensed database exports, prepared
 docking structures, model weights, official third-party source snapshots,
-participant design metadata pending privacy review, and raw/topology/trajectory
-MD files are excluded. Public GEO accessions and exact staging requirements are
-listed in `DATA_AND_LICENSES.md` and `config/input_paths.example.tsv`.
+private participant design metadata, and raw/topology/trajectory MD files are
+excluded. Included derived tables may retain public-study pseudonymous subject
+labels and single-cell barcodes for provenance; they contain no names or contact
+details. Public GEO accessions and exact staging requirements are listed in
+`DATA_AND_LICENSES.md` and `config/input_paths.example.tsv`.
 
 ## Figure reproducibility
 
@@ -99,12 +116,13 @@ inputs that are not fully redistributed. These are explicitly labelled in
 `FIGURE_SOURCE_MAP.tsv`; absence of an exact renderer must not be described as
 full from-raw reproducibility.
 
-The final publication choice between the visually reviewed Figure 9/S9/S10 v5
-set and later v6/v7 presentation derivatives remains an author decision.
+The finalized Figure 9/S9/S10 presentation pipeline uses the v6 renderer,
+followed by the v7 RGB conversion. These versions preserve black titles and a
+white background; v7 changes color mode only and does not recompute results.
 
 ## License and citation
 
 Repository-authored code is BSD-3-Clause. Third-party datasets, databases,
-Geneformer code/model assets, SPSS, Cytoscape, GROMACS, AutoDock Vina and R/Python
-packages retain their own terms. Do not add a new GitHub URL or Zenodo DOI to
-`CITATION.cff` until the author creates the new repository and release record.
+Geneformer code/model assets, SPSS, Cytoscape, GROMACS, AutoDock Vina and
+R/Python packages retain their own terms. The repository URL is recorded in
+`CITATION.cff`; a Zenodo DOI must be added only after one is actually issued.

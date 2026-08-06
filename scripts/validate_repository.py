@@ -85,7 +85,9 @@ def validate_repository() -> int:
         "GITHUB_ZENODO_RELEASE_CHECKLIST.md",
         "WORKFLOW_ORDER.tsv",
         "config/analysis_parameters.tsv",
+        "config/input_paths.example.tsv",
         "config/random_seeds.tsv",
+        "environment/README.md",
         "environment/requirements.txt",
         "environment/geneformer_gpu_environment_20260804_v1.yml",
         "environment/install_r_packages.R",
@@ -99,7 +101,8 @@ def validate_repository() -> int:
         "scripts/geneformer/85_bmc_geneformer_overexpression_mvp_20260802_v3.py",
         "scripts/geneformer/93_bmc_geneformer_bidirectional_audit_20260802_v2.py",
         "scripts/geneformer/109_bmc_geneformer_state_specific_perturbation_20260802_v1.py",
-        "scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v1.py",
+        "scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py",
+        "scripts/geneformer_figures/convert_bmc_geneformer_panels_rgb_20260803_v7.py",
         "scripts/molecular_dynamics/build_figure7_five_complex_standard_md_20260725_v2.py",
         "scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260725_v3.py",
         "scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260725_v4.py",
@@ -175,6 +178,25 @@ def validate_repository() -> int:
         historical_repo = "aa-prescription-" + "hematopoietic-workflow"
         if historical_doi in metadata or historical_repo in metadata:
             fail(f"Historical repository/DOI leaked into new release metadata: {metadata_name}")
+
+    readme = (ROOT / "README.md").read_text(encoding="utf-8-sig")
+    required_readme_terms = [
+        "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation",
+        "python3 scripts/validate_repository.py",
+        "v6 renderer",
+        "v7 RGB conversion",
+    ]
+    missing_readme_terms = [term for term in required_readme_terms if term not in readme]
+    if missing_readme_terms:
+        fail(f"README is missing public-release guidance: {missing_readme_terms}")
+    forbidden_readme_terms = [
+        "UPLOAD_READINESS_AUDIT_20260804_v1.md",
+        "PROPOSED_UPLOAD_MANIFEST_20260804_v1.tsv",
+        "remains an author decision",
+    ]
+    leaked_readme_terms = [term for term in forbidden_readme_terms if term in readme]
+    if leaked_readme_terms:
+        fail(f"README contains internal or stale guidance: {leaked_readme_terms}")
 
     if not MANIFEST_PATH.is_file():
         fail("Missing release file: MANIFEST.tsv")

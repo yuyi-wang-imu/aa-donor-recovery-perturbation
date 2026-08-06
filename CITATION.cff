@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Donor-Aware Recovery and Perturbation Workflow for Aplastic Anemia"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Wang
+    given-names: Yuyi
+    orcid: "https://orcid.org/0009-0009-4087-7142"
+repository-code: "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation"
+url: "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation"
+license: BSD-3-Clause
+keywords:
+  - aplastic anemia
+  - donor-aware transcriptomics
+  - Geneformer
+  - molecular dynamics
+  - computational gene perturbation
+abstract: >-
+  Reproducible analysis code and selected derived source tables for
+  prescription mining, hematopoietic transcriptomics, molecular dynamics,
+  scTenifoldKnk and donor-aware bidirectional Geneformer perturbation in
+  aplastic anemia. No Zenodo DOI has yet been assigned to this repository.

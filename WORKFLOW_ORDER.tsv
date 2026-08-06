@@ -33,4 +33,4 @@ order	workflow	canonical_entry	current_scope
 32	Geneformer positive-control calibration	scripts/geneformer/108_bmc_geneformer_positive_control_matched_null_20260802_v2.py	Evaluate prespecified positive controls against outcome-blind matched backgrounds
 33	Geneformer extension table builder	scripts/geneformer/113_bmc_geneformer_extension_table_builder_20260802_v1.py	Build the supplementary calibration tables from completed perturbation outputs
 34	Geneformer extension independent QC	scripts/geneformer/115_bmc_geneformer_extension_tables_independent_qc_20260802_v1.py	Validate the extension tables and emit checksums/QC without changing analysis values
-35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v1.py	Render source-backed Geneformer panels; later v6/v7 files are presentation derivatives pending final-version confirmation
+35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py	Render the finalized white-background black-title Geneformer panels with v6, then use v7 to convert final outputs to RGB without recomputing results
