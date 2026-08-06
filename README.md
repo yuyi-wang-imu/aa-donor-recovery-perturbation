@@ -1,6 +1,6 @@
 # Donor-aware recovery and perturbation workflow for aplastic anemia
 
-Private public-release candidate containing analysis code, selected derived
+Pre-release candidate containing analysis code, selected derived
 source tables, and a frozen publication-replay test suite for the BMC Genomics
 manuscript. The repository covers prescription
 mining, exact candidate construction, transcriptomic and co-expression
@@ -16,9 +16,9 @@ not experimental target validation.
 
 ## Release status
 
-This repository is currently a **private, pre-release candidate** at
-<https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. It is not a
-GitHub release and has no Zenodo DOI. The historical repository and historical
+This repository is a **pre-release candidate** at
+<https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. No formal
+GitHub Release or Zenodo DOI has been created. The historical repository and historical
 DOI are not modified or withdrawn by this work and must not be reused as the
 citation for this repository.
 

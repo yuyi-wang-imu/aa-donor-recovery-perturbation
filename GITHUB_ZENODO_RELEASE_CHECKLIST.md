@@ -40,9 +40,12 @@ absolute executable path if `Rscript` is not on `PATH`.
 - [x] Run a clean-clone structural check and the non-analytical Python/R checks.
 - [ ] Where external inputs are available, run the
       minimal smoke tests in a new output directory.
-- [ ] Make public only after manuscript/code-version approval.
-- [ ] Create a new release tag chosen by the author; do not reuse the old release tag.
-- [ ] Enable Zenodo only for the new repository and mint a new DOI.
+- [ ] Push and verify the final approved commit while the repository remains private.
+- [ ] Make the new repository public only after manuscript/code-version approval.
+- [ ] Enable the new repository in Zenodo before creating its first formal release.
+- [ ] Create tag `v0.1.0`, matching `CITATION.cff`, on the verified final commit;
+      do not reuse any historical tag.
+- [ ] Create the GitHub Release and wait for Zenodo to archive that release and mint a new DOI.
 - [ ] Add the issued DOI only after it exists; never guess a DOI.
 - [ ] Rebuild `MANIFEST.tsv` and the release archive after metadata changes.
 

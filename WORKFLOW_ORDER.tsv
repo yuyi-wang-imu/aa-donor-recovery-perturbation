@@ -16,7 +16,7 @@ order	workflow	canonical_entry	current_scope
 15	computational perturbation validation	scripts/computational_perturbation/validate_sctenifoldknk_outputs.py	Verify the formal 210-run manifest and packaged candidate outputs
 16	matched-control calibration	scripts/computational_perturbation/summarize_sctenifoldknk_matched_calibration_v3.R	Apply the prespecified matched-control calibration gates
 17	global-unique sensitivity	scripts/computational_perturbation/summarize_sctenifoldknk_global_unique_sensitivity_v1.R	Run the secondary global-unique rematching sensitivity analysis
-18	computational perturbation figures	scripts/computational_perturbation/build_figure8_standard_and_s11_sensitivity_candidate_v5.R	Render Figure 8 and Figure S11 with approved P-value and CD34-positive HSPC typography; source tables are verified before rendering
+18	computational perturbation figures	scripts/computational_perturbation/build_figure8_standard_and_s11_sensitivity_candidate_v5.R	Render Figure 8 and manuscript Figure S8 (historical source basename FigureS11) with approved P-value and CD34-positive HSPC typography; source tables are verified before rendering
 19	MD trajectory analysis	scripts/molecular_dynamics/run_gromacs_trajectory_analysis.py	Perform PBC-aware trajectory analysis for five completed 100 ns complexes
 20	Figure 7 molecular-dynamics rendering	scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py	Render the frozen five-complex comparison with C-alpha typography corrected; no analytical recomputation
 21	Figure 4/5 layout-only rendering	scripts/figure_packaging/build_figure4_5_layout_fixes_20260726_v1.py	Remove the verified Figure 4 spacer band and standardize Figure 5 A/B labels; no analytical recomputation
