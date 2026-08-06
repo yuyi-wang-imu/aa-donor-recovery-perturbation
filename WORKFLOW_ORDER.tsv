@@ -34,3 +34,5 @@ order	workflow	canonical_entry	current_scope
 33	Geneformer extension table builder	scripts/geneformer/113_bmc_geneformer_extension_table_builder_20260802_v1.py	Build the supplementary calibration tables from completed perturbation outputs
 34	Geneformer extension independent QC	scripts/geneformer/115_bmc_geneformer_extension_tables_independent_qc_20260802_v1.py	Validate the extension tables and emit checksums/QC without changing analysis values
 35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py	Render the finalized white-background black-title Geneformer panels with v6, then use v7 to convert final outputs to RGB without recomputing results
+36	publication figure replay	scripts/publication_figures/reproduce_all_publication_figures.py	Rebuild Figure 1-9, Figure S8-S10 and the S1-S8 PDF package, then compare against frozen submission references
+37	frozen submission asset verification	scripts/publication_tables/verify_submission_assets.py	Verify the separately held v5 main figures and additional files by size, SHA-256 and optional workbook invariants

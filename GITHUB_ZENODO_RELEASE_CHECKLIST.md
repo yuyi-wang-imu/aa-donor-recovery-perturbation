@@ -12,10 +12,12 @@ unpublishing, overwriting or DOI withdrawal for the historical repository.
       pseudonymous labels documented in `DATA_AND_LICENSES.md`.
 - [x] Repository title, URL and currently confirmed software author recorded in
       `CITATION.cff` without inventing a DOI.
-- [ ] Decide whether Figures 1, 4, 5 and 6 will remain documented as conditional
-      reproducibility or whether their missing accepted inputs/renderers will be added.
+- [x] Add approved publication intermediates and deterministic replay for
+      Figures 1, 4, 5 and 6 while retaining conditional upstream-analysis labels.
 - [x] Confirm that TCMSP, SwissTargetPrediction and other licensed/raw database
       exports are absent and that only permissible derived tables remain.
+- [x] Rebuild Figure 1-9 and Figure S8-S10 and verify exact hashes or documented
+      pixel tolerances against the frozen BMC submission references.
 
 ## Local static checks
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import matplotlib as mpl
@@ -14,8 +15,12 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "derived_data" / "geneformer"
-OUT = ROOT / "outputs" / "geneformer_figures"
+DATA = Path(
+    os.environ.get("AA_GENEFORMER_DATA_DIR", ROOT / "derived_data" / "geneformer")
+)
+OUT = Path(
+    os.environ.get("AA_GENEFORMER_FIGURE_OUT", ROOT / "outputs" / "geneformer_figures")
+)
 OUT.mkdir(parents=True, exist_ok=True)
 
 AUDIT = DATA / "BMC_Geneformer_BIDIRECTIONAL_AUDIT_SINGLE_20260802_v1"

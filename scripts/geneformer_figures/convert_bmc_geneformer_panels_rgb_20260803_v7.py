@@ -5,12 +5,18 @@ are never overwritten.
 """
 
 from pathlib import Path
+import os
 import shutil
 
 from PIL import Image
 
 
-ROOT = Path(__file__).resolve().parents[2] / "outputs" / "geneformer_figures"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(
+    os.environ.get(
+        "AA_GENEFORMER_FIGURE_OUT", REPO_ROOT / "outputs" / "geneformer_figures"
+    )
+)
 
 
 def v7_name(path: Path) -> Path:

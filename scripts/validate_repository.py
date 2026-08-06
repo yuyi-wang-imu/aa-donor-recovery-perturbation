@@ -82,6 +82,8 @@ def validate_repository() -> int:
         "CITATION.cff",
         "DATA_AND_LICENSES.md",
         "FIGURE_SOURCE_MAP.tsv",
+        "REPRODUCIBILITY_MATRIX.tsv",
+        "PUBLICATION_ASSET_CHECKSUMS.tsv",
         "GITHUB_ZENODO_RELEASE_CHECKLIST.md",
         "WORKFLOW_ORDER.tsv",
         "config/analysis_parameters.tsv",
@@ -89,6 +91,9 @@ def validate_repository() -> int:
         "config/random_seeds.tsv",
         "environment/README.md",
         "environment/requirements.txt",
+        "environment/publication_replay_python_20260806.txt",
+        "environment/figure7_exact_renderer_python_20260806.txt",
+        "environment/publication_replay_r_packages_20260806.tsv",
         "environment/geneformer_gpu_environment_20260804_v1.yml",
         "environment/install_r_packages.R",
         "environment/r_packages.tsv",
@@ -111,6 +116,10 @@ def validate_repository() -> int:
         "scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py",
         "scripts/transcriptomics_wgcna/build_figure2_candidate_pool_CD34_context_typography_20260726_v7.py",
         "scripts/figure_packaging/assemble_supplementary_figures_s1_s8_20260727_v2.py",
+        "scripts/publication_figures/assemble_static_publication_figures.py",
+        "scripts/publication_figures/reproduce_all_publication_figures.py",
+        "scripts/publication_figures/verify_publication_figures.py",
+        "scripts/publication_tables/verify_submission_assets.py",
         "derived_data/molecular_dynamics/Figure_7_five_system_md_source_data_20260725_v5_pbc_audited.csv",
         "derived_data/bone_marrow/Figure4A_bone_marrow_UMAP_display_source_data_20260716_v2.csv",
         "derived_data/bone_marrow/Figure4B_subject_timepoint_composition_source_data_20260716_v2.csv",
@@ -122,7 +131,37 @@ def validate_repository() -> int:
         "derived_data/computational_perturbation/FigureS11_matched_control_calibration_source_20260725_v4.csv",
         "derived_data/computational_perturbation/FigureS11_matched_control_covariate_balance_source_20260725_v4.csv",
         "derived_data/computational_perturbation/FigureS11_matched_control_pooled_null_source_20260725_v4.csv",
+        "derived_data/publication_intermediates/README.md",
+        "reference_outputs/README.md",
     ]
+    required.extend(
+        f"reference_outputs/main_figures/Figure_{number}.png"
+        for number in range(1, 10)
+    )
+    required.extend(
+        f"reference_outputs/supplementary_figures/Figure_{suffix}.png"
+        for suffix in ("S8", "S9", "S10")
+    )
+    required.extend(
+        [
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S1_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S2_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S3_DetectionCoverageOnly_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S4_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S5_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S6_ModuleLocalizationRobustness_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S7_DockingMatrixOnly_20260726.pdf",
+            "derived_data/publication_intermediates/supplementary_pages/"
+            "Supplementary_Figure_S8_MatchedControlSensitivity_20260726.pdf",
+        ]
+    )
     missing = [name for name in required if not (ROOT / name).is_file()]
     if missing:
         fail(f"Missing release files: {', '.join(missing)}")
@@ -157,6 +196,16 @@ def validate_repository() -> int:
     if forbidden_files:
         fail(f"Forbidden large/sensitive release files: {forbidden_files}")
 
+    oversized = [
+        (path.relative_to(ROOT).as_posix(), path.stat().st_size)
+        for path in ROOT.rglob("*")
+        if path.is_file()
+        and ".git" not in path.relative_to(ROOT).parts
+        and path.stat().st_size > 50 * 1024 * 1024
+    ]
+    if oversized:
+        fail(f"Files exceed the 50 MiB release ceiling: {oversized}")
+
     high_confidence_secret_patterns = [
         re.compile(r"AKIA[0-9A-Z]{16}"),
         re.compile(r"gh[pousr]_[A-Za-z0-9]{30,}"),
@@ -185,6 +234,9 @@ def validate_repository() -> int:
         "python3 scripts/validate_repository.py",
         "v6 renderer",
         "v7 RGB conversion",
+        "reproduce_all_publication_figures.py",
+        "REPRODUCIBILITY_MATRIX.tsv",
+        "verify_submission_assets.py",
     ]
     missing_readme_terms = [term for term in required_readme_terms if term not in readme]
     if missing_readme_terms:
@@ -197,6 +249,45 @@ def validate_repository() -> int:
     leaked_readme_terms = [term for term in forbidden_readme_terms if term in readme]
     if leaked_readme_terms:
         fail(f"README contains internal or stale guidance: {leaked_readme_terms}")
+
+    golden_hashes = {
+        "reference_outputs/main_figures/Figure_1.png": "8FC1DB2D457AE795688AE5449B97985B0CE905049B19D9FA0C845A6C8FDD3B98",
+        "reference_outputs/main_figures/Figure_2.png": "7F803D3150BA552A7BE4BF6D966C3D96CCE066ED2BF1BF04D3700B2CA47CFBC1",
+        "reference_outputs/main_figures/Figure_3.png": "DB2F65B4A27E914ADF46CA2C8615D327BE59F58B10249AE0FD3B6696E1FEA6D1",
+        "reference_outputs/main_figures/Figure_4.png": "117ED322C86BFD888902FF200EA9B5B07534DAAA870CEC3A3FEAC35BB4C8FCF3",
+        "reference_outputs/main_figures/Figure_5.png": "B06CFA047B930B23FE0CC4BCEF62090F2CADE622CC8FAC80515229917DB94DDF",
+        "reference_outputs/main_figures/Figure_6.png": "93E4DBAB25FAA507D32FA9DC377536560BE92D7682723B3365B616952E5DBA1B",
+        "reference_outputs/main_figures/Figure_7.png": "BD4215EEB8B14474EF0ED1625D6AD85028776253EF421C828D1319B7893F2A6B",
+        "reference_outputs/main_figures/Figure_8.png": "5DE72C3AA4C89F87B34E4ED761080085A4B173AAC6300BBBBCA4117E3495E459",
+        "reference_outputs/main_figures/Figure_9.png": "5CB383358B113F04FBE7F4A827817548A3E98534DF27F0EB50081DA0BACCC9CC",
+        "reference_outputs/supplementary_figures/Figure_S8.png": "A18A1691FAFADD746C55AEE08316B87126A0F61830A2C445363E91EF4E4DDBD5",
+        "reference_outputs/supplementary_figures/Figure_S9.png": "16CC237FDEC974676C3FD3D9ADF1FB309DBB4DDB9E49BB3FC431A57361758E74",
+        "reference_outputs/supplementary_figures/Figure_S10.png": "5924F2DDA18953F1647B6BE292D8181347409967291EA6EFF595D9039F57B5DA",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S1_20260726.pdf": "CB1A9FF441576C6F3B1F30E355362518C49FA52E1BC103199116629CE2D32C8A",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S2_20260726.pdf": "4716A73B273823EA39A23B79CB9638D2083293ED1FE12AD79432E6A1F1E7ED3B",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S3_DetectionCoverageOnly_20260726.pdf": "15DD182C7AC7C1E272AC9AA6C426B33E6129AC53706688FA3B2B2BADD42F7EF0",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S4_20260726.pdf": "42ADF2988485037E8926EA0147D5D5C0C2FABE5C814019CECEF106D1B4A0E419",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S5_20260726.pdf": "E06F2D9FC3FD51065EAB194380676DC71C16F087640B4C6BC690DA7A718E5E53",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S6_ModuleLocalizationRobustness_20260726.pdf": "B6500C86F945908F45F8C9687D9DFB2DDA2E194148D20B1ECD4C19794048B7D1",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S7_DockingMatrixOnly_20260726.pdf": "B1DCDDBEEB16E6702447D31C26A56D7266DD1F0F4BA7D03247C785E7956661AE",
+        "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S8_MatchedControlSensitivity_20260726.pdf": "737AE4F7C595A85FF03523889A6589C18F68B186A26F8FA8BC006860C13CD3C5",
+    }
+    golden_mismatches = [
+        name
+        for name, expected in golden_hashes.items()
+        if digest_bytes((ROOT / name).read_bytes()) != expected
+    ]
+    if golden_mismatches:
+        fail(f"Frozen publication references changed: {golden_mismatches}")
+
+    with (ROOT / "PUBLICATION_ASSET_CHECKSUMS.tsv").open(
+        "r", encoding="utf-8-sig", newline=""
+    ) as handle:
+        publication_assets = list(csv.DictReader(handle, delimiter="\t"))
+    if len(publication_assets) != 17:
+        fail(f"Expected 17 frozen submission assets, found {len(publication_assets)}")
+    if any(len(row.get("sha256", "")) != 64 for row in publication_assets):
+        fail("Invalid SHA-256 entry in PUBLICATION_ASSET_CHECKSUMS.tsv")
 
     if not MANIFEST_PATH.is_file():
         fail("Missing release file: MANIFEST.tsv")

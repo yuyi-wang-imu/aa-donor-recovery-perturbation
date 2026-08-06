@@ -10,6 +10,9 @@ author-controlled clinical/design metadata.
 - Selected derived numerical tables required to inspect or rerender manuscript
   figures, where the table does not reproduce a restricted raw database export.
 - Aggregated and model-derived outputs for the Geneformer calibration panels.
+- Approved publication-facing image/PDF intermediates and frozen submission
+  figures used only for layout replay and regression testing. These assets are
+  not treated as substitutes for analytical source data.
 - Derived public-study tables may retain pseudonymous subject labels (for
   example, UPN codes) and single-cell barcodes solely for traceable provenance;
   they contain no names, contact details, or private design table.
@@ -36,7 +39,11 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 ## Not redistributed
 
-- Author-curated 390-record prescription workbook and verified SPSS exports.
+- The complete BMC supplementary workbooks are not duplicated into GitHub.
+  `PUBLICATION_ASSET_CHECKSUMS.tsv` and
+  `scripts/publication_tables/verify_submission_assets.py` verify the separate
+  journal files, including 390 prescription records and the corrected 12-rule
+  table, without republishing their archived database rows as source exports.
 - TCMSP, SwissTargetPrediction, OMIM, GeneCards, TTD, DisGeNET, bibliographic,
   or other licensed/raw database exports. Derived associations must be reviewed
   case by case and cannot be treated as permission to republish the source dump.
@@ -51,8 +58,11 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 ## Reproducibility consequence
 
-The repository supports code and selected-derived-data verification. It is not
-yet a complete from-raw public capsule for every panel: Figures 1, 4, 5 and 6
-and parts of the legacy supplementary package require author-controlled or
-third-party inputs. These limitations are listed in `FIGURE_SOURCE_MAP.tsv` and
-must remain visible in the public README.
+The repository provides a complete publication-replay layer for the submitted
+figure set and a scientific-recomputation layer wherever legal, public, or
+author-reviewed inputs can be staged. It is not a self-contained from-raw
+capsule for every analysis. Author-prepared structures, licensed source
+exports, raw MD trajectories, official model assets, and reviewed participant
+design staging remain external. The exact boundary for every figure and table
+is recorded in `REPRODUCIBILITY_MATRIX.tsv` and must remain visible in the
+public README.

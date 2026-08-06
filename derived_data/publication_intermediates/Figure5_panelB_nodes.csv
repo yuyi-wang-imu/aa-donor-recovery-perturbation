@@ -1,0 +1,104 @@
+﻿id,name,display_label,full_label,panel,layer,node_type,visual_class,fill_group,core_role,formal_rank,formal_score,strict_status,strict_module,source_role,evidence_boundary,layout_x,layout_y
+B_TGT_CDK6,B_TGT_CDK6,"1
+CDK6",CDK6,B,Top30,Target,Target_core_direct,STATUS_FDR,core10_direct_priority_candidate,1,79.34656777665151,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,-800.0
+B_TGT_CA2,B_TGT_CA2,"2
+CA2",CA2,B,Top30,Target,Target_core_direct,STATUS_NOMINAL,core10_direct_priority_candidate,2,77.61705714886202,nominal_module_context,midnightblue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,-800.0
+B_TGT_HSP90AB1,B_TGT_HSP90AB1,"3
+HSP90AB1",HSP90AB1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,3,72.96351599301178,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,-800.0
+B_TGT_PARP1,B_TGT_PARP1,"4
+PARP1",PARP1,B,Top30,Target,Target_core_direct,STATUS_FDR,core10_direct_priority_candidate,4,68.82787111305984,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,-800.0
+B_TGT_ACHE,B_TGT_ACHE,"5
+ACHE",ACHE,B,Top30,Target,Target_noncore,STATUS_NOMINAL,top30_priority_candidate,5,67.35091437159633,nominal_module_context,midnightblue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,-800.0
+B_TGT_HIF1A,B_TGT_HIF1A,"6
+HIF1A",HIF1A,B,Top30,Target,Target_core_mechanism,STATUS_FDR,core10_mechanism_perturbation_candidate,6,62.614011693635064,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,-480.0
+B_TGT_KIT,B_TGT_KIT,"7
+KIT",KIT,B,Top30,Target,Target_core_direct,STATUS_FDR,core10_direct_priority_candidate,7,61.97632846267291,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,-480.0
+B_TGT_CDK4,B_TGT_CDK4,"8
+CDK4",CDK4,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,8,60.389387654168516,contrast_specific_FDR_module_support,magenta,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,-480.0
+B_TGT_CDK2,B_TGT_CDK2,"9
+CDK2",CDK2,B,Top30,Target,Target_noncore,STATUS_UNASSIGNED,top30_priority_candidate,9,59.59020295464639,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,-480.0
+B_TGT_APEX1,B_TGT_APEX1,"10
+APEX1",APEX1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,10,59.43107527416479,contrast_specific_FDR_module_support,blue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,-480.0
+B_TGT_SYK,B_TGT_SYK,"11
+SYK",SYK,B,Top30,Target,Target_core_direct,STATUS_FDR,core10_direct_priority_candidate,11,59.07862844170006,contrast_specific_FDR_module_support,royalblue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,-160.0
+B_TGT_TOP2A,B_TGT_TOP2A,"12
+TOP2A",TOP2A,B,Top30,Target,Target_core_mechanism,STATUS_NONE,core10_mechanism_perturbation_candidate,12,59.036461554775876,no_prespecified_module_contrast_support,darkred,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,-160.0
+B_TGT_HSP90AA1,B_TGT_HSP90AA1,"13
+HSP90AA1",HSP90AA1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,13,58.73784582062004,contrast_specific_FDR_module_support,blue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,-160.0
+B_TGT_CHEK1,B_TGT_CHEK1,"14
+CHEK1",CHEK1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,14,57.87059883307138,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,-160.0
+B_TGT_SIGMAR1,B_TGT_SIGMAR1,"15
+SIGMAR1",SIGMAR1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,15,57.55192381845957,contrast_specific_FDR_module_support,lightyellow,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,-160.0
+B_TGT_TERT,B_TGT_TERT,"16
+TERT",TERT,B,Top30,Target,Target_core_mechanism,STATUS_UNASSIGNED,core10_mechanism_perturbation_candidate,16,57.53866507508347,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,160.0
+B_TGT_PTPN11,B_TGT_PTPN11,"17
+PTPN11",PTPN11,B,Top30,Target,Target_noncore,STATUS_NOMINAL,top30_priority_candidate,17,57.292317637911296,nominal_module_context,greenyellow,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,160.0
+B_TGT_PTGS2,B_TGT_PTGS2,"18
+PTGS2",PTGS2,B,Top30,Target,Target_noncore,STATUS_UNASSIGNED,top30_priority_candidate,18,56.65453431485879,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,160.0
+B_TGT_ARG1,B_TGT_ARG1,"19
+ARG1",ARG1,B,Top30,Target,Target_noncore,STATUS_UNASSIGNED,top30_priority_candidate,19,56.4415071362566,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,160.0
+B_TGT_CD38,B_TGT_CD38,"20
+CD38",CD38,B,Top30,Target,Target_core_mechanism,STATUS_NONE,core10_mechanism_perturbation_candidate,20,56.33118733049547,no_prespecified_module_contrast_support,lightcyan,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,160.0
+B_TGT_MDM4,B_TGT_MDM4,"21
+MDM4",MDM4,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,21,55.64509677007915,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,480.0
+B_TGT_MPO,B_TGT_MPO,"22
+MPO",MPO,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,22,54.890440011081985,contrast_specific_FDR_module_support,blue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,480.0
+B_TGT_PRKDC,B_TGT_PRKDC,"23
+PRKDC",PRKDC,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,23,54.71872594659365,contrast_specific_FDR_module_support,turquoise,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,480.0
+B_TGT_GSK3B,B_TGT_GSK3B,"24
+GSK3B",GSK3B,B,Top30,Target,Target_core_direct,STATUS_NONE,core10_direct_priority_candidate,24,54.673239333423915,no_prespecified_module_contrast_support,purple,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,480.0
+B_TGT_CCNB1,B_TGT_CCNB1,"25
+CCNB1",CCNB1,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,25,54.60723991893139,contrast_specific_FDR_module_support,blue,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,480.0
+B_TGT_G6PD,B_TGT_G6PD,"26
+G6PD",G6PD,B,Top30,Target,Target_noncore,STATUS_NONE,top30_priority_candidate,26,54.1033457548013,no_prespecified_module_contrast_support,yellow,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-2500.0,800.0
+B_TGT_MIF,B_TGT_MIF,"27
+MIF",MIF,B,Top30,Target,Target_noncore,STATUS_FDR,top30_priority_candidate,27,53.89438931387487,contrast_specific_FDR_module_support,magenta,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1900.0,800.0
+B_TGT_TBXAS1,B_TGT_TBXAS1,"28
+TBXAS1",TBXAS1,B,Top30,Target,Target_noncore,STATUS_UNASSIGNED,top30_priority_candidate,28,53.80934079860913,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-1300.0,800.0
+B_TGT_AURKB,B_TGT_AURKB,"29
+AURKB",AURKB,B,Top30,Target,Target_noncore,STATUS_NONE,top30_priority_candidate,29,53.80161593046072,no_prespecified_module_contrast_support,darkred,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-700.0,800.0
+B_TGT_PIK3CG,B_TGT_PIK3CG,"30
+PIK3CG",PIK3CG,B,Top30,Target,Target_noncore,STATUS_UNASSIGNED,top30_priority_candidate,30,53.45711100591184,projection_only_not_in_strict_top5000,not assigned,prespecified Top30 candidate,Candidate priority annotation; not single-gene differential expression.,-100.0,800.0
+B_MOD_blue,B_MOD_blue,blue,MEblue,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,blue,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,1150.0,-160.0
+B_MOD_darkred,B_MOD_darkred,darkred,MEdarkred,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,darkred,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,480.0
+B_MOD_greenyellow,B_MOD_greenyellow,greenyellow,MEgreenyellow,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,greenyellow,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,-160.0
+B_MOD_lightcyan,B_MOD_lightcyan,lightcyan,MElightcyan,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,lightcyan,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,1150.0,160.0
+B_MOD_lightyellow,B_MOD_lightyellow,lightyellow,MElightyellow,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,lightyellow,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,1150.0,-480.0
+B_MOD_magenta,B_MOD_magenta,magenta,MEmagenta,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,magenta,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,160.0
+B_MOD_midnightblue,B_MOD_midnightblue,midnightblue,MEmidnightblue,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,midnightblue,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,-800.0
+B_MOD_purple,B_MOD_purple,purple,MEpurple,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,purple,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,1150.0,480.0
+B_MOD_royalblue,B_MOD_royalblue,royalblue,MEroyalblue,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,royalblue,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,-480.0
+B_MOD_turquoise,B_MOD_turquoise,turquoise,MEturquoise,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,turquoise,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,1150.0,-800.0
+B_MOD_yellow,B_MOD_yellow,yellow,MEyellow,B,Strict 42-profile module,Module,Module,MODULE,not_applicable,,,strict network assignment,yellow,own_module_if_top5000,Module label only; not a biological direction or single-gene effect.,450.0,800.0
+B_UNASSIGNED_STRICT,B_UNASSIGNED_STRICT,"No module assignment
+(n=6)",No assignment among the analyzed candidate-associated modules (n=6),B,Strict assignment status,Unassigned,Unassigned,UNASSIGNED,not_applicable,,,not assigned in strict network,not applicable,projection-context candidates separated from strict module assignments,No strict module edge is imputed.,1150.0,800.0
+B_CTX_HSPC_identity,B_CTX_HSPC_identity,HSPC identity,HSPC identity,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,-900.0
+B_CTX_HSPC_injury_stress,B_CTX_HSPC_injury_stress,HSPC injury/stress,HSPC injury/stress,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,-540.0
+B_CTX_immune_IFN_TNF,B_CTX_immune_IFN_TNF,"Interferon/
+inflammation",Interferon/inflammation,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,540.0
+B_CTX_hematopoietic_support,B_CTX_hematopoietic_support,"Hematopoietic
+support",Hematopoietic support,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,180.0
+B_CTX_liver_bone_marrow_response,B_CTX_liver_bone_marrow_response,"Liver-derived
+hematopoietic
+support",Liver-derived hematopoietic support,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,900.0
+B_CTX_cell_cycle_recovery,B_CTX_cell_cycle_recovery,"Cell-cycle-
+related response",Cell-cycle-related response,B,Curated AA biological context,AA context,AA_context,AA_CONTEXT,not_applicable,,,overlap annotation,not_applicable,predefined signature gene-overlap annotation,"Gene-overlap annotation only; not statistical association, enrichment, or gene-level differential expression.",2000.0,-180.0
+B_CONTRAST_baseline_minus_HD,B_CONTRAST_baseline_minus_HD,Baseline vs HD,Baseline vs HD,B,Prespecified AA contrast,Contrast,Contrast,CONTRAST,not_applicable,,,prespecified module-level contrast,not_applicable,strict_group_contrast_module_tests,Module-eigengene contrast only; not candidate-gene differential expression.,450.0,1850.0
+B_CONTRAST_M3_minus_baseline,B_CONTRAST_M3_minus_baseline,3M vs baseline,3M vs baseline,B,Prespecified AA contrast,Contrast,Contrast,CONTRAST,not_applicable,,,prespecified module-level contrast,not_applicable,strict_group_contrast_module_tests,Module-eigengene contrast only; not candidate-gene differential expression.,1800.0,1850.0
+B_CONTRAST_M6_minus_baseline,B_CONTRAST_M6_minus_baseline,6M vs baseline,6M vs baseline,B,Prespecified AA contrast,Contrast,Contrast,CONTRAST,not_applicable,,,prespecified module-level contrast,not_applicable,strict_group_contrast_module_tests,Module-eigengene contrast only; not candidate-gene differential expression.,3150.0,1850.0
+B_COMP_HSPC,B_COMP_HSPC,HSPC,HSPC,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,-300.0
+B_COMP_Erythroid,B_COMP_Erythroid,Erythroid,Erythroid,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,-600.0
+B_COMP_Megakaryocyte,B_COMP_Megakaryocyte,Megakaryocyte,Megakaryocyte,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,0.0
+B_COMP_Myeloid,B_COMP_Myeloid,Myeloid,Myeloid,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,300.0
+B_COMP_T_NK,B_COMP_T_NK,T/NK,T/NK,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,900.0
+B_COMP_B_Plasma,B_COMP_B_Plasma,B/Plasma,B/Plasma,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,-900.0
+B_COMP_Stromal_Endothelial,B_COMP_Stromal_Endothelial,"Stromal/
+Endothelial",Stromal/ Endothelial,B,Marrow compartment descriptive context,Marrow compartment,Marrow_compartment,MARROW,not_applicable,,,strict42 descriptive context layer,not_applicable,strict42 marrow projection descriptive context,"Descriptive marrow context only; not enrichment, localization proof, causality, or independent validation.",3200.0,600.0
+ANN_B,ANN_B,"B  Candidate–module–AA
+category–bone marrow network","B  Candidate–module–AA
+category–bone marrow network",annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,-1800.0,-1750.0
+ANN_B_TOP,ANN_B_TOP,30 prioritized candidates,30 prioritized candidates,annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,-1300.0,-1250.0
+ANN_B_MOD,ANN_B_MOD,Candidate-associated modules,Candidate-associated modules,annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,800.0,-1250.0
+ANN_B_CTX,ANN_B_CTX,AA-related biological categories,AA-related biological categories,annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,2000.0,-1250.0
+ANN_B_MAR,ANN_B_MAR,Bone marrow compartments,Bone marrow compartments,annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,3200.0,-1250.0
+ANN_B_CON,ANN_B_CON,Longitudinal comparisons,Longitudinal comparisons,annotation,Layout annotation,Annotation,Annotation,ANNOTATION,not_applicable,,,not_applicable,not_applicable,layout only,Not a data node.,1800.0,1600.0

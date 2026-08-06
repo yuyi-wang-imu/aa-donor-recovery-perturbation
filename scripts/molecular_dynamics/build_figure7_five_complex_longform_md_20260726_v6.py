@@ -67,7 +67,7 @@ def panel_letter(axis, letter):
     )
 
 
-def make_overview(frame, limits, output_dir):
+def make_overview(frame, limits, output_dir, publication_final=False):
     figure = plt.figure(
         figsize=(183 / 25.4, 242 / 25.4),
         facecolor="white",
@@ -123,7 +123,7 @@ def make_overview(frame, limits, output_dir):
         axis.set_title(
             SHORT_DISPLAY[case_id],
             fontsize=6.2,
-            color=COLORS[case_id],
+            color=("#111111" if publication_final else COLORS[case_id]),
             fontweight="bold",
             pad=3,
         )
@@ -189,24 +189,25 @@ def make_overview(frame, limits, output_dir):
         color="#65717A",
     )
 
-    figure.text(
-        0.105,
-        0.977,
-        "Standardized 100 ns molecular-dynamics assessment of five representative complexes",
-        fontsize=10.5,
-        fontweight="bold",
-        va="center",
-    )
-    figure.text(
-        0.105,
-        0.952,
-        (
-            "All time-series panels span the complete 0\u2013100 ns trajectories; "
-            "grey shading denotes the final 20 ns."
-        ),
-        fontsize=6.2,
-        color="#56616A",
-    )
+    if not publication_final:
+        figure.text(
+            0.105,
+            0.977,
+            "Standardized 100 ns molecular-dynamics assessment of five representative complexes",
+            fontsize=10.5,
+            fontweight="bold",
+            va="center",
+        )
+        figure.text(
+            0.105,
+            0.952,
+            (
+                "All time-series panels span the complete 0\u2013100 ns trajectories; "
+                "grey shading denotes the final 20 ns."
+            ),
+            fontsize=6.2,
+            color="#56616A",
+        )
     stem = f"Figure_7_five_complexes_100ns_MD_overview_{VERSION}"
     files = BASE.BASE.save_all(figure, output_dir, stem)
     plt.close(figure)
@@ -217,6 +218,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-csv", required=True, type=pathlib.Path)
     parser.add_argument("--output-dir", required=True, type=pathlib.Path)
+    parser.add_argument(
+        "--publication-final",
+        action="store_true",
+        help="Reproduce the accepted BMC layout: no overall title/subtitle and black RMSF titles.",
+    )
     args = parser.parse_args()
     if args.output_dir.exists():
         raise FileExistsError(
@@ -230,13 +236,24 @@ def main() -> int:
     limits = BASE.BASE.BASE.global_limits(frame)
     args.output_dir.mkdir(parents=True, exist_ok=False)
 
-    overview = make_overview(frame, limits, args.output_dir)
+    global VERSION
+    if args.publication_final:
+        VERSION = "20260806_no_top_title_final"
+        BASE.VERSION = VERSION
+
+    overview = make_overview(
+        frame, limits, args.output_dir, publication_final=args.publication_final
+    )
     full_matrix = BASE.make_full_matrix(frame, limits, args.output_dir)
     outputs = [*overview.values(), *full_matrix.values()]
     manifest = {
         "version": VERSION,
         "change_from_v4": (
-            "Spacing and short headings only; source data, 0\u2013100 ns ranges, "
+            "Publication-final title treatment plus spacing and short headings; "
+            "source data, 0\u2013100 ns ranges, axis limits, smoothing, and calculations "
+            "are unchanged."
+            if args.publication_final
+            else "Spacing and short headings only; source data, 0\u2013100 ns ranges, "
             "axis limits, smoothing, and calculations are unchanged."
         ),
         "source_csv": str(args.source_csv),

@@ -1,0 +1,9 @@
+package	validated_version	role
+R	4.5.2	publication replay runtime
+ggplot2	4.0.2	Figure 8 and S8 rendering
+patchwork	1.3.2	multi-panel assembly
+scales	1.4.0	scale formatting
+svglite	2.2.2	SVG output
+ragg	1.5.0	PNG and TIFF output
+dplyr	1.1.4	data transformation
+tidyr	1.3.2	data reshaping
