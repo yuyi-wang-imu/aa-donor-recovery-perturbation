@@ -43,7 +43,7 @@ def inspect_workbooks(package_root: Path) -> list[str]:
         ) from exc
 
     additional = package_root / "04_Additional_Files"
-    file1 = additional / "Additional_file_1_Supplementary_Tables_S1-S6.xlsx"
+    file1 = additional / "Additional_file_1_Supplementary_Tables_S1-S6_PublicationReady.xlsx"
     workbook = load_workbook(file1, read_only=True, data_only=True)
     expected_rows = {
         "S1_prescription_records": 391,

@@ -2,7 +2,15 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) == 0L) {
-  stop("No R scripts supplied for parse validation")
+  args <- sort(list.files(
+    "scripts",
+    pattern = "\\.[Rr]$",
+    recursive = TRUE,
+    full.names = TRUE
+  ))
+}
+if (length(args) == 0L) {
+  stop("No R scripts found for parse validation")
 }
 
 for (path in args) {

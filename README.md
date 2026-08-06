@@ -32,7 +32,8 @@ citation for this repository.
 - `reference_outputs/`: frozen submission figures used only as regression-test references.
 - `FIGURE_SOURCE_MAP.tsv`: Figure 1-9 and supplementary source mapping.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
-- `PUBLICATION_ASSET_CHECKSUMS.tsv`: frozen v5 submission-asset checksums.
+- `PUBLICATION_ASSET_CHECKSUMS.tsv`: frozen V6 checksums for nine main figures
+  and six Additional files.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
 - `CITATION.cff`: citation metadata without a guessed DOI.
 - `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
@@ -63,10 +64,13 @@ the scientific analyses.
 
 Reproducibility is reported in two layers and the distinction is mandatory:
 
-1. **Publication replay** rebuilds the final Figure 1-9 layouts, Figure S8-S10,
-   and the eight-page Figure S1-S8 package from repository-distributed derived
-   tables and approved publication intermediates. It then compares the results
-   with frozen BMC submission references.
+1. **Publication replay** rebuilds the final Figure 1-9 layouts, independent
+   Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
+   from repository-distributed derived tables and approved publication
+   intermediates. The V6 submission-asset verifier separately checks the
+   ten-page Figure S1-S10 PDF submitted as Additional file 2. Independent
+   Figure S9 and S10 files remain regression references, not separate V6
+   Additional files.
 2. **Scientific recomputation** reruns analytical models from public,
    author-staged, or licensed inputs. Some workflows require separately
    obtained GEO files, reviewed design metadata, official model assets,
@@ -95,7 +99,7 @@ corrected 12-rule supplementary workbook, run:
 
 ```powershell
 py -3 -B scripts/publication_tables/verify_submission_assets.py `
-  C:\path\to\BMC_Genomics_Submission_Ready_20260806_v5_Pending_GitHub `
+  C:\path\to\BMC_Genomics_Submission_Ready_20260806_v6_SuppFiguresMerged_Pending_GitHub `
   --inspect-workbooks
 ```
 

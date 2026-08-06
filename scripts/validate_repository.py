@@ -284,8 +284,30 @@ def validate_repository() -> int:
         "r", encoding="utf-8-sig", newline=""
     ) as handle:
         publication_assets = list(csv.DictReader(handle, delimiter="\t"))
-    if len(publication_assets) != 17:
-        fail(f"Expected 17 frozen submission assets, found {len(publication_assets)}")
+    expected_submission_paths = {
+        *(f"02_Main_Figures/Figure_{index}.png" for index in range(1, 10)),
+        "04_Additional_Files/Additional_file_1_Supplementary_Tables_S1-S6_PublicationReady.xlsx",
+        "04_Additional_Files/Additional_file_2_Supplementary_Figures_S1-S10.pdf",
+        "04_Additional_Files/Additional_file_3_Supplementary_Table_S7.xlsx",
+        "04_Additional_Files/Additional_file_4_Supplementary_Table_S8.xlsx",
+        "04_Additional_Files/Additional_file_5_Supplementary_Table_S10.xlsx",
+        "04_Additional_Files/Additional_file_6_Supplementary_Table_S9.xlsx",
+    }
+    actual_submission_paths = {
+        row.get("relative_submission_path", "") for row in publication_assets
+    }
+    if len(publication_assets) != 15:
+        fail(f"Expected 15 frozen V6 submission assets, found {len(publication_assets)}")
+    if actual_submission_paths != expected_submission_paths:
+        missing = sorted(expected_submission_paths - actual_submission_paths)
+        extra = sorted(actual_submission_paths - expected_submission_paths)
+        fail(f"V6 submission-asset path mismatch: missing={missing}, extra={extra}")
+    role_counts = {
+        role: sum(row.get("package_role") == role for row in publication_assets)
+        for role in ("main_figure", "additional_file")
+    }
+    if role_counts != {"main_figure": 9, "additional_file": 6}:
+        fail(f"Unexpected V6 submission-asset roles: {role_counts}")
     if any(len(row.get("sha256", "")) != 64 for row in publication_assets):
         fail("Invalid SHA-256 entry in PUBLICATION_ASSET_CHECKSUMS.tsv")
 
