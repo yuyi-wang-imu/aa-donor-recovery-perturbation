@@ -10,6 +10,7 @@ A/B panel letters with larger, consistently positioned labels.
 from __future__ import annotations
 
 import argparse
+import os
 import pathlib
 
 from PIL import Image, ImageDraw, ImageFont
@@ -34,11 +35,17 @@ def fix_figure4(source: pathlib.Path, output: pathlib.Path) -> None:
 
 
 def get_font(size: int) -> ImageFont.FreeTypeFont:
-    candidates = [
-        pathlib.Path(r"C:\Windows\Fonts\arialbd.ttf"),
-        pathlib.Path(r"C:\Windows\Fonts\calibrib.ttf"),
-        pathlib.Path(r"C:\Windows\Fonts\DejaVuSans-Bold.ttf"),
-    ]
+    windows_dir = os.environ.get("WINDIR")
+    candidates = []
+    if windows_dir:
+        font_dir = pathlib.Path(windows_dir) / "Fonts"
+        candidates.extend(
+            [
+                font_dir / "arialbd.ttf",
+                font_dir / "calibrib.ttf",
+                font_dir / "DejaVuSans-Bold.ttf",
+            ]
+        )
     for candidate in candidates:
         if candidate.exists():
             return ImageFont.truetype(str(candidate), size=size)

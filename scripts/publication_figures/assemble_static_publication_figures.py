@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -100,12 +101,22 @@ def expand(box: tuple[int, int, int, int], amount: int, size: tuple[int, int]):
 
 
 def default_font() -> Path:
-    candidates = (
-        Path(r"C:\Windows\Fonts\arialbd.ttf"),
-        Path(r"C:\Windows\Fonts\calibrib.ttf"),
-        Path(r"C:\Windows\Fonts\DejaVuSans-Bold.ttf"),
-        Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf"),
-        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+    candidates = []
+    windows_dir = os.environ.get("WINDIR")
+    if windows_dir:
+        font_dir = Path(windows_dir) / "Fonts"
+        candidates.extend(
+            [
+                font_dir / "arialbd.ttf",
+                font_dir / "calibrib.ttf",
+                font_dir / "DejaVuSans-Bold.ttf",
+            ]
+        )
+    candidates.extend(
+        [
+            Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf"),
+            Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+        ]
     )
     for candidate in candidates:
         if candidate.is_file():

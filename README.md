@@ -83,9 +83,11 @@ Install the dedicated replay stack from
 Geneformer GPU environment for this rendering-only command.
 
 ```powershell
+$replayRoot = Join-Path $env:TEMP ("AA_replay_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
+$rscript = Join-Path $env:ProgramFiles "R\R-4.5.2\bin\Rscript.exe"
 py -3 -B scripts/publication_figures/reproduce_all_publication_figures.py `
-  --output-root C:\AA_replay_20260806 `
-  --rscript "C:\Program Files\R\R-4.5.2\bin\Rscript.exe"
+  --output-root "$replayRoot" `
+  --rscript "$rscript"
 ```
 
 The output root must not already exist. Figures 1, 2, 4, 5, 6, 8, 9, S9 and
@@ -98,8 +100,9 @@ To verify a separately held frozen BMC submission package, including the
 corrected 12-rule supplementary workbook, run:
 
 ```powershell
+$submissionPackage = Join-Path $PWD "BMC_Genomics_Submission_Ready_20260806_v7_ComplianceFix_PendingRelease"
 py -3 -B scripts/publication_tables/verify_submission_assets.py `
-  C:\path\to\BMC_Genomics_Submission_Ready_20260806_v6_SuppFiguresMerged_Pending_GitHub `
+  "$submissionPackage" `
   --inspect-workbooks
 ```
 

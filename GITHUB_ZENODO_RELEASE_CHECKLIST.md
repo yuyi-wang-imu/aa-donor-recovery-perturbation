@@ -43,7 +43,7 @@ absolute executable path if `Rscript` is not on `PATH`.
 - [x] Run a clean-clone structural check and the non-analytical Python/R checks.
 - [ ] Where external inputs are available, run the
       minimal smoke tests in a new output directory.
-- [ ] Push and verify the final approved commit while the repository remains private.
+- [x] Push and verify the final approved commit while the repository remains private.
 - [ ] Make the new repository public only after manuscript/code-version approval.
 - [ ] Enable the new repository in Zenodo before creating its first formal release.
 - [ ] Create tag `v0.1.0`, matching `CITATION.cff`, on the verified final commit;
