@@ -9,6 +9,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-4087-7142"
 repository-code: "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation"
 url: "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation"
+doi: "10.5281/zenodo.21837457"
 license: BSD-3-Clause
 keywords:
   - aplastic anemia
@@ -20,4 +21,4 @@ abstract: >-
   Reproducible analysis code and selected derived source tables for
   prescription mining, hematopoietic transcriptomics, molecular dynamics,
   scTenifoldKnk and donor-aware bidirectional Geneformer perturbation in
-  aplastic anemia. No Zenodo DOI has yet been assigned to this repository.
+  aplastic anemia. Release v0.1.0 is archived by Zenodo.

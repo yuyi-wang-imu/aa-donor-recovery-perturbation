@@ -44,12 +44,12 @@ absolute executable path if `Rscript` is not on `PATH`.
       minimal smoke tests in a new output directory.
 - [x] Push and verify the final approved commit while the repository remains private.
 - [x] Author approval received for public visibility after repository checks pass.
-- [ ] Enable the new repository in Zenodo before creating its first formal release.
-- [ ] Create tag `v0.1.0`, matching `CITATION.cff`, on the verified final commit;
+- [x] Enable the new repository in Zenodo before creating its first formal release.
+- [x] Create tag `v0.1.0`, matching `CITATION.cff`, on the verified final commit;
       do not reuse any historical tag.
-- [ ] Create the GitHub Release and wait for Zenodo to archive that release and mint a new DOI.
-- [ ] Add the issued DOI only after it exists; never guess a DOI.
-- [ ] Rebuild `MANIFEST.tsv` and the release archive after metadata changes.
+- [x] Create the GitHub Release and wait for Zenodo to archive that release and mint a new DOI.
+- [x] Add the issued DOI only after it exists; never guess a DOI.
+- [x] Rebuild `MANIFEST.tsv` and the release archive after metadata changes.
 
 ## Explicit prohibitions
 

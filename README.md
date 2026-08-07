@@ -17,8 +17,8 @@ not experimental target validation.
 ## Repository status
 
 The source code and supporting files are maintained at
-<https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. No formal
-GitHub Release or Zenodo DOI has yet been created for this repository.
+<https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. Release
+`v0.1.0` is archived at <https://doi.org/10.5281/zenodo.21837457>.
 
 ## Repository map
 
@@ -33,7 +33,7 @@ GitHub Release or Zenodo DOI has yet been created for this repository.
 - `PUBLICATION_ASSET_CHECKSUMS.tsv`: checksums for nine main figures and six
   Additional files.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
-- `CITATION.cff`: citation metadata without a guessed DOI.
+- `CITATION.cff`: citation metadata including the issued Zenodo DOI.
 - `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
 
 ## Quick structural checks
@@ -180,8 +180,8 @@ without recomputing analytical results.
 
 Repository-authored code is BSD-3-Clause. Third-party datasets, databases,
 Geneformer code/model assets, SPSS, Cytoscape, GROMACS, AutoDock Vina and
-R/Python packages retain their own terms. The repository URL is recorded in
-`CITATION.cff`; a Zenodo DOI must be added only after one is actually issued.
+R/Python packages retain their own terms. The repository URL and issued Zenodo
+DOI are recorded in `CITATION.cff`.
 
 Software name: `aa-donor-recovery-perturbation`; supported operating systems:
 Windows for the byte-stable publication replay and Windows/Linux for analytical
