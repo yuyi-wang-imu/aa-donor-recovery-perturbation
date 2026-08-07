@@ -232,15 +232,16 @@ def validate_repository() -> int:
     required_readme_terms = [
         "https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation",
         "python3 scripts/validate_repository.py",
-        "v6 renderer",
-        "v7 RGB conversion",
+        "panel rendering",
+        "final RGB conversion",
+        "without recomputing analytical results",
         "reproduce_all_publication_figures.py",
         "REPRODUCIBILITY_MATRIX.tsv",
         "verify_submission_assets.py",
     ]
     missing_readme_terms = [term for term in required_readme_terms if term not in readme]
     if missing_readme_terms:
-        fail(f"README is missing public-release guidance: {missing_readme_terms}")
+        fail(f"README is missing publication guidance: {missing_readme_terms}")
     forbidden_readme_terms = [
         "UPLOAD_READINESS_AUDIT_20260804_v1.md",
         "PROPOSED_UPLOAD_MANIFEST_20260804_v1.tsv",

@@ -10,8 +10,8 @@ author-controlled clinical/design metadata.
 - Selected derived numerical tables required to inspect or rerender manuscript
   figures, where the table does not reproduce a restricted raw database export.
 - Aggregated and model-derived outputs for the Geneformer calibration panels.
-- Approved publication-facing image/PDF intermediates and frozen submission
-  figures used only for layout replay and regression testing. These assets are
+- Publication-facing image/PDF intermediates and reference figures used only
+  for layout replay and regression testing. These assets are
   not treated as substitutes for analytical source data.
 - Derived public-study tables may retain pseudonymous subject labels (for
   example, UPN codes) and single-cell barcodes solely for traceable provenance;

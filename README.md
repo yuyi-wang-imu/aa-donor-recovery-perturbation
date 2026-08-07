@@ -1,8 +1,8 @@
 # Donor-aware recovery and perturbation workflow for aplastic anemia
 
-Pre-release candidate containing analysis code, selected derived
-source tables, and a frozen publication-replay test suite for the BMC Genomics
-manuscript. The repository covers prescription
+This repository contains the analysis code, selected derived source tables,
+and publication-figure regression tests for the associated BMC Genomics
+manuscript. It covers prescription
 mining, exact candidate construction, transcriptomic and co-expression
 analyses, bone-marrow single-cell projection, evidence integration, docking,
 five standardized 100 ns molecular-dynamics simulations (500 ns total),
@@ -14,13 +14,11 @@ TOP2A and GSK3B, treats KIT cautiously, and keeps complete weak/null calibration
 results in Supplementary Table S10. Model outputs are computational evidence,
 not experimental target validation.
 
-## Release status
+## Repository status
 
-This repository is a **pre-release candidate** at
+The source code and supporting files are maintained at
 <https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>. No formal
-GitHub Release or Zenodo DOI has been created. The historical repository and historical
-DOI are not modified or withdrawn by this work and must not be reused as the
-citation for this repository.
+GitHub Release or Zenodo DOI has yet been created for this repository.
 
 ## Repository map
 
@@ -29,11 +27,11 @@ citation for this repository.
 - `config/`: parameters and external-input staging template.
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
-- `reference_outputs/`: frozen submission figures used only as regression-test references.
+- `reference_outputs/`: publication figures used as regression-test references.
 - `FIGURE_SOURCE_MAP.tsv`: Figure 1-9 and supplementary source mapping.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
-- `PUBLICATION_ASSET_CHECKSUMS.tsv`: frozen V6 checksums for nine main figures
-  and six Additional files.
+- `PUBLICATION_ASSET_CHECKSUMS.tsv`: checksums for nine main figures and six
+  Additional files.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
 - `CITATION.cff`: citation metadata without a guessed DOI.
 - `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
@@ -67,9 +65,9 @@ Reproducibility is reported in two layers and the distinction is mandatory:
 1. **Publication replay** rebuilds the final Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
-   intermediates. The V6 submission-asset verifier separately checks the
+   intermediates. The submission-asset verifier separately checks the
    ten-page Figure S1-S10 PDF submitted as Additional file 2. Independent
-   Figure S9 and S10 files remain regression references, not separate V6
+   Figure S9 and S10 files remain regression references, not separate
    Additional files.
 2. **Scientific recomputation** reruns analytical models from public,
    author-staged, or licensed inputs. Some workflows require separately
@@ -92,15 +90,16 @@ py -3 -B scripts/publication_figures/reproduce_all_publication_figures.py `
 
 The output root must not already exist. Figures 1, 2, 4, 5, 6, 8, 9, S9 and
 S10 require exact SHA-256 equality. Figures 3, 7 and S8 use documented pixel
-tolerances because supported Matplotlib/R rasterizer versions and the frozen
-submission re-encoding change antialiasing or PNG metadata without changing
+tolerances because supported Matplotlib/R rasterizer versions and reference
+image encoding can change antialiasing or PNG metadata without changing
 source values or panel geometry.
 
-To verify a separately held frozen BMC submission package, including the
+To verify a separately held BMC submission package, including the
 corrected 12-rule supplementary workbook, run:
 
 ```powershell
-$submissionPackage = Join-Path $PWD "BMC_Genomics_Submission_Ready_20260806_v7_ComplianceFix_PendingRelease"
+$submissionPackage = $env:BMC_SUBMISSION_PACKAGE
+if (-not $submissionPackage) { throw "Set BMC_SUBMISSION_PACKAGE to the submission-package directory." }
 py -3 -B scripts/publication_tables/verify_submission_assets.py `
   "$submissionPackage" `
   --inspect-workbooks
@@ -123,7 +122,7 @@ algorithm by itself. The publishable methodological contribution is the
 donor-aware recovery-axis design, bidirectional single-gene perturbation,
 donor-bootstrap inference, state stratification, and matched-background
 calibration. CPU execution may be technically possible but was not the recorded
-runtime and has not been clean-room validated for this release.
+runtime and is not part of the documented runtime validation.
 
 ## Geneformer assets and inputs
 
@@ -169,13 +168,13 @@ is self-contained from raw data. Figures 1, 2, 4, 5 and 6 and several legacy
 supplementary panels still require author-staged or licensed upstream inputs
 for scientific recomputation. Figure 7 is rerendered from the complete derived
 summary of five 100 ns systems (500 ns total), while raw trajectories remain
-excluded. Figure 9/S9/S10 is rerendered from frozen model outputs; repeating
+excluded. Figure 9/S9/S10 is rerendered from recorded model outputs; repeating
 model inference requires official Geneformer assets. Exact statuses are in
 `REPRODUCIBILITY_MATRIX.tsv` and `FIGURE_SOURCE_MAP.tsv`.
 
-The finalized Figure 9/S9/S10 presentation pipeline uses the v6 renderer,
-followed by the v7 RGB conversion. These versions preserve black titles and a
-white background; v7 changes color mode only and does not recompute results.
+The Figure 9/S9/S10 presentation pipeline separates panel rendering from the
+final RGB conversion. This preserves black titles and a white background
+without recomputing analytical results.
 
 ## License and citation
 

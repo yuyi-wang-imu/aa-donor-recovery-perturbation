@@ -1,5 +1,5 @@
 order	workflow	canonical_entry	current_scope
-1	prescription-rule extraction	scripts/prescription_mining/extract_verified_spss_association_rules.py	Recover the 12 frozen Apriori rules from the verified SPSS source
+1	prescription-rule extraction	scripts/prescription_mining/extract_verified_spss_association_rules.py	Recover the 12 prespecified Apriori rules from the verified SPSS source
 2	prescription-rule figure	scripts/prescription_mining/plot_verified_spss_association_rules.R	Render the verified rule panel without changing rule order
 3	candidate harmonization	scripts/candidate_harmonization/build_table_s4_candidate_harmonization.py	Construct the exact standardized-symbol candidate pool and retain composite-label exclusions
 4	compound-target provenance	scripts/candidate_harmonization/build_compound_target_provenance.py	Keep archived TCMSP compounds and SwissTargetPrediction target records as distinct sources
@@ -8,7 +8,7 @@ order	workflow	canonical_entry	current_scope
 7	Figure 2 typography rendering	scripts/transcriptomics_wgcna/build_figure2_panel_label_pvalue_geneitalic_exactcontent_20260726_v7.R	Render the accepted Figure 2 panels with aligned A-D labels and approved P-value and gene-symbol typography; no analytical recomputation
 8	bone-marrow RPCA	scripts/bone_marrow_single_cell/gse247531_bm_seurat_rpca_umap.R	Integrated marrow atlas
 9	bone-marrow module projection	scripts/bone_marrow_single_cell/strict42_top30_modules_bm_projection.R	Bone-marrow compartment projection
-10	bone-marrow figure	scripts/bone_marrow_single_cell/render_bone_marrow_figure3_gene_format_fixed_v5.py	Render current manuscript Figure 3 with approved gene-symbol and merged-category typography; frozen CSV basenames retain historical Figure4 labels
+10	bone-marrow figure	scripts/bone_marrow_single_cell/render_bone_marrow_figure3_gene_format_fixed_v5.py	Render current manuscript Figure 3 with approved gene-symbol and merged-category typography; recorded CSV basenames retain historical Figure4 labels
 11	priority evidence assembly	scripts/priority_evidence/assemble_priority_evidence.py	Fixed 1-30 order; docking, MD, and perturbation excluded
 12	priority weight sensitivity	scripts/priority_evidence/top30_weight_robustness.py	Reproduce the formal Top30 and evaluate 518 alternative weight scenarios
 13	docking matrix	scripts/docking/run_vina_matrix.py	Run 138 receptor-ligand combinations without target ranking
@@ -18,7 +18,7 @@ order	workflow	canonical_entry	current_scope
 17	global-unique sensitivity	scripts/computational_perturbation/summarize_sctenifoldknk_global_unique_sensitivity_v1.R	Run the secondary global-unique rematching sensitivity analysis
 18	computational perturbation figures	scripts/computational_perturbation/build_figure8_standard_and_s11_sensitivity_candidate_v5.R	Render Figure 8 and manuscript Figure S8 (historical source basename FigureS11) with approved P-value and CD34-positive HSPC typography; source tables are verified before rendering
 19	MD trajectory analysis	scripts/molecular_dynamics/run_gromacs_trajectory_analysis.py	Perform PBC-aware trajectory analysis for five completed 100 ns complexes
-20	Figure 7 molecular-dynamics rendering	scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py	Render the frozen five-complex comparison with C-alpha typography corrected; no analytical recomputation
+20	Figure 7 molecular-dynamics rendering	scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py	Render the recorded five-complex comparison with C-alpha typography corrected; no analytical recomputation
 21	Figure 4/5 layout-only rendering	scripts/figure_packaging/build_figure4_5_layout_fixes_20260726_v1.py	Remove the verified Figure 4 spacer band and standardize Figure 5 A/B labels; no analytical recomputation
 22	Supplementary-figure packaging	scripts/figure_packaging/assemble_supplementary_figures_s1_s8_20260727_v2.py	Assemble the eight nonduplicative Supplementary Figures S1-S8 as independent PDFs, a combined PDF, and a ZIP archive; no analytical recomputation
 23	Geneformer balanced-input preparation	scripts/geneformer/70_bmc_geneformer_prepare_balanced_cd34_public_20260804_v1.R	Generate the seeded 64-cells-per-subject-timepoint sparse matrix and metadata from user-supplied GSE247531 inputs
@@ -33,6 +33,6 @@ order	workflow	canonical_entry	current_scope
 32	Geneformer positive-control calibration	scripts/geneformer/108_bmc_geneformer_positive_control_matched_null_20260802_v2.py	Evaluate prespecified positive controls against outcome-blind matched backgrounds
 33	Geneformer extension table builder	scripts/geneformer/113_bmc_geneformer_extension_table_builder_20260802_v1.py	Build the supplementary calibration tables from completed perturbation outputs
 34	Geneformer extension independent QC	scripts/geneformer/115_bmc_geneformer_extension_tables_independent_qc_20260802_v1.py	Validate the extension tables and emit checksums/QC without changing analysis values
-35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py	Render the finalized white-background black-title Geneformer panels with v6, then use v7 to convert final outputs to RGB without recomputing results
-36	publication figure replay	scripts/publication_figures/reproduce_all_publication_figures.py	Rebuild Figure 1-9, Figure S8-S10 and the S1-S8 PDF package, then compare against frozen submission references
-37	frozen submission asset verification	scripts/publication_tables/verify_submission_assets.py	Verify the separately held v5 main figures and additional files by size, SHA-256 and optional workbook invariants
+35	Figure 9 and S9-S10 rendering	scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py	Render the white-background black-title Geneformer panels, then convert final outputs to RGB without recomputing results
+36	publication figure replay	scripts/publication_figures/reproduce_all_publication_figures.py	Rebuild Figure 1-9, Figure S8-S10 and the S1-S8 PDF package, then compare against submission references
+37	submission asset verification	scripts/publication_tables/verify_submission_assets.py	Verify the separately held main figures and additional files by size, SHA-256 and optional workbook invariants
