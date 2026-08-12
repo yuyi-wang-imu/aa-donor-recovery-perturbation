@@ -94,7 +94,9 @@ image encoding can change antialiasing or PNG metadata without changing
 source values or panel geometry.
 
 To verify a separately held publication submission package, including the
-corrected 12-rule supplementary workbook, run:
+corrected 12-rule supplementary workbook, run the command below. The verifier
+accepts either a flat package root containing the 15 named assets or the
+earlier layout using `02_Main_Figures/` and `04_Additional_Files/`.
 
 ```powershell
 $submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
