@@ -1,7 +1,7 @@
 # Publication-facing intermediate assets
 
 This directory contains author-generated intermediate PNGs and small derived
-tables used to replay the final BMC Genomics figure layouts. These files are
+tables used to replay the final manuscript figure layouts. These files are
 not raw clinical data, licensed database exports, prepared docking structures,
 model weights, or molecular-dynamics trajectories.
 

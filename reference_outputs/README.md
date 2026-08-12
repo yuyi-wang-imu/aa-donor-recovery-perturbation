@@ -1,7 +1,7 @@
 # Golden publication outputs
 
 These files are byte-level or pixel-level references extracted from the frozen
-BMC Genomics submission package. They are used only for regression testing of
+manuscript submission package. They are used only for regression testing of
 the public figure-reproduction workflow. They are not treated as analytical
 inputs and must never substitute for the source tables and scripts.
 

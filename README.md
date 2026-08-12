@@ -1,9 +1,8 @@
 # Donor-aware recovery and perturbation workflow for aplastic anemia
 
 This repository contains the analysis code, selected derived source tables,
-and publication-figure regression tests for the associated BMC Genomics
-manuscript. It covers prescription
-mining, exact candidate construction, transcriptomic and co-expression
+and publication-figure regression tests for the associated manuscript. It
+covers prescription mining, exact candidate construction, transcriptomic and co-expression
 analyses, bone-marrow single-cell projection, evidence integration, docking,
 five standardized 100 ns molecular-dynamics simulations (500 ns total),
 scTenifoldKnk perturbation, and donor-aware Geneformer deletion and
