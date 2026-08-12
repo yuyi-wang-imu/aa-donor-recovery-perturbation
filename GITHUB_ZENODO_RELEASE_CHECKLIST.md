@@ -17,7 +17,7 @@ unpublishing, overwriting or DOI withdrawal for the historical repository.
 - [x] Confirm that TCMSP, SwissTargetPrediction and other licensed/raw database
       exports are absent and that only permissible derived tables remain.
 - [x] Rebuild Figure 1-9 and Figure S8-S10 and verify exact checksums or documented
-      pixel tolerances against the BMC submission references.
+      pixel tolerances against the publication submission references.
 - [x] Confirm the submitted Figure 5 and Figure 8 reference images and record
       the Additional file 4 checksum without redistributing the journal workbook.
 

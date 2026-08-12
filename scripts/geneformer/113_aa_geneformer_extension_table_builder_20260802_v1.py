@@ -32,10 +32,10 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
 
     pos_summary = read_tsv(
-        "BMC_Geneformer_POSCTRL_MATCHED_20260802_v2/positive_control_gene_summary.tsv"
+        "AA_Geneformer_POSCTRL_MATCHED_20260802_v2/positive_control_gene_summary.tsv"
     )
     individual = read_tsv(
-        "BMC_Geneformer_POSCTRL_MATCHED_20260802_v2/individual_matched_null.tsv"
+        "AA_Geneformer_POSCTRL_MATCHED_20260802_v2/individual_matched_null.tsv"
     )
     individual = individual.rename(columns={"positive_control": "gene"})
     pos = pos_summary.merge(individual, on="gene", how="left", validate="one_to_one")
@@ -58,9 +58,9 @@ def main() -> int:
     table_a = table_a.sort_values("frozen_order", kind="stable")
     table_a.to_csv(OUT / "Table_A_positive_control_bidirectional_perturbation.tsv", sep="\t", index=False)
 
-    availability = read_tsv("BMC_Geneformer_STATE_SPECIFIC_20260802_v1_effect_availability.tsv")
-    state_summary = read_tsv("BMC_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_summary.tsv")
-    bootstrap = read_tsv("BMC_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_bootstrap.tsv")
+    availability = read_tsv("AA_Geneformer_STATE_SPECIFIC_20260802_v1_effect_availability.tsv")
+    state_summary = read_tsv("AA_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_summary.tsv")
+    bootstrap = read_tsv("AA_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_bootstrap.tsv")
     bootstrap = bootstrap.loc[bootstrap["metric"].eq("bidirectional_recovery_score")].copy()
     bootstrap = bootstrap.rename(
         columns={
@@ -84,8 +84,8 @@ def main() -> int:
     table_b = table_b.merge(bootstrap[keep], on=["state_class", "gene"], how="left")
     table_b.to_csv(OUT / "Table_B_state_specific_perturbation.tsv", sep="\t", index=False)
 
-    baseline = read_tsv("BMC_Geneformer_POSCTRL_DELETE_20260802_v2_simple_baselines.tsv")
-    lodo = read_tsv("BMC_Geneformer_POSCTRL_DELETE_20260802_v2_lodo_rank_stability.tsv")
+    baseline = read_tsv("AA_Geneformer_POSCTRL_DELETE_20260802_v2_simple_baselines.tsv")
+    lodo = read_tsv("AA_Geneformer_POSCTRL_DELETE_20260802_v2_lodo_rank_stability.tsv")
     lodo_summary = pd.DataFrame(
         [
             {
@@ -102,10 +102,10 @@ def main() -> int:
     lodo.to_csv(OUT / "Table_C2_LODO_by_donor.tsv", sep="\t", index=False)
     lodo_summary.to_csv(OUT / "Table_C3_LODO_summary.tsv", sep="\t", index=False)
 
-    ablation = read_tsv("BMC_Geneformer_PROGRAM_ABLATION_20260802_v1_program_ablation_summary.tsv")
+    ablation = read_tsv("AA_Geneformer_PROGRAM_ABLATION_20260802_v1_program_ablation_summary.tsv")
     ablation.to_csv(OUT / "Table_D_program_ablation.tsv", sep="\t", index=False)
 
-    leakage = read_tsv("BMC_Geneformer_PRETRAINING_LEAKAGE_AUDIT_20260802_v1.tsv")
+    leakage = read_tsv("AA_Geneformer_PRETRAINING_LEAKAGE_AUDIT_20260802_v1.tsv")
     leakage.to_csv(OUT / "Table_E_pretraining_leakage_audit.tsv", sep="\t", index=False)
 
     outputs = sorted(OUT.glob("*.tsv"))

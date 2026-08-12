@@ -12,8 +12,8 @@ from transformers import BertForMaskedLM
 HERE = Path(__file__).resolve().parent
 MODEL_DIR = Path(os.environ.get('GENEFORMER_MODEL_DIR', '__GENEFORMER_MODEL_DIR_NOT_SET__'))
 SOURCE_DIR = Path(os.environ.get('GENEFORMER_SOURCE_DIR', '__GENEFORMER_SOURCE_DIR_NOT_SET__'))
-BASE_ENGINE = HERE/'71_bmc_geneformer_donor_mvp_20260802_v2.py'
-OE_ENGINE = HERE/'85_bmc_geneformer_overexpression_mvp_20260802_v3.py'
+BASE_ENGINE = HERE/'71_aa_geneformer_donor_mvp_20260802_v2.py'
+OE_ENGINE = HERE/'85_aa_geneformer_overexpression_mvp_20260802_v3.py'
 GENES = ['CDK6','CA2','PARP1','KIT','SYK','GSK3B','HIF1A','TOP2A','TERT','CD38',
          'MPL','JAK2','STAT5A','STAT5B','PIM1','BCL2L1']
 STATES = ['HSPC-marker-class','megakaryocyte-marker-class']

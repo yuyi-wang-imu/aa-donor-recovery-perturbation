@@ -10,8 +10,8 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 
-ENGINE = Path(__file__).with_name("71_bmc_geneformer_donor_mvp_20260802_v1.py")
-spec = importlib.util.spec_from_file_location("bmc_geneformer_engine_v1", ENGINE)
+ENGINE = Path(__file__).with_name("71_aa_geneformer_donor_mvp_20260802_v1.py")
+spec = importlib.util.spec_from_file_location("aa_geneformer_engine_v1", ENGINE)
 if spec is None or spec.loader is None:
     raise RuntimeError(f"Unable to load frozen Geneformer engine: {ENGINE}")
 engine = importlib.util.module_from_spec(spec)

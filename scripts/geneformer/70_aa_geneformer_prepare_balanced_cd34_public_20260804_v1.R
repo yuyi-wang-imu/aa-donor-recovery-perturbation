@@ -5,7 +5,7 @@ suppressPackageStartupMessages(library(Matrix))
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 3L) {
   stop(paste(
-    "Usage: Rscript 70_bmc_geneformer_prepare_balanced_cd34_public_20260804_v1.R",
+    "Usage: Rscript 70_aa_geneformer_prepare_balanced_cd34_public_20260804_v1.R",
     "GSE247531_CD34counts.Rdata.gz DESIGN_TABLE.tsv OUTPUT_DIR"
   ))
 }

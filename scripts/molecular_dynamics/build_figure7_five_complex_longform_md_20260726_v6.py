@@ -221,7 +221,7 @@ def main() -> int:
     parser.add_argument(
         "--publication-final",
         action="store_true",
-        help="Reproduce the accepted BMC layout: no overall title/subtitle and black RMSF titles.",
+        help="Reproduce the accepted publication layout: no overall title/subtitle and black RMSF titles.",
     )
     args = parser.parse_args()
     if args.output_dir.exists():

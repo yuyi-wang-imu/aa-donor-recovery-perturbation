@@ -24,12 +24,12 @@ def main():
     args=parser.parse_args()
     data=Path(args.input_dir); out=Path(args.output_dir)
     files={
-        "pos_del": data / "BMC_Geneformer_POSCTRL_DELETE_20260802_v2_gene_level_effects.tsv",
-        "pos_oe": data / "BMC_Geneformer_POSCTRL_OVEREXP_20260802_v2_gene_level_effects.tsv",
-        "pos_del_donor": data / "BMC_Geneformer_POSCTRL_DELETE_20260802_v2_donor_gene_effects.tsv",
-        "pos_oe_donor": data / "BMC_Geneformer_POSCTRL_OVEREXP_20260802_v2_donor_gene_effects.tsv",
-        "ctrl_del": data / "BMC_Geneformer_FULL_20260802_v1_gene_level_effects.tsv",
-        "ctrl_oe": data / "BMC_Geneformer_OVEREXP_FULL_20260802_v3_gene_level_effects.tsv",
+        "pos_del": data / "AA_Geneformer_POSCTRL_DELETE_20260802_v2_gene_level_effects.tsv",
+        "pos_oe": data / "AA_Geneformer_POSCTRL_OVEREXP_20260802_v2_gene_level_effects.tsv",
+        "pos_del_donor": data / "AA_Geneformer_POSCTRL_DELETE_20260802_v2_donor_gene_effects.tsv",
+        "pos_oe_donor": data / "AA_Geneformer_POSCTRL_OVEREXP_20260802_v2_donor_gene_effects.tsv",
+        "ctrl_del": data / "AA_Geneformer_FULL_20260802_v1_gene_level_effects.tsv",
+        "ctrl_oe": data / "AA_Geneformer_OVEREXP_FULL_20260802_v3_gene_level_effects.tsv",
     }
     for path in files.values():
         if not path.exists(): raise FileNotFoundError(path)

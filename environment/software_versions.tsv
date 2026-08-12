@@ -1,6 +1,6 @@
 software	recorded_version	role
 R	4.5.1	statistical analysis
-R (publication replay)	4.5.2	frozen BMC figure regression test
+R (publication replay)	4.5.2	frozen publication figure regression test
 Python	3.12.5	data processing and figure rendering
 GROMACS	2024.6	molecular-dynamics simulation and trajectory processing
 AutoDock Vina	1.2.7	molecular docking

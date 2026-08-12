@@ -14,9 +14,9 @@ import pandas as pd
 
 
 HERE = Path(__file__).resolve().parent
-V2 = HERE / "build_bmc_geneformer_panels_20260803_v2.py"
+V2 = HERE / "build_publication_geneformer_panels_20260803_v2.py"
 
-spec = importlib.util.spec_from_file_location("bmc_panels_v2", V2)
+spec = importlib.util.spec_from_file_location("publication_panels_v2", V2)
 if spec is None or spec.loader is None:
     raise RuntimeError(f"Could not load {V2}")
 wrapper = importlib.util.module_from_spec(spec)

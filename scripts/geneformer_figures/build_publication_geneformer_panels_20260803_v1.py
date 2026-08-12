@@ -23,9 +23,9 @@ OUT = Path(
 )
 OUT.mkdir(parents=True, exist_ok=True)
 
-AUDIT = DATA / "BMC_Geneformer_BIDIRECTIONAL_AUDIT_SINGLE_20260802_v1"
-EXT = DATA / "BMC_Geneformer_EXTENSION_TABLES_20260802_v1"
-POS = DATA / "BMC_Geneformer_POSCTRL_MATCHED_20260802_v2"
+AUDIT = DATA / "AA_Geneformer_BIDIRECTIONAL_AUDIT_SINGLE_20260802_v1"
+EXT = DATA / "AA_Geneformer_EXTENSION_TABLES_20260802_v1"
+POS = DATA / "AA_Geneformer_POSCTRL_MATCHED_20260802_v2"
 
 FILES = {
     "candidate": AUDIT / "candidate_bidirectional_summary.tsv",
@@ -34,16 +34,16 @@ FILES = {
     "baselines": EXT / "Table_C1_simple_baselines.tsv",
     "lodo": EXT / "Table_C2_LODO_by_donor.tsv",
     "ablation": EXT / "Table_D_program_ablation.tsv",
-    "matching": DATA / "BMC_Geneformer_REMATCH_20260802_v1_diagnostics.tsv",
-    "matched_null": DATA / "BMC_Geneformer_REMATCH_20260802_v1_candidate_matched_null.tsv",
-    "state_boot": DATA / "BMC_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_bootstrap.tsv",
+    "matching": DATA / "AA_Geneformer_REMATCH_20260802_v1_diagnostics.tsv",
+    "matched_null": DATA / "AA_Geneformer_REMATCH_20260802_v1_candidate_matched_null.tsv",
+    "state_boot": DATA / "AA_Geneformer_STATE_SPECIFIC_20260802_v1_state_gene_bootstrap.tsv",
     "positive": POS / "positive_control_gene_summary.tsv",
-    "cross_model": DATA / "BMC_Geneformer_FULL_20260802_v1_geneformer_sctenifold_consistency.tsv",
-    "recovery": DATA / "BMC_candidate_set_directional_recovery_extension_MVP_20260802_v1_donor_scores.csv",
-    "external_145668": DATA / "BMC_GSE145668_external_paired_recovery_MVP_20260802_v1_donor_scores.csv",
-    "external_145668_json": DATA / "BMC_GSE145668_external_paired_recovery_MVP_20260802_v1.json",
-    "external_165870": DATA / "BMC_GSE165870_candidate_direction_replication_MVP_20260802_v1_gene_effects.csv",
-    "external_165870_json": DATA / "BMC_GSE165870_candidate_direction_replication_MVP_20260802_v1.json",
+    "cross_model": DATA / "AA_Geneformer_FULL_20260802_v1_geneformer_sctenifold_consistency.tsv",
+    "recovery": DATA / "AA_candidate_set_directional_recovery_extension_MVP_20260802_v1_donor_scores.csv",
+    "external_145668": DATA / "AA_GSE145668_external_paired_recovery_MVP_20260802_v1_donor_scores.csv",
+    "external_145668_json": DATA / "AA_GSE145668_external_paired_recovery_MVP_20260802_v1.json",
+    "external_165870": DATA / "AA_GSE165870_candidate_direction_replication_MVP_20260802_v1_gene_effects.csv",
+    "external_165870_json": DATA / "AA_GSE165870_candidate_direction_replication_MVP_20260802_v1.json",
 }
 
 for key, path in FILES.items():

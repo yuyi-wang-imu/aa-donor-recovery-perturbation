@@ -18,9 +18,9 @@ from PIL import Image
 
 
 HERE = Path(__file__).resolve().parent
-V4 = HERE / "build_bmc_geneformer_panels_20260803_v4.py"
+V4 = HERE / "build_publication_geneformer_panels_20260803_v4.py"
 
-spec = importlib.util.spec_from_file_location("bmc_panels_v4", V4)
+spec = importlib.util.spec_from_file_location("publication_panels_v4", V4)
 if spec is None or spec.loader is None:
     raise RuntimeError(f"Could not load {V4}")
 wrapper = importlib.util.module_from_spec(spec)

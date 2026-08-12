@@ -896,7 +896,7 @@ save_figure <- function(plot_object, stem, width_in, height_in) {
 save_figure(main_figure, main_stem, 7.205, 7.1)
 save_figure(supp_figure, supp_stem, 7.205, 8.9)
 
-# BMC Genomics requires the overall figure title and legend in the manuscript
+# The journal requires the overall figure title and legend in the manuscript
 # caption rather than duplicated inside the raster. This publication-only
 # postprocess erases rows 1:270 of the main PNG and verifies that all panel
 # pixels below the title band remain byte-for-byte unchanged in decoded space.

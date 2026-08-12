@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare a publication replay with the frozen BMC figure references.
+"""Compare a publication replay with the frozen publication figure references.
 
 Exact SHA-256 equality is required where the renderer is byte-stable. Figures
 3 and 7 are compared in pixel space because Matplotlib font rasterization and

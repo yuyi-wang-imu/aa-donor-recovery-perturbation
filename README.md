@@ -93,12 +93,12 @@ tolerances because supported Matplotlib/R rasterizer versions and reference
 image encoding can change antialiasing or PNG metadata without changing
 source values or panel geometry.
 
-To verify a separately held BMC submission package, including the
+To verify a separately held publication submission package, including the
 corrected 12-rule supplementary workbook, run:
 
 ```powershell
-$submissionPackage = $env:BMC_SUBMISSION_PACKAGE
-if (-not $submissionPackage) { throw "Set BMC_SUBMISSION_PACKAGE to the submission-package directory." }
+$submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
+if (-not $submissionPackage) { throw "Set PUBLICATION_SUBMISSION_PACKAGE to the submission-package directory." }
 py -3 -B scripts/publication_tables/verify_submission_assets.py `
   "$submissionPackage" `
   --inspect-workbooks
@@ -130,7 +130,7 @@ runtime and is not part of the documented runtime validation.
 2. Run the balanced-input preparation script with a new output directory:
 
 ```bash
-Rscript scripts/geneformer/70_bmc_geneformer_prepare_balanced_cd34_public_20260804_v1.R \
+Rscript scripts/geneformer/70_aa_geneformer_prepare_balanced_cd34_public_20260804_v1.R \
   /path/to/GSE247531_CD34counts.Rdata.gz \
   /path/to/GSE247531_CD34_design_table.tsv \
   /path/to/balanced_cd34_inputs
@@ -182,8 +182,21 @@ Geneformer code/model assets, SPSS, Cytoscape, GROMACS, AutoDock Vina and
 R/Python packages retain their own terms. The repository URL and issued Zenodo
 DOI are recorded in `CITATION.cff`.
 
-Software name: `aa-donor-recovery-perturbation`; supported operating systems:
-Windows for the byte-stable publication replay and Windows/Linux for analytical
-scripts where dependencies permit; languages: Python 3.10+ and R 4.5.x; license:
-BSD-3-Clause for repository-authored code. External software, data and model
-restrictions are documented in `DATA_AND_LICENSES.md`.
+Software availability information for manuscript reporting:
+
+- Project name: `aa-donor-recovery-perturbation`.
+- Project home page: <https://github.com/yuyi-wang-imu/aa-donor-recovery-perturbation>.
+- Archived version: `v0.1.0`, <https://doi.org/10.5281/zenodo.21837457>.
+- Operating systems: Windows for the byte-stable publication replay, and
+  Windows/Linux for analytical scripts where dependencies permit.
+- Programming languages: Python 3.10+ and R 4.5.x.
+- Other requirements: workflow-specific dependencies and external inputs are
+  documented in `environment/`, `config/input_paths.example.tsv`, and
+  `DATA_AND_LICENSES.md`.
+- License: BSD-3-Clause for repository-authored code.
+- Restrictions: external software, data, models, licensed databases, prepared
+  structures and raw molecular-dynamics trajectories retain their own access
+  terms and are not redistributed here.
+
+The DOI identifies the archived `v0.1.0` release. Subsequent maintenance on
+the default branch does not alter that archived release or its DOI.

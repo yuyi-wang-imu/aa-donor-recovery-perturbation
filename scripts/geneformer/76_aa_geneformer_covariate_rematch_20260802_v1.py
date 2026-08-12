@@ -44,7 +44,7 @@ def main() -> int:
     effects_path = Path(args.effects)
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    stem = "BMC_Geneformer_REMATCH_20260802_v1"
+    stem = "AA_Geneformer_REMATCH_20260802_v1"
     outputs = {
         "selection": output_dir / f"{stem}_selection.tsv",
         "diagnostics": output_dir / f"{stem}_diagnostics.tsv",

@@ -169,7 +169,7 @@ def main() -> int:
         [
             sys.executable,
             "-B",
-            str(repo / "scripts/geneformer_figures/build_bmc_geneformer_panels_20260803_v6.py"),
+            str(repo / "scripts/geneformer_figures/build_publication_geneformer_panels_20260803_v6.py"),
         ],
         repo,
         geneformer_env,
@@ -178,7 +178,7 @@ def main() -> int:
         [
             sys.executable,
             "-B",
-            str(repo / "scripts/geneformer_figures/convert_bmc_geneformer_panels_rgb_20260803_v7.py"),
+            str(repo / "scripts/geneformer_figures/convert_publication_geneformer_panels_rgb_20260803_v7.py"),
         ],
         repo,
         geneformer_env,

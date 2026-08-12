@@ -4,8 +4,8 @@ import importlib.util
 from pathlib import Path
 
 
-V1 = Path(__file__).with_name("71_bmc_geneformer_donor_mvp_20260802_v1.py")
-spec = importlib.util.spec_from_file_location("bmc_geneformer_mvp_v1", V1)
+V1 = Path(__file__).with_name("71_aa_geneformer_donor_mvp_20260802_v1.py")
+spec = importlib.util.spec_from_file_location("aa_geneformer_mvp_v1", V1)
 if spec is None or spec.loader is None:
     raise RuntimeError(f"Unable to load frozen MVP implementation: {V1}")
 module = importlib.util.module_from_spec(spec)

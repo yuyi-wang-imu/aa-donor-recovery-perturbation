@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the frozen BMC submission figures and supplementary workbooks.
+"""Verify the frozen publication submission figures and supplementary workbooks.
 
 The submission package is supplied separately and is never copied into the
 repository by this command. Exact sizes and SHA-256 values are checked first.

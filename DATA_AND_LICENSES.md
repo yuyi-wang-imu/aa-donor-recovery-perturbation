@@ -39,7 +39,7 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 ## Not redistributed
 
-- The complete BMC supplementary workbooks are not duplicated into GitHub.
+- The complete publication supplementary workbooks are not duplicated into GitHub.
   `PUBLICATION_ASSET_CHECKSUMS.tsv` and
   `scripts/publication_tables/verify_submission_assets.py` verify the separate
   journal files, including 390 prescription records and the corrected 12-rule
