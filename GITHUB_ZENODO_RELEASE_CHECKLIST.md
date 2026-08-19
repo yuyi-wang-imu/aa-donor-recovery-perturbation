@@ -72,8 +72,14 @@ absolute executable path if `Rscript` is not on `PATH`.
 - [x] State explicitly that the archived `v0.1.0` replay retains its legacy
       Figure 1-9/Figure S1-S10 numbering, whereas the current manuscript uses
       five main figures and Figure S1-S19.
-- [ ] If Zenodo metadata is edited, change only title, description, and
+- [x] If Zenodo metadata is edited, change only title, description, and
       keywords, then verify the public record still resolves to the same DOI
       and the same archived `v0.1.0` file.
-- [ ] Do not replace archived files or create a new version merely to make a
+- [x] Do not replace archived files or create a new version merely to make a
       documentation-only maintenance commit appear inside the old ZIP.
+
+Verified on 2026-08-20: the public record retained version DOI
+`10.5281/zenodo.21837457`, concept DOI `10.5281/zenodo.21837456`, version
+`v0.1.0`, and archived file
+`yuyi-wang-imu/aa-donor-recovery-perturbation-v0.1.0.zip` (48,051,582 bytes;
+MD5 `c54383bbd520f980095dedfe5334c156`).
