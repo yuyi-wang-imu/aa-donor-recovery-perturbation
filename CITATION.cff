@@ -1,8 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it using the metadata below."
-title: "Donor-Aware Recovery and Perturbation Workflow for Aplastic Anemia"
+message: "If you use this workflow, please cite the archived software record and the associated manuscript."
+title: "Donor-Aware Longitudinal Transcriptomics and Bidirectional Geneformer Perturbation in Aplastic Anemia: Analysis Code and Derived Data"
 type: software
 version: 0.1.0
+date-released: 2026-08-07
 authors:
   - family-names: Wang
     given-names: Yuyi
@@ -13,12 +14,19 @@ doi: "10.5281/zenodo.21837457"
 license: BSD-3-Clause
 keywords:
   - aplastic anemia
-  - donor-aware transcriptomics
+  - longitudinal transcriptomics
+  - hematopoietic stem and progenitor cells
+  - single-cell transcriptomics
   - Geneformer
-  - molecular dynamics
   - computational gene perturbation
+  - donor-aware analysis
+  - molecular dynamics
+  - reproducible research
 abstract: >-
-  Reproducible analysis code and selected derived source tables for
-  prescription mining, hematopoietic transcriptomics, molecular dynamics,
-  scTenifoldKnk and donor-aware bidirectional Geneformer perturbation in
-  aplastic anemia. Release v0.1.0 is archived by Zenodo.
+  Reproducible analysis code, configuration, and selected derived data
+  supporting a donor-anchored aplastic-anemia study that integrates traceable
+  candidate provenance, CD34+ hematopoietic transcriptomics, bone-marrow
+  single-cell context, bidirectional Geneformer perturbation,
+  regulatory-network analysis, docking, and standardized molecular dynamics.
+  Release v0.1.0 is archived by Zenodo; later default-branch maintenance does
+  not alter the archived tag, files, or DOI.

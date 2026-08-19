@@ -60,3 +60,20 @@ absolute executable path if `Rscript` is not on `PATH`.
 - Do not withdraw, replace or repoint the historical DOI.
 - Do not upload raw MD trajectories, model weights, secrets, private metadata,
   licensed source exports, local caches, or the surrounding manuscript folders.
+
+## Post-release metadata maintenance (2026-08-19)
+
+- [x] Keep tag `v0.1.0` fixed at commit
+      `b850d7e6a6141962d3a2d38021d0780e3c5907a1`.
+- [x] Keep version DOI `10.5281/zenodo.21837457`; do not create a replacement
+      release or silently repoint the DOI.
+- [x] Align default-branch README and citation metadata with the current
+      Human Genomics manuscript title and evidence hierarchy.
+- [x] State explicitly that the archived `v0.1.0` replay retains its legacy
+      Figure 1-9/Figure S1-S10 numbering, whereas the current manuscript uses
+      five main figures and Figure S1-S19.
+- [ ] If Zenodo metadata is edited, change only title, description, and
+      keywords, then verify the public record still resolves to the same DOI
+      and the same archived `v0.1.0` file.
+- [ ] Do not replace archived files or create a new version merely to make a
+      documentation-only maintenance commit appear inside the old ZIP.

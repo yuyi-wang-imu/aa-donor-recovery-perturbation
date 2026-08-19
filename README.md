@@ -1,17 +1,60 @@
-# Donor-aware recovery and perturbation workflow for aplastic anemia
+# Donor-aware longitudinal transcriptomics and bidirectional Geneformer perturbation in aplastic anemia
 
-This repository contains the analysis code, selected derived source tables,
-and publication-figure regression tests for the associated manuscript. It
-covers prescription mining, exact candidate construction, transcriptomic and co-expression
-analyses, bone-marrow single-cell projection, evidence integration, docking,
-five standardized 100 ns molecular-dynamics simulations (500 ns total),
-scTenifoldKnk perturbation, and donor-aware Geneformer deletion and
-overexpression analyses.
+This repository contains reproducible analysis code, configuration files,
+selected derived source tables, and publication-regression tests supporting the
+manuscript *Donor-Aware Longitudinal Transcriptomics and Bidirectional
+Geneformer Perturbation Prioritize Recovery-Aligned Genes in Aplastic Anemia*.
+The workflow separates traceable candidate provenance from recovery-aligned
+model evidence. It integrates prescription-derived candidate construction,
+CD34+ hematopoietic transcriptomics, participant-aware co-expression analysis,
+bone-marrow single-cell context, donor-aware longitudinal recovery-axis
+analysis, paired in silico deletion and overexpression with Geneformer,
+scTenifoldKnk, docking, and molecular dynamics.
 
-The manuscript emphasizes the stronger donor-aware bidirectional support for
-TOP2A and GSK3B, treats KIT cautiously, and keeps complete weak/null calibration
-results in Supplementary Table S10. Model outputs are computational evidence,
-not experimental target validation.
+## Evidence hierarchy and current manuscript alignment
+
+The current manuscript follows this prespecified evidence order:
+
+1. Mining 390 aplastic-anemia prescription records identified a recurrent
+   *Ecliptae Herba*-*Cuscutae Semen*-*Ligustri Lucidi Fructus* pattern.
+2. Exact matching of 472 standardized compound-associated genes to 1,529
+   aplastic-anemia-associated genes defined 126 starting candidates.
+3. CD34+ expression, participant-aware WGCNA, bone-marrow single-cell context,
+   independent expression context, and prespecified multi-source criteria
+   prioritized 30 candidates and fixed ten genes before model perturbation.
+4. All 17 donors with pretreatment and latest-follow-up profiles moved toward
+   the healthy reference on the primary 5,000-gene recovery axis (median
+   displacement, 0.362; exact two-sided sign-test P = 1.53 x 10^-5).
+5. Geneformer reproduced the healthy-directed change in 14 of 15
+   baseline-to-six-month donor pairs. Five fixed candidates--TOP2A, KIT,
+   GSK3B, HIF1A, and SYK--showed the prespecified deletion-away and
+   overexpression-toward-health pattern; TOP2A and GSK3B received the strongest
+   donor-level and expression-matched support.
+
+scTenifoldKnk, docking, and molecular dynamics are downstream,
+hypothesis-generating analyses. They did not define or rerank candidates.
+Prescription recurrence is not evidence of efficacy; Geneformer output is
+model-based prioritization rather than experimental gene editing; docking
+scores are not biochemical affinities; and single 100 ns trajectories do not
+establish direct target engagement, inhibition, or therapeutic activity.
+
+## Version and publication-asset boundary
+
+Release `v0.1.0` is the immutable software snapshot archived at Zenodo and
+corresponds to commit
+`b850d7e6a6141962d3a2d38021d0780e3c5907a1`. The DOI and tag are retained for
+traceability. Maintenance commits on the default branch, including this
+2026-08-19 documentation alignment, do not alter the archived ZIP, tag, or DOI.
+
+The current Human Genomics manuscript uses five main figures (CD34+/WGCNA;
+bone-marrow single-cell context; donor recovery plus Geneformer;
+scTenifoldKnk; and molecular dynamics) and Supplementary Figures S1-S19.
+The frozen replay tables and reference images distributed in `v0.1.0` retain
+their original Figure 1-9 and Figure S1-S10 numbering. Files such as
+`FIGURE_SOURCE_MAP.tsv`, `REPRODUCIBILITY_MATRIX.tsv`, and
+`PUBLICATION_ASSET_CHECKSUMS.tsv` are therefore archive-specific regression
+records, not a claim that the current manuscript still uses the legacy figure
+numbering.
 
 ## Repository status
 
@@ -27,10 +70,11 @@ The source code and supporting files are maintained at
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
 - `reference_outputs/`: publication figures used as regression-test references.
-- `FIGURE_SOURCE_MAP.tsv`: Figure 1-9 and supplementary source mapping.
+- `FIGURE_SOURCE_MAP.tsv`: archive-specific Figure 1-9 and supplementary
+  source mapping for the frozen `v0.1.0` replay.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
-- `PUBLICATION_ASSET_CHECKSUMS.tsv`: checksums for nine main figures and six
-  Additional files.
+- `PUBLICATION_ASSET_CHECKSUMS.tsv`: checksums for the nine main figures and
+  six Additional files in the frozen `v0.1.0` submission-asset snapshot.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
 - `CITATION.cff`: citation metadata including the issued Zenodo DOI.
 - `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
@@ -61,7 +105,7 @@ the scientific analyses.
 
 Reproducibility is reported in two layers and the distinction is mandatory:
 
-1. **Publication replay** rebuilds the final Figure 1-9 layouts, independent
+1. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
    intermediates. The submission-asset verifier separately checks the
@@ -163,8 +207,8 @@ Public GEO accessions and exact staging requirements are listed in
 
 ## Figure reproducibility
 
-The complete publication appearance of Figure 1-9 and Figure S1-S10 is
-replayable or regression-verifiable. This does **not** mean that every analysis
+The archived `v0.1.0` publication appearance of Figure 1-9 and Figure S1-S10
+is replayable or regression-verifiable. This does **not** mean that every analysis
 is self-contained from raw data. Figures 1, 2, 4, 5 and 6 and several legacy
 supplementary panels still require author-staged or licensed upstream inputs
 for scientific recomputation. Figure 7 is rerendered from the complete derived
@@ -201,4 +245,6 @@ Software availability information for manuscript reporting:
   terms and are not redistributed here.
 
 The DOI identifies the archived `v0.1.0` release. Subsequent maintenance on
-the default branch does not alter that archived release or its DOI.
+the default branch does not alter that archived release or its DOI. The current
+manuscript title and evidence hierarchy above are a documentation alignment;
+they do not silently replace the contents of the archived release.
