@@ -43,12 +43,18 @@ establish direct target engagement, inhibition, or therapeutic activity.
 Release `v0.1.0` is the immutable software snapshot archived at Zenodo and
 corresponds to commit
 `b850d7e6a6141962d3a2d38021d0780e3c5907a1`. The DOI and tag are retained for
-traceability. Maintenance commits on the default branch, including this
-2026-08-19 documentation alignment, do not alter the archived ZIP, tag, or DOI.
+traceability. Maintenance commits on the default branch, including the
+2026-08-20 manuscript-structure alignment, do not alter the archived ZIP, tag,
+or DOI.
 
-The current Human Genomics manuscript uses five main figures (CD34+/WGCNA;
-bone-marrow single-cell context; donor recovery plus Geneformer;
-scTenifoldKnk; and molecular dynamics) and Supplementary Figures S1-S19.
+The current Human Genomics manuscript uses eight main figures: CD34+/WGCNA;
+bone-marrow single-cell context; candidate annotation and sensitivity; the
+three-herb/compound/candidate network; donor recovery plus Geneformer;
+scTenifoldKnk; representative docking hypotheses; and molecular dynamics.
+Supplementary Figures run from S1 to S16; the original prescription-mining and
+candidate-construction workflow is retained in Figure S11. The current
+structural follow-up reports five ligand-containing 100 ns trajectories plus a
+matched 100 ns HIF1A-ARNT apo reference (600 ns total).
 The frozen replay tables and reference images distributed in `v0.1.0` retain
 their original Figure 1-9 and Figure S1-S10 numbering. Files such as
 `FIGURE_SOURCE_MAP.tsv`, `REPRODUCIBILITY_MATRIX.tsv`, and

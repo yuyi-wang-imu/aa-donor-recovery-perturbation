@@ -71,7 +71,7 @@ absolute executable path if `Rscript` is not on `PATH`.
       Human Genomics manuscript title and evidence hierarchy.
 - [x] State explicitly that the archived `v0.1.0` replay retains its legacy
       Figure 1-9/Figure S1-S10 numbering, whereas the current manuscript uses
-      five main figures and Figure S1-S19.
+      eight main figures and Figure S1-S16.
 - [x] If Zenodo metadata is edited, change only title, description, and
       keywords, then verify the public record still resolves to the same DOI
       and the same archived `v0.1.0` file.
