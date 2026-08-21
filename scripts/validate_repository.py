@@ -303,7 +303,7 @@ def validate_repository() -> int:
         "reference_outputs/current_manuscript/Figure_6.png": "EF41370F994774E0C46C1447E48EDF77D57E0EA4C19C757D96CAED7102A51731",
         "reference_outputs/current_manuscript/Figure_7.png": "F620E61BC83AF0C8FA292C21F185D6A23B4BAE02C41F3FAD99331E474043FB39",
         "reference_outputs/current_manuscript/Figure_8.png": "046BAD345A05FFC90D043B742E24A2AD82537CF1C61AD77BCB3A1BC607B6367B",
-        "reference_outputs/current_manuscript/Graphical_Abstract.png": "51906FFE3AEF1644A6EB7CE9D2CB58CD6FFE6CE6902C5B7E2A9666BD03035845",
+        "reference_outputs/current_manuscript/Graphical_Abstract.png": "B792B411849F8199031DE6170FCE0CDDBED76717FBD38F6DBF309C9821FB9E07",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz": "EFFAF8AA397AF7DDF1365FE6A8246B2B46280E8E532FB175587A5131DF5D5710",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv": "DA6344A272C1C688641BC8F7B4F7BC568A658103BFB80F2F57BB7764FE7E6D13",
         "derived_data/molecular_dynamics/current_figure8/Figure8_final20ns_quantitative_summary.tsv": "63AFC6229EC931481AD209387107475FA06ADC4D4AFE15E09F9D87E23CF0B764",
