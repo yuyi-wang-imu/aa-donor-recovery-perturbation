@@ -84,6 +84,10 @@ def validate_repository() -> int:
         "FIGURE_SOURCE_MAP.tsv",
         "REPRODUCIBILITY_MATRIX.tsv",
         "PUBLICATION_ASSET_CHECKSUMS.tsv",
+        "CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv",
+        "CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv",
+        "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv",
+        "CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv",
         "GITHUB_ZENODO_RELEASE_CHECKLIST.md",
         "WORKFLOW_ORDER.tsv",
         "config/analysis_parameters.tsv",
@@ -114,13 +118,20 @@ def validate_repository() -> int:
         "scripts/transcriptomics_wgcna/build_figure2_panel_label_pvalue_geneitalic_exactcontent_20260726_v7.R",
         "scripts/figure_packaging/build_figure4_5_layout_fixes_20260726_v1.py",
         "scripts/molecular_dynamics/build_figure7_five_complex_longform_md_20260726_v6.py",
+        "scripts/molecular_dynamics/render_current_figure8_md.R",
         "scripts/transcriptomics_wgcna/build_figure2_candidate_pool_CD34_context_typography_20260726_v7.py",
         "scripts/figure_packaging/assemble_supplementary_figures_s1_s8_20260727_v2.py",
+        "scripts/figure_packaging/build_current_supplementary_visual_corrections.R",
         "scripts/publication_figures/assemble_static_publication_figures.py",
         "scripts/publication_figures/reproduce_all_publication_figures.py",
         "scripts/publication_figures/verify_publication_figures.py",
         "scripts/publication_tables/verify_submission_assets.py",
+        "scripts/publication_tables/verify_current_submission_assets.py",
         "derived_data/molecular_dynamics/Figure_7_five_system_md_source_data_20260725_v5_pbc_audited.csv",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_final20ns_quantitative_summary.tsv",
+        "derived_data/molecular_dynamics/current_figure8/README.md",
         "derived_data/bone_marrow/Figure4A_bone_marrow_UMAP_display_source_data_20260716_v2.csv",
         "derived_data/bone_marrow/Figure4B_subject_timepoint_composition_source_data_20260716_v2.csv",
         "derived_data/bone_marrow/Figure4C_strict_module_compartment_projection_source_data_20260716_v2.csv",
@@ -133,11 +144,17 @@ def validate_repository() -> int:
         "derived_data/computational_perturbation/FigureS11_matched_control_pooled_null_source_20260725_v4.csv",
         "derived_data/publication_intermediates/README.md",
         "reference_outputs/README.md",
+        "reference_outputs/current_manuscript/README.md",
     ]
     required.extend(
         f"reference_outputs/main_figures/Figure_{number}.png"
         for number in range(1, 10)
     )
+    required.extend(
+        f"reference_outputs/current_manuscript/Figure_{number}.png"
+        for number in range(1, 9)
+    )
+    required.append("reference_outputs/current_manuscript/Graphical_Abstract.png")
     required.extend(
         f"reference_outputs/supplementary_figures/Figure_{suffix}.png"
         for suffix in ("S8", "S9", "S10")
@@ -238,6 +255,12 @@ def validate_repository() -> int:
         "reproduce_all_publication_figures.py",
         "REPRODUCIBILITY_MATRIX.tsv",
         "verify_submission_assets.py",
+        "CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv",
+        "CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv",
+        "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv",
+        "verify_current_submission_assets.py",
+        "render_current_figure8_md.R",
+        "build_current_supplementary_visual_corrections.R",
     ]
     missing_readme_terms = [term for term in required_readme_terms if term not in readme]
     if missing_readme_terms:
@@ -272,6 +295,18 @@ def validate_repository() -> int:
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S6_ModuleLocalizationRobustness_20260726.pdf": "B6500C86F945908F45F8C9687D9DFB2DDA2E194148D20B1ECD4C19794048B7D1",
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S7_DockingMatrixOnly_20260726.pdf": "B1DCDDBEEB16E6702447D31C26A56D7266DD1F0F4BA7D03247C785E7956661AE",
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S8_MatchedControlSensitivity_20260726.pdf": "737AE4F7C595A85FF03523889A6589C18F68B186A26F8FA8BC006860C13CD3C5",
+        "reference_outputs/current_manuscript/Figure_1.png": "7F803D3150BA552A7BE4BF6D966C3D96CCE066ED2BF1BF04D3700B2CA47CFBC1",
+        "reference_outputs/current_manuscript/Figure_2.png": "B8166744F62B11B0071A2EC01D6E790C0CB393BA5054AC9945F954BFD83ACC22",
+        "reference_outputs/current_manuscript/Figure_3.png": "117ED322C86BFD888902FF200EA9B5B07534DAAA870CEC3A3FEAC35BB4C8FCF3",
+        "reference_outputs/current_manuscript/Figure_4.png": "922BD60B7C8931ECD23FAB7528A7E423BFA83DE32C69F37840222222E72F9CBE",
+        "reference_outputs/current_manuscript/Figure_5.png": "5CB383358B113F04FBE7F4A827817548A3E98534DF27F0EB50081DA0BACCC9CC",
+        "reference_outputs/current_manuscript/Figure_6.png": "EF41370F994774E0C46C1447E48EDF77D57E0EA4C19C757D96CAED7102A51731",
+        "reference_outputs/current_manuscript/Figure_7.png": "F620E61BC83AF0C8FA292C21F185D6A23B4BAE02C41F3FAD99331E474043FB39",
+        "reference_outputs/current_manuscript/Figure_8.png": "046BAD345A05FFC90D043B742E24A2AD82537CF1C61AD77BCB3A1BC607B6367B",
+        "reference_outputs/current_manuscript/Graphical_Abstract.png": "51906FFE3AEF1644A6EB7CE9D2CB58CD6FFE6CE6902C5B7E2A9666BD03035845",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz": "EFFAF8AA397AF7DDF1365FE6A8246B2B46280E8E532FB175587A5131DF5D5710",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv": "DA6344A272C1C688641BC8F7B4F7BC568A658103BFB80F2F57BB7764FE7E6D13",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_final20ns_quantitative_summary.tsv": "63AFC6229EC931481AD209387107475FA06ADC4D4AFE15E09F9D87E23CF0B764",
     }
     golden_mismatches = [
         name
@@ -311,6 +346,65 @@ def validate_repository() -> int:
         fail(f"Unexpected V6 submission-asset roles: {role_counts}")
     if any(len(row.get("sha256", "")) != 64 for row in publication_assets):
         fail("Invalid SHA-256 entry in PUBLICATION_ASSET_CHECKSUMS.tsv")
+
+    with (ROOT / "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv").open(
+        "r", encoding="utf-8-sig", newline=""
+    ) as handle:
+        current_assets = list(csv.DictReader(handle, delimiter="\t"))
+    expected_current_names = {
+        "Manuscript.docx",
+        *(f"Figure_{index}.png" for index in range(1, 9)),
+        "Table_1.docx",
+        "Table_2.docx",
+        "Graphical_Abstract.png",
+        "Cover_Letter.docx",
+        "Additional_file_1_Supplementary_Tables_S1-S6.xlsx",
+        "Additional_file_2_Supplementary_Figures_S1-S16.pdf",
+        "Additional_file_3_Supplementary_Table_S7.xlsx",
+        "Additional_file_4_Supplementary_Table_S8.xlsx",
+        "Additional_file_5_Supplementary_Table_S10.xlsx",
+        "Additional_file_6_Supplementary_Table_S9.xlsx",
+    }
+    actual_current_names = {row.get("filename", "") for row in current_assets}
+    if len(current_assets) != 19 or actual_current_names != expected_current_names:
+        missing = sorted(expected_current_names - actual_current_names)
+        extra = sorted(actual_current_names - expected_current_names)
+        fail(f"Current submission-asset mismatch: missing={missing}, extra={extra}")
+    expected_current_roles = {
+        "manuscript": 1,
+        "main_figure": 8,
+        "main_table": 2,
+        "graphical_abstract": 1,
+        "cover_letter": 1,
+        "additional_file": 6,
+    }
+    observed_current_roles = {
+        role: sum(row.get("package_role") == role for row in current_assets)
+        for role in expected_current_roles
+    }
+    if observed_current_roles != expected_current_roles:
+        fail(f"Unexpected current submission-asset roles: {observed_current_roles}")
+    if any(
+        len(row.get("sha256", "")) != 64 or int(row.get("bytes", "0")) <= 0
+        for row in current_assets
+    ):
+        fail("Invalid current submission-asset size or SHA-256 entry")
+    current_asset_by_name = {row["filename"]: row for row in current_assets}
+    for index in range(1, 9):
+        filename = f"Figure_{index}.png"
+        reference = ROOT / "reference_outputs" / "current_manuscript" / filename
+        row = current_asset_by_name[filename]
+        data = reference.read_bytes()
+        if len(data) != int(row["bytes"]) or digest_bytes(data) != row["sha256"]:
+            fail(f"Current figure checksum table mismatch: {filename}")
+    graphical = ROOT / "reference_outputs" / "current_manuscript" / "Graphical_Abstract.png"
+    graphical_row = current_asset_by_name["Graphical_Abstract.png"]
+    graphical_data = graphical.read_bytes()
+    if (
+        len(graphical_data) != int(graphical_row["bytes"])
+        or digest_bytes(graphical_data) != graphical_row["sha256"]
+    ):
+        fail("Current graphical-abstract checksum table mismatch")
 
     if not MANIFEST_PATH.is_file():
         fail("Missing release file: MANIFEST.tsv")

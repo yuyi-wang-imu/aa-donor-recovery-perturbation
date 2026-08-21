@@ -83,3 +83,18 @@ Verified on 2026-08-20: the public record retained version DOI
 `v0.1.0`, and archived file
 `yuyi-wang-imu/aa-donor-recovery-perturbation-v0.1.0.zip` (48,051,582 bytes;
 MD5 `c54383bbd520f980095dedfe5334c156`).
+
+## Current Human Genomics manuscript alignment (2026-08-21)
+
+- [x] Preserve the archived Figure 1-9 and Figure S1-S10 replay without
+      moving tag `v0.1.0` or changing DOI `10.5281/zenodo.21837457`.
+- [x] Add exact current references for Figure 1-8 and the graphical abstract.
+- [x] Add a current 19-file submission checksum table and a dedicated verifier.
+- [x] Add current Figure 1-8 source and reproducibility maps and the Figure
+      S1-S16 page map.
+- [x] Add the five-candidate Figure 8 derived source tables and a path-neutral
+      R renderer; do not add raw trajectories, topologies or checkpoints.
+- [x] Verify the separately held current submission package without copying the
+      manuscript, cover letter or supplementary workbooks into GitHub.
+- [x] Keep prepared docking structures, ligand/pose projects, licensed source
+      exports, model weights and private design metadata outside the repository.

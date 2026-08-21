@@ -21,18 +21,19 @@ The current manuscript follows this prespecified evidence order:
    aplastic-anemia-associated genes defined 126 starting candidates.
 3. CD34+ expression, participant-aware WGCNA, bone-marrow single-cell context,
    independent expression context, and prespecified multi-source criteria
-   prioritized 30 candidates and fixed ten genes before model perturbation.
+   prioritized 30 candidates and selected ten genes before model perturbation.
 4. All 17 donors with pretreatment and latest-follow-up profiles moved toward
    the healthy reference on the primary 5,000-gene recovery axis (median
    displacement, 0.362; exact two-sided sign-test P = 1.53 x 10^-5).
 5. Geneformer reproduced the healthy-directed change in 14 of 15
-   baseline-to-six-month donor pairs. Five fixed candidates--TOP2A, KIT,
+   baseline-to-six-month donor pairs. Five candidates--TOP2A, KIT,
    GSK3B, HIF1A, and SYK--showed the prespecified deletion-away and
    overexpression-toward-health pattern; TOP2A and GSK3B received the strongest
    donor-level and expression-matched support.
 
 scTenifoldKnk, docking, and molecular dynamics are downstream,
-hypothesis-generating analyses. They did not define or rerank candidates.
+hypothesis-generating analyses. They did not contribute to candidate selection
+or ranking.
 Prescription recurrence is not evidence of efficacy; Geneformer output is
 model-based prioritization rather than experimental gene editing; docking
 scores are not biochemical affinities; and single 100 ns trajectories do not
@@ -55,7 +56,7 @@ Supplementary Figures run from S1 to S16; the original prescription-mining and
 candidate-construction workflow is retained in Figure S11. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
-The frozen replay tables and reference images distributed in `v0.1.0` retain
+The archived replay tables and reference images distributed in `v0.1.0` retain
 their original Figure 1-9 and Figure S1-S10 numbering. Files such as
 `FIGURE_SOURCE_MAP.tsv`, `REPRODUCIBILITY_MATRIX.tsv`, and
 `PUBLICATION_ASSET_CHECKSUMS.tsv` are therefore archive-specific regression
@@ -76,11 +77,21 @@ The source code and supporting files are maintained at
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
 - `reference_outputs/`: publication figures used as regression-test references.
+- `reference_outputs/current_manuscript/`: the eight current main figures and
+  graphical abstract, with exact checksums.
+- `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`: current Figure 1-8 source and
+  access boundaries.
+- `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`: current publication replay
+  versus scientific recomputation.
+- `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: exact 19-file Human Genomics
+  submission-package inventory used by the current verifier.
+- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv`: page-level Figure S1-S16
+  content and verification scope.
 - `FIGURE_SOURCE_MAP.tsv`: archive-specific Figure 1-9 and supplementary
-  source mapping for the frozen `v0.1.0` replay.
+  source mapping for the archived `v0.1.0` replay.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
 - `PUBLICATION_ASSET_CHECKSUMS.tsv`: checksums for the nine main figures and
-  six Additional files in the frozen `v0.1.0` submission-asset snapshot.
+  six Additional files in the archived `v0.1.0` submission-asset snapshot.
 - `DATA_AND_LICENSES.md`: redistribution boundaries and third-party assets.
 - `CITATION.cff`: citation metadata including the issued Zenodo DOI.
 - `MANIFEST.tsv`: canonical path, size and SHA-256 inventory.
@@ -107,23 +118,66 @@ These checks verify repository structure; they do not download licensed data,
 Geneformer weights, or large molecular-dynamics trajectories and do not rerun
 the scientific analyses.
 
-## Publication replay
+## Current-manuscript verification and publication replay
 
-Reproducibility is reported in two layers and the distinction is mandatory:
+Reproducibility is reported in four layers and the distinction is mandatory:
 
-1. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
+1. **Current submission verification** checks the separately held flat
+   19-file Human Genomics package against exact byte sizes and SHA-256 values,
+   verifies Figure 1-8 dimensions and resolution metadata, verifies the
+   920 x 300-pixel graphical abstract and 16-page supplementary PDF, and can
+   inspect core workbook invariants. The package is not copied into GitHub.
+2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
+   from the repository-distributed time series, C-alpha RMSF and final-20-ns
+   summaries. Raw trajectories, topologies and checkpoints are excluded.
+3. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
    intermediates. The submission-asset verifier separately checks the
    ten-page Figure S1-S10 PDF submitted as Additional file 2. Independent
    Figure S9 and S10 files remain regression references, not separate
    Additional files.
-2. **Scientific recomputation** reruns analytical models from public,
+4. **Scientific recomputation** reruns analytical models from public,
    author-staged, or licensed inputs. Some workflows require separately
    obtained GEO files, reviewed design metadata, official model assets,
    prepared structural inputs, or licensed database exports.
 
-The publication replay is available on Windows with Python 3.10+ and R 4.5.x:
+To verify the current submission package, run:
+
+```powershell
+$submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
+if (-not $submissionPackage) { throw "Set PUBLICATION_SUBMISSION_PACKAGE to the flat submission-package directory." }
+py -3 -B scripts/publication_tables/verify_current_submission_assets.py `
+  "$submissionPackage" `
+  --inspect-workbooks
+```
+
+To rerender the current Figure 8 from the packaged derived tables, run the
+following command from the repository root with a new output directory:
+
+```powershell
+$figure8Output = Join-Path $env:TEMP ("AA_current_Figure8_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
+& (Join-Path $env:ProgramFiles "R\R-4.5.2\bin\Rscript.exe") `
+  scripts/molecular_dynamics/render_current_figure8_md.R `
+  "$figure8Output"
+```
+
+The final 16-page supplementary PDF is held with the submission package. To
+apply the reviewed visual-only correction to a separately staged source PDF,
+run the R script below with a new output directory. The correction moves the
+Figure S6 legend outside the plotting region and removes the redundant page
+title from Figure S7; pages 1-5 and 8-16 are checked for pixel equality.
+
+```powershell
+$supplementOutput = Join-Path $env:TEMP ("AA_current_supplement_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
+& (Join-Path $env:ProgramFiles "R\R-4.5.2\bin\Rscript.exe") `
+  scripts/figure_packaging/build_current_supplementary_visual_corrections.R `
+  "$env:PUBLICATION_SUPPLEMENTARY_PDF" `
+  "$supplementOutput"
+```
+
+The archived publication replay remains available on Windows with Python
+3.10+ and R 4.5.x:
 
 Install the dedicated replay stack from
 `environment/publication_replay_python_20260806.txt`; do not substitute the
@@ -143,10 +197,9 @@ tolerances because supported Matplotlib/R rasterizer versions and reference
 image encoding can change antialiasing or PNG metadata without changing
 source values or panel geometry.
 
-To verify a separately held publication submission package, including the
-corrected 12-rule supplementary workbook, run the command below. The verifier
-accepts either a flat package root containing the 15 named assets or the
-earlier layout using `02_Main_Figures/` and `04_Additional_Files/`.
+To verify the separately held archived `v0.1.0` publication assets, use the
+archive-specific verifier. It accepts either a flat package root containing
+the 15 archived assets or the earlier nested layout.
 
 ```powershell
 $submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
@@ -213,17 +266,28 @@ Public GEO accessions and exact staging requirements are listed in
 
 ## Figure reproducibility
 
+The current manuscript uses Figure 1-8. Exact current references are stored in
+`reference_outputs/current_manuscript/`; source and access boundaries are in
+`CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`. Figure 8 is rerenderable from the
+current five-complex derived tables and reproduces the submitted geometry to
+the documented pixel tolerance. Figure 7 is retained as an exact final-image
+reference because prepared receptor, ligand, pose and visualization assets are
+not redistributed. Supplementary Figures S1-S16 are verified as a separately
+held 16-page PDF using the current submission-asset verifier.
+
+The archived `v0.1.0` references remain available for historical regression:
+
 The archived `v0.1.0` publication appearance of Figure 1-9 and Figure S1-S10
 is replayable or regression-verifiable. This does **not** mean that every analysis
 is self-contained from raw data. Figures 1, 2, 4, 5 and 6 and several legacy
 supplementary panels still require author-staged or licensed upstream inputs
-for scientific recomputation. Figure 7 is rerendered from the complete derived
+for scientific recomputation. Archived Figure 7 is rerendered from the complete derived
 summary of five 100 ns systems (500 ns total), while raw trajectories remain
 excluded. Figure 9/S9/S10 is rerendered from recorded model outputs; repeating
 model inference requires official Geneformer assets. Exact statuses are in
 `REPRODUCIBILITY_MATRIX.tsv` and `FIGURE_SOURCE_MAP.tsv`.
 
-The Figure 9/S9/S10 presentation pipeline separates panel rendering from the
+The archived Figure 9/S9/S10 presentation pipeline separates panel rendering from the
 final RGB conversion. This preserves black titles and a white background
 without recomputing analytical results.
 

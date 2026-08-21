@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Verify the publication submission figures and supplementary workbooks.
+"""Verify the archived v0.1.0 publication figures and supplementary workbooks.
 
-The submission package is supplied separately and is never copied into the
+The archived package is supplied separately and is never copied into the
 repository by this command. Exact sizes and SHA-256 values are checked first.
-Both a flat submission directory and the earlier nested layout are supported.
-When openpyxl is available, core workbook invariants are checked as well.
+Both a flat directory and the earlier nested layout are supported. Use
+``verify_current_submission_assets.py`` for the current eight-figure
+Human Genomics package.
 """
 
 from __future__ import annotations

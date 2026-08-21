@@ -40,10 +40,11 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 ## Not redistributed
 
 - The complete publication supplementary workbooks are not duplicated into GitHub.
-  `PUBLICATION_ASSET_CHECKSUMS.tsv` and
-  `scripts/publication_tables/verify_submission_assets.py` verify the separate
-  journal files, including 390 prescription records and the corrected 12-rule
-  table, without republishing their archived database rows as source exports.
+  `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` and
+  `scripts/publication_tables/verify_current_submission_assets.py` verify the
+  current separate journal files without republishing their database-derived
+  rows as source exports. `PUBLICATION_ASSET_CHECKSUMS.tsv` and the archived
+  verifier retain the corresponding `v0.1.0` regression record.
 - TCMSP, SwissTargetPrediction, OMIM, GeneCards, TTD, DisGeNET, bibliographic,
   or other licensed/raw database exports. Derived associations must be reviewed
   case by case and cannot be treated as permission to republish the source dump.
@@ -58,11 +59,12 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 ## Reproducibility consequence
 
-The repository provides a complete publication-replay layer for the submitted
-figure set and a scientific-recomputation layer wherever legal, public, or
-author-reviewed inputs can be staged. It is not a self-contained from-raw
-capsule for every analysis. Author-prepared structures, licensed source
-exports, raw MD trajectories, official model assets, and reviewed participant
-design staging remain external. The exact boundary for every figure and table
-is recorded in `REPRODUCIBILITY_MATRIX.tsv` and must remain visible in the
-public README.
+The repository provides an exact current-manuscript reference and
+submission-verification layer, retains the archived `v0.1.0` replay, and
+supports scientific recomputation wherever legal, public, or author-reviewed
+inputs can be staged. It is not a self-contained from-raw capsule for every
+analysis. Author-prepared structures, licensed source exports, raw MD
+trajectories, official model assets, and reviewed participant design staging
+remain external. Current boundaries are recorded in
+`CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`; archived boundaries remain in
+`REPRODUCIBILITY_MATRIX.tsv`.
