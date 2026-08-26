@@ -117,8 +117,10 @@ MD5 `c54383bbd520f980095dedfe5334c156`).
       (2016), DOI `10.1155/2016/8656740`, Figure 1 crude product.
 - [x] Replace the eight current main-figure regression references with the
       visually approved lowercase-panel Scientific Reports files from the
-      final v2 package.
-- [x] Replace `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` with the exact final v2
+      final package. The v4 submission PNGs are pixel-identical to these frozen
+      references and carry the final 300 dpi metadata; the frozen repository
+      copies retain their validated original PNG encoding.
+- [x] Replace `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` with the exact final v4
       16-file Scientific Reports inventory after all files passed review.
 - [x] Run `verify_scientific_reports_submission_assets.py --inspect-workbooks`
       against a clean copy of the final package and confirm strict
@@ -126,3 +128,11 @@ MD5 `c54383bbd520f980095dedfe5334c156`).
       and absence of forbidden graphical-abstract/main-table extras.
 - [x] Rebuild `MANIFEST.tsv` last, run all repository validators, review the
       staged diff, and confirm author authorization before commit and push.
+
+The final v4 checksum mapping was prepared and validated locally on 2026-08-26.
+The repository's frozen publication-reference binaries were intentionally left
+unchanged because the v4 figures are pixel-identical and differ only in PNG
+metadata. The author explicitly authorized the Scientific Reports repository
+update on 2026-08-26. The archived Zenodo version DOI, files and tag remain
+unchanged; only the existing record metadata may identify the live transfer
+branch and final manuscript-asset mapping.

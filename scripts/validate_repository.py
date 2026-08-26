@@ -439,9 +439,16 @@ def validate_repository() -> int:
         filename = f"Figure_{index}.png"
         reference = ROOT / "reference_outputs" / "current_manuscript" / filename
         row = current_asset_by_name[filename]
+        reference_bytes = row.get("reference_bytes", "").strip()
+        reference_sha256 = row.get("reference_sha256", "").strip()
+        if not reference_bytes or len(reference_sha256) != 64:
+            fail(f"Missing frozen-reference checksum record: {filename}")
         data = reference.read_bytes()
-        if len(data) != int(row["bytes"]) or digest_bytes(data) != row["sha256"]:
-            fail(f"Current figure checksum table mismatch: {filename}")
+        if (
+            len(data) != int(reference_bytes)
+            or digest_bytes(data) != reference_sha256
+        ):
+            fail(f"Frozen current-figure reference mismatch: {filename}")
     if not MANIFEST_PATH.is_file():
         fail("Missing release file: MANIFEST.tsv")
     rows = parse_manifest(canonical_bytes(MANIFEST_PATH))
