@@ -41,10 +41,15 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 - The complete publication supplementary workbooks are not duplicated into GitHub.
   `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` and
-  `scripts/publication_tables/verify_current_submission_assets.py` verify the
-  current separate journal files without republishing their database-derived
-  rows as source exports. `PUBLICATION_ASSET_CHECKSUMS.tsv` and the archived
-  verifier retain the corresponding `v0.1.0` regression record.
+  `scripts/publication_tables/verify_scientific_reports_submission_assets.py`
+  verify the separately held Scientific Reports transfer files without
+  republishing their database-derived rows as source exports.
+  `PUBLICATION_ASSET_CHECKSUMS.tsv` and the archived verifiers retain the
+  corresponding `v0.1.0` and prior-submission regression records.
+- The prior Human Genomics graphical abstract is retained only as a provenance
+  record and is excluded from the Scientific Reports transfer package. Its
+  documented third-party source licenses do not transfer ownership of the
+  original photographs to this repository.
 - TCMSP, SwissTargetPrediction, OMIM, GeneCards, TTD, DisGeNET, bibliographic,
   or other licensed/raw database exports. Derived associations must be reviewed
   case by case and cannot be treated as permission to republish the source dump.
@@ -59,12 +64,13 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 
 ## Reproducibility consequence
 
-The repository provides an exact current-manuscript reference and
+The repository provides a current-manuscript reference and
 submission-verification layer, retains the archived `v0.1.0` replay, and
 supports scientific recomputation wherever legal, public, or author-reviewed
 inputs can be staged. It is not a self-contained from-raw capsule for every
 analysis. Author-prepared structures, licensed source exports, raw MD
 trajectories, official model assets, and reviewed participant design staging
-remain external. Current boundaries are recorded in
+remain external. Exact transfer-package hashes were recorded after final asset
+generation and visual approval. Current boundaries are recorded in
 `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`; archived boundaries remain in
 `REPRODUCIBILITY_MATRIX.tsv`.

@@ -1,0 +1,11 @@
+table_order	table	source_table_from_prior_package	scientific_reports_filename	content	verification_scope
+1	Supplementary Table S1	Table S1	Supplementary_Tables_S1-S6.xlsx	Prescription records and manual curation	Scientific Reports numbering unchanged; final workbook checksum verified
+2	Supplementary Table S2	Table S2	Supplementary_Tables_S1-S6.xlsx	Prescription-mining and herb-frequency outputs	Scientific Reports numbering unchanged; final workbook checksum verified
+3	Supplementary Table S3	Table S3	Supplementary_Tables_S1-S6.xlsx	Association rules and core herb combination	Scientific Reports numbering unchanged; final workbook checksum verified
+4	Supplementary Table S4	Table S4	Supplementary_Tables_S1-S6.xlsx	Candidate-pool construction and source provenance	Scientific Reports numbering unchanged; final workbook checksum verified
+5	Supplementary Table S5	Table S5	Supplementary_Tables_S1-S6.xlsx	Multi-source candidate prioritization and sensitivity analyses	Scientific Reports numbering unchanged; final workbook checksum verified
+6	Supplementary Table S6	Table S6	Supplementary_Tables_S1-S6.xlsx	Candidate annotation, localization and intended investigation class	Scientific Reports numbering unchanged; final workbook checksum verified
+7	Supplementary Table S7	Table S10	Supplementary_Table_S7.xlsx	Donor recovery, Geneformer perturbation, stability, calibration and external sensitivity analyses	Renumbered to satisfy strict first-citation order; final workbook checksum verified
+8	Supplementary Table S8	Table S8	Supplementary_Table_S8.xlsx	scTenifoldKnk perturbation and matched-control sensitivity analyses	Scientific Reports number retained; final workbook checksum verified
+9	Supplementary Table S9	Table S7	Supplementary_Table_S9.xlsx	Complete docking results and representative structural follow-up	Renumbered to satisfy strict first-citation order; final workbook checksum verified
+10	Supplementary Table S10	Table S9	Supplementary_Table_S10.xlsx	Database-specific search concepts, eligibility criteria and manual prescription-curation framework	Renumbered to satisfy strict first-citation order; final workbook checksum verified

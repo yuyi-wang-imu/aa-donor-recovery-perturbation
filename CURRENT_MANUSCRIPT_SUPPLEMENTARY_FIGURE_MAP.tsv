@@ -1,17 +1,17 @@
-page	figure	content	verification_scope
-1	Figure S1	Literature retrieval, manual verification and prescription construction	Final PDF page and label verified
-2	Figure S2	Detailed prescription-mining results	Flattened 300-dpi page; no duplicate hidden text layer
-3	Figure S3	CD34+ HSPC detection coverage	Final PDF page and label verified
-4	Figure S4	Independent lineage-negative CD34+ bulk context	Final PDF page and label verified
-5	Figure S5	Verified CD34+ HSPC network inputs and parameters	Final PDF page and label verified
-6	Figure S6	Bone-marrow module-localization robustness	Legend moved outside the plotting region; reviewed 9/9, 8/9 and 7/9 values unchanged
-7	Figure S7	Complete receptor-ligand docking-score matrix	Redundant page-level title removed; complete 138-pair matrix retained
-8	Figure S8	scTenifoldKnk matched-control sensitivity	Final PDF page and label verified
-9	Figure S9	Geneformer recovery-axis and donor-stability analyses	Final PDF page and label verified
-10	Figure S10	Geneformer ablation, external-cohort and cross-model analyses	Final PDF page and label verified
-11	Figure S11	Prescription network and candidate-construction workflow	Final PDF page and label verified
-12	Figure S12	Complete 18-pose overview from the six-receptor screen	Final PDF page contains only the complete overview; obsolete contact-map panels removed
-13	Figure S13	TOP2A targeted screening and HIF1A receptor-model score screening	Final PDF page and label verified
-14	Figure S14	TOP2A molecular-dynamics quality control	Final PDF page and label verified
-15	Figure S15	HIF1A-ARNT apo and butin-started molecular-dynamics comparison	Final PDF page and label verified
-16	Figure S16	HIF1A pocket-geometry analyses	Final PDF page verified; stray panel character removed
+figure_order	figure	source_figure_from_prior_package	content	verification_scope
+1	Figure S1	Figure S1	Literature retrieval, manual verification and prescription construction	Final composite page, label and checksum verified
+2	Figure S2	Figure S2	Detailed prescription-mining results	Flattened 300-dpi page verified; no duplicate hidden text layer
+3	Figure S3	Figure S11	Prescription network and candidate-construction workflow	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+4	Figure S4	Figure S3	CD34+ HSPC detection coverage	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+5	Figure S5	Figure S4	Independent lineage-negative CD34+ bulk context	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+6	Figure S6	Figure S5	Verified CD34+ HSPC network inputs and parameters	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+7	Figure S7	Figure S6	Bone-marrow module-localization robustness	Renumbered to satisfy strict first-citation order; reviewed 9/9, 8/9 and 7/9 values unchanged; final checksum verified
+8	Figure S8	Figure S9	Geneformer recovery-axis and donor-stability analyses	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+9	Figure S9	Figure S10	Geneformer ablation, external-cohort and cross-model analyses	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+10	Figure S10	Figure S8	scTenifoldKnk matched-control sensitivity	Renumbered to satisfy strict first-citation order; final composite page, label and checksum verified
+11	Figure S11	Figure S7	Complete receptor-ligand docking-score matrix	Renumbered to satisfy strict first-citation order; redundant page-level title removed, complete 138-pair matrix retained and final checksum verified
+12	Figure S12	Figure S12	Complete 18-pose overview from the six-receptor screen	Final composite page contains only the complete overview; obsolete contact-map panels removed; checksum verified
+13	Figure S13	Figure S13	TOP2A targeted screening and HIF1A receptor-model score screening	Final composite page, label and checksum verified
+14	Figure S14	Figure S14	TOP2A molecular-dynamics quality control	Final composite page, label and checksum verified
+15	Figure S15	Figure S15	HIF1A-ARNT apo and butin-started molecular-dynamics comparison	Final composite page, label and checksum verified
+16	Figure S16	Figure S16	HIF1A pocket-geometry analyses	Stray panel character removed; final composite page, label and checksum verified

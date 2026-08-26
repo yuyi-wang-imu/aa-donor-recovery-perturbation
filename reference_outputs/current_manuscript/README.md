@@ -1,10 +1,13 @@
 # Current-manuscript image references
 
-This directory contains the eight main figures and the exact-title photographic
-graphical abstract used by the current Human Genomics submission package. Their
-filenames, byte sizes and SHA-256 values are recorded in
-`CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`. The graphical-abstract image sources
-and reuse boundaries are documented in
+This directory contains the eight visually approved, lowercase-panel main-
+figure regression references from the final Scientific Reports transfer
+package. Their exact byte sizes and SHA-256 values are recorded in
+`CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`.
+
+The photographic graphical abstract is a retained asset from the prior Human
+Genomics submission and is **not** part of the Scientific Reports transfer
+package. Its image sources and reuse boundaries are documented in
 `GRAPHICAL_ABSTRACT_IMAGE_PROVENANCE.md`.
 
 These images are regression references, not analytical inputs. Figure 8 can be

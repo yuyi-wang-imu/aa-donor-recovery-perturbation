@@ -48,14 +48,23 @@ traceability. Maintenance commits on the default branch, including the
 2026-08-20 manuscript-structure alignment, do not alter the archived ZIP, tag,
 or DOI.
 
-The current Human Genomics manuscript uses eight main figures: CD34+/WGCNA;
+The current Scientific Reports transfer manuscript uses eight main figures:
+CD34+/WGCNA;
 bone-marrow single-cell context; candidate annotation and sensitivity; the
 three-herb/compound/candidate network; donor recovery plus Geneformer;
 scTenifoldKnk; representative docking hypotheses; and molecular dynamics.
-Supplementary Figures run from S1 to S16; the original prescription-mining and
-candidate-construction workflow is retained in Figure S11. The current
+Supplementary Figures S1-S16 and Supplementary Tables S1-S10 are renumbered in
+strict first-citation order. In that transfer numbering, the
+prescription/candidate-construction workflow is Supplementary Fig. S3, the
+Geneformer extensions are Supplementary Figs. S8-S9 and Supplementary Table
+S7, scTenifoldKnk sensitivity is Supplementary Fig. S10 and Supplementary
+Table S8, and the complete docking screen is Supplementary Fig. S11 and
+Supplementary Table S9. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
+Scientific Reports does not use the prior graphical abstract, and the two
+standalone main-table files are not transfer-package assets; their information
+is retained in the manuscript or supplementary information.
 The archived replay tables and reference images distributed in `v0.1.0` retain
 their original Figure 1-9 and Figure S1-S10 numbering. Files such as
 `FIGURE_SOURCE_MAP.tsv`, `REPRODUCIBILITY_MATRIX.tsv`, and
@@ -77,16 +86,22 @@ The source code and supporting files are maintained at
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
 - `reference_outputs/`: publication figures used as regression-test references.
-- `reference_outputs/current_manuscript/`: the eight current main figures and
-  graphical abstract, with exact checksums.
+- `reference_outputs/current_manuscript/`: the eight current main-figure
+  regression references plus the prior Human Genomics graphical abstract,
+  which is retained for provenance but excluded from the Scientific Reports
+  package.
 - `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`: current Figure 1-8 source and
   access boundaries.
 - `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`: current publication replay
   versus scientific recomputation.
-- `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: exact 19-file Human Genomics
-  submission-package inventory used by the current verifier.
-- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv`: page-level Figure S1-S16
-  content and verification scope.
+- `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: exact current submission-package
+  inventory for the visually approved 16-file Scientific Reports package.
+- `SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv`: exact planned 16-file transfer
+  inventory, final byte sizes, SHA-256 values and verification status.
+- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv`: strict first-citation
+  Figure S1-S16 order, prior-package source number and verification scope.
+- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`: Scientific Reports
+  Supplementary Table S1-S10 renumbering and source-workbook provenance.
 - `FIGURE_SOURCE_MAP.tsv`: archive-specific Figure 1-9 and supplementary
   source mapping for the archived `v0.1.0` replay.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
@@ -123,20 +138,20 @@ the scientific analyses.
 Reproducibility is reported in four layers and the distinction is mandatory:
 
 1. **Current submission verification** checks the separately held flat
-   19-file Human Genomics package against exact byte sizes and SHA-256 values,
-   verifies Figure 1-8 dimensions and resolution metadata, verifies the
-   920 x 300-pixel graphical abstract and 16-page supplementary PDF, and can
-   inspect core workbook invariants. The package is not copied into GitHub.
+   16-file Scientific Reports package against exact byte sizes and SHA-256
+   values, verifies Figure 1-8 dimensions and resolution metadata, verifies the
+   composite `Supplementary_Information.pdf`, and inspects the five
+   Supplementary Table workbooks. The graphical abstract and standalone main
+   tables are forbidden package extras. The package is not copied into GitHub.
 2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
    from the repository-distributed time series, C-alpha RMSF and final-20-ns
    summaries. Raw trajectories, topologies and checkpoints are excluded.
 3. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
-   intermediates. The submission-asset verifier separately checks the
-   ten-page Figure S1-S10 PDF submitted as Additional file 2. Independent
-   Figure S9 and S10 files remain regression references, not separate
-   Additional files.
+   intermediates. The archived submission-asset verifier separately checks the
+   historical ten-page Figure S1-S10 PDF. Independent Figure S9 and S10 files
+   remain archive regression references rather than current transfer assets.
 4. **Scientific recomputation** reruns analytical models from public,
    author-staged, or licensed inputs. Some workflows require separately
    obtained GEO files, reviewed design metadata, official model assets,
@@ -147,10 +162,14 @@ To verify the current submission package, run:
 ```powershell
 $submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
 if (-not $submissionPackage) { throw "Set PUBLICATION_SUBMISSION_PACKAGE to the flat submission-package directory." }
-py -3 -B scripts/publication_tables/verify_current_submission_assets.py `
+py -3 -B scripts/publication_tables/verify_scientific_reports_submission_assets.py `
   "$submissionPackage" `
   --inspect-workbooks
 ```
+
+The prior `verify_current_submission_assets.py` remains available to audit the
+historical Human Genomics package; it must not be used to approve the current
+Scientific Reports transfer.
 
 To rerender the current Figure 8 from the packaged derived tables, run the
 following command from the repository root with a new output directory:
@@ -162,11 +181,11 @@ $figure8Output = Join-Path $env:TEMP ("AA_current_Figure8_" + (Get-Date -Format 
   "$figure8Output"
 ```
 
-The final 16-page supplementary PDF is held with the submission package. To
-apply the reviewed visual-only correction to a separately staged source PDF,
-run the R script below with a new output directory. The correction moves the
-Figure S6 legend outside the plotting region and removes the redundant page
-title from Figure S7; pages 1-5 and 8-16 are checked for pixel equality.
+The prior 16-page figure-only PDF is retained as a source-stage asset outside
+the repository. The R helper below applies the previously reviewed visual-only
+corrections before those pages are reordered and relabelled for the Scientific
+Reports composite supplementary-information file. It is not, by itself, the
+final Scientific Reports supplement.
 
 ```powershell
 $supplementOutput = Join-Path $env:TEMP ("AA_current_supplement_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
@@ -272,8 +291,9 @@ The current manuscript uses Figure 1-8. Exact current references are stored in
 current five-complex derived tables and reproduces the submitted geometry to
 the documented pixel tolerance. Figure 7 is retained as an exact final-image
 reference because prepared receptor, ligand, pose and visualization assets are
-not redistributed. Supplementary Figures S1-S16 are verified as a separately
-held 16-page PDF using the current submission-asset verifier.
+not redistributed. Supplementary Figures S1-S16 are verified within the
+separately held Scientific Reports composite supplementary-information PDF
+using the current submission-asset verifier.
 
 The archived `v0.1.0` references remain available for historical regression:
 

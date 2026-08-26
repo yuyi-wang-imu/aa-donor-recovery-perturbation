@@ -98,3 +98,31 @@ MD5 `c54383bbd520f980095dedfe5334c156`).
       manuscript, cover letter or supplementary workbooks into GitHub.
 - [x] Keep prepared docking structures, ligand/pose projects, licensed source
       exports, model weights and private design metadata outside the repository.
+
+## Scientific Reports transfer alignment (2026-08-26)
+
+- [x] Create the local branch `scientific-reports-transfer-20260826` from
+      `74d91070c762bd464c104d57d38ee1eb97a1e70a` without changing remote state.
+- [x] Preserve the immutable `v0.1.0` tag, archived ZIP and version DOI
+      `10.5281/zenodo.21837457`; do not create a new tag, release or DOI for this
+      journal transfer.
+- [x] Retain the Human Genomics package history as provenance while defining a
+      separate 16-file Scientific Reports transfer package.
+- [x] Exclude the prior graphical abstract and standalone main-table files from
+      the Scientific Reports package; retain their scientific content or
+      provenance records where applicable.
+- [x] Define strict first-citation renumbering for Supplementary Figs. S1-S16
+      and Supplementary Tables S1-S10 in the current mapping files.
+- [x] Correct the retained Cuscutae Semen image provenance to Song Yang et al.
+      (2016), DOI `10.1155/2016/8656740`, Figure 1 crude product.
+- [x] Replace the eight current main-figure regression references with the
+      visually approved lowercase-panel Scientific Reports files from the
+      final v2 package.
+- [x] Replace `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` with the exact final v2
+      16-file Scientific Reports inventory after all files passed review.
+- [x] Run `verify_scientific_reports_submission_assets.py --inspect-workbooks`
+      against a clean copy of the final package and confirm strict
+      supplementary first-use order, absence of `Additional file` terminology
+      and absence of forbidden graphical-abstract/main-table extras.
+- [x] Rebuild `MANIFEST.tsv` last, run all repository validators, review the
+      staged diff, and confirm author authorization before commit and push.

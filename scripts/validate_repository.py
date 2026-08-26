@@ -88,6 +88,8 @@ def validate_repository() -> int:
         "CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv",
         "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv",
         "CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv",
+        "CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv",
+        "SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv",
         "GITHUB_ZENODO_RELEASE_CHECKLIST.md",
         "WORKFLOW_ORDER.tsv",
         "config/analysis_parameters.tsv",
@@ -127,6 +129,7 @@ def validate_repository() -> int:
         "scripts/publication_figures/verify_publication_figures.py",
         "scripts/publication_tables/verify_submission_assets.py",
         "scripts/publication_tables/verify_current_submission_assets.py",
+        "scripts/publication_tables/verify_scientific_reports_submission_assets.py",
         "derived_data/molecular_dynamics/Figure_7_five_system_md_source_data_20260725_v5_pbc_audited.csv",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv",
@@ -258,7 +261,10 @@ def validate_repository() -> int:
         "CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv",
         "CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv",
         "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv",
+        "CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv",
+        "SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv",
         "verify_current_submission_assets.py",
+        "verify_scientific_reports_submission_assets.py",
         "render_current_figure8_md.R",
         "build_current_supplementary_visual_corrections.R",
     ]
@@ -295,14 +301,14 @@ def validate_repository() -> int:
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S6_ModuleLocalizationRobustness_20260726.pdf": "B6500C86F945908F45F8C9687D9DFB2DDA2E194148D20B1ECD4C19794048B7D1",
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S7_DockingMatrixOnly_20260726.pdf": "B1DCDDBEEB16E6702447D31C26A56D7266DD1F0F4BA7D03247C785E7956661AE",
         "derived_data/publication_intermediates/supplementary_pages/Supplementary_Figure_S8_MatchedControlSensitivity_20260726.pdf": "737AE4F7C595A85FF03523889A6589C18F68B186A26F8FA8BC006860C13CD3C5",
-        "reference_outputs/current_manuscript/Figure_1.png": "7F803D3150BA552A7BE4BF6D966C3D96CCE066ED2BF1BF04D3700B2CA47CFBC1",
-        "reference_outputs/current_manuscript/Figure_2.png": "B8166744F62B11B0071A2EC01D6E790C0CB393BA5054AC9945F954BFD83ACC22",
-        "reference_outputs/current_manuscript/Figure_3.png": "117ED322C86BFD888902FF200EA9B5B07534DAAA870CEC3A3FEAC35BB4C8FCF3",
-        "reference_outputs/current_manuscript/Figure_4.png": "922BD60B7C8931ECD23FAB7528A7E423BFA83DE32C69F37840222222E72F9CBE",
-        "reference_outputs/current_manuscript/Figure_5.png": "5CB383358B113F04FBE7F4A827817548A3E98534DF27F0EB50081DA0BACCC9CC",
-        "reference_outputs/current_manuscript/Figure_6.png": "EF41370F994774E0C46C1447E48EDF77D57E0EA4C19C757D96CAED7102A51731",
-        "reference_outputs/current_manuscript/Figure_7.png": "F620E61BC83AF0C8FA292C21F185D6A23B4BAE02C41F3FAD99331E474043FB39",
-        "reference_outputs/current_manuscript/Figure_8.png": "046BAD345A05FFC90D043B742E24A2AD82537CF1C61AD77BCB3A1BC607B6367B",
+        "reference_outputs/current_manuscript/Figure_1.png": "5C24043E35EA1FEA4CBB7B5084966EC0EC39FA2610A8F7B65077A497EFD88791",
+        "reference_outputs/current_manuscript/Figure_2.png": "8D6B96EC6D3E791232F76A80F2DDDBBFFE2FDAB77C74D68975B8B483074163C6",
+        "reference_outputs/current_manuscript/Figure_3.png": "59C45F0445F5CBA3DB8906BBADEA0ACBAFD8DD1D5B8508FF00A1C5E4D5C980FC",
+        "reference_outputs/current_manuscript/Figure_4.png": "F54C0CCB1066757A67ADA3F6FCA2E81AC724C8CB30E176A7075AD64F028EF24E",
+        "reference_outputs/current_manuscript/Figure_5.png": "A651E2F574A47463D7494D48904663039DD33A82DC5AB25E01944EF637765E63",
+        "reference_outputs/current_manuscript/Figure_6.png": "491C94D67A2EA17A234F444D085C50A2C9885CE0AB62C2989092782E4E6D848A",
+        "reference_outputs/current_manuscript/Figure_7.png": "416206B03F0165276C51820F1A9824E968DD3CC8D6BE52DFEF52A4D23216AA19",
+        "reference_outputs/current_manuscript/Figure_8.png": "0B90206F3D90ECFAEC2616F10BB11DAA0702B44B13CF68F8183CA6A5EEA221AC",
         "reference_outputs/current_manuscript/Graphical_Abstract.png": "B792B411849F8199031DE6170FCE0CDDBED76717FBD38F6DBF309C9821FB9E07",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz": "EFFAF8AA397AF7DDF1365FE6A8246B2B46280E8E532FB175587A5131DF5D5710",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv": "DA6344A272C1C688641BC8F7B4F7BC568A658103BFB80F2F57BB7764FE7E6D13",
@@ -347,6 +353,44 @@ def validate_repository() -> int:
     if any(len(row.get("sha256", "")) != 64 for row in publication_assets):
         fail("Invalid SHA-256 entry in PUBLICATION_ASSET_CHECKSUMS.tsv")
 
+    with (ROOT / "SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv").open(
+        "r", encoding="utf-8-sig", newline=""
+    ) as handle:
+        transfer_plan = list(csv.DictReader(handle, delimiter="\t"))
+    expected_transfer_names = {
+        "Manuscript.docx",
+        "Cover_Letter.docx",
+        *(f"Figure_{index}.png" for index in range(1, 9)),
+        "Supplementary_Information.pdf",
+        "Supplementary_Tables_S1-S6.xlsx",
+        *(f"Supplementary_Table_S{index}.xlsx" for index in range(7, 11)),
+    }
+    actual_transfer_names = {row.get("filename", "") for row in transfer_plan}
+    if len(transfer_plan) != 16 or actual_transfer_names != expected_transfer_names:
+        missing = sorted(expected_transfer_names - actual_transfer_names)
+        extra = sorted(actual_transfer_names - expected_transfer_names)
+        fail(f"Scientific Reports transfer-plan mismatch: missing={missing}, extra={extra}")
+    expected_transfer_roles = {
+        "manuscript": 1,
+        "cover_letter": 1,
+        "main_figure": 8,
+        "supplementary_information": 1,
+        "supplementary_table": 5,
+    }
+    observed_transfer_roles = {
+        role: sum(row.get("package_role") == role for row in transfer_plan)
+        for role in expected_transfer_roles
+    }
+    if observed_transfer_roles != expected_transfer_roles:
+        fail(f"Unexpected Scientific Reports transfer roles: {observed_transfer_roles}")
+    for row in transfer_plan:
+        size = row.get("final_bytes", "").strip()
+        digest = row.get("final_sha256", "").strip()
+        if bool(size) != bool(digest):
+            fail(f"Partial transfer hash record for {row.get('filename', '')}")
+        if size and (int(size) <= 0 or len(digest) != 64):
+            fail(f"Invalid transfer size/hash record for {row.get('filename', '')}")
+
     with (ROOT / "CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv").open(
         "r", encoding="utf-8-sig", newline=""
     ) as handle:
@@ -354,29 +398,22 @@ def validate_repository() -> int:
     expected_current_names = {
         "Manuscript.docx",
         *(f"Figure_{index}.png" for index in range(1, 9)),
-        "Table_1.docx",
-        "Table_2.docx",
-        "Graphical_Abstract.png",
         "Cover_Letter.docx",
-        "Additional_file_1_Supplementary_Tables_S1-S6.xlsx",
-        "Additional_file_2_Supplementary_Figures_S1-S16.pdf",
-        "Additional_file_3_Supplementary_Table_S7.xlsx",
-        "Additional_file_4_Supplementary_Table_S8.xlsx",
-        "Additional_file_5_Supplementary_Table_S10.xlsx",
-        "Additional_file_6_Supplementary_Table_S9.xlsx",
+        "Supplementary_Information.pdf",
+        "Supplementary_Tables_S1-S6.xlsx",
+        *(f"Supplementary_Table_S{index}.xlsx" for index in range(7, 11)),
     }
     actual_current_names = {row.get("filename", "") for row in current_assets}
-    if len(current_assets) != 19 or actual_current_names != expected_current_names:
+    if len(current_assets) != 16 or actual_current_names != expected_current_names:
         missing = sorted(expected_current_names - actual_current_names)
         extra = sorted(actual_current_names - expected_current_names)
         fail(f"Current submission-asset mismatch: missing={missing}, extra={extra}")
     expected_current_roles = {
         "manuscript": 1,
         "main_figure": 8,
-        "main_table": 2,
-        "graphical_abstract": 1,
         "cover_letter": 1,
-        "additional_file": 6,
+        "supplementary_information": 1,
+        "supplementary_table": 5,
     }
     observed_current_roles = {
         role: sum(row.get("package_role") == role for row in current_assets)
@@ -390,6 +427,14 @@ def validate_repository() -> int:
     ):
         fail("Invalid current submission-asset size or SHA-256 entry")
     current_asset_by_name = {row["filename"]: row for row in current_assets}
+    transfer_plan_by_name = {row["filename"]: row for row in transfer_plan}
+    for filename, row in current_asset_by_name.items():
+        plan_row = transfer_plan_by_name[filename]
+        if (
+            row["bytes"] != plan_row["final_bytes"]
+            or row["sha256"] != plan_row["final_sha256"]
+        ):
+            fail(f"Transfer plan/checksum mismatch: {filename}")
     for index in range(1, 9):
         filename = f"Figure_{index}.png"
         reference = ROOT / "reference_outputs" / "current_manuscript" / filename
@@ -397,15 +442,6 @@ def validate_repository() -> int:
         data = reference.read_bytes()
         if len(data) != int(row["bytes"]) or digest_bytes(data) != row["sha256"]:
             fail(f"Current figure checksum table mismatch: {filename}")
-    graphical = ROOT / "reference_outputs" / "current_manuscript" / "Graphical_Abstract.png"
-    graphical_row = current_asset_by_name["Graphical_Abstract.png"]
-    graphical_data = graphical.read_bytes()
-    if (
-        len(graphical_data) != int(graphical_row["bytes"])
-        or digest_bytes(graphical_data) != graphical_row["sha256"]
-    ):
-        fail("Current graphical-abstract checksum table mismatch")
-
     if not MANIFEST_PATH.is_file():
         fail("Missing release file: MANIFEST.tsv")
     rows = parse_manifest(canonical_bytes(MANIFEST_PATH))
