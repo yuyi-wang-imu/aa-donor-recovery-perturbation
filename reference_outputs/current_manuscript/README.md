@@ -22,9 +22,9 @@ redistributed. The source and access boundaries for every current figure are
 specified in `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv` and
 `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`.
 
-The final v4 manuscript contains 103 sequentially cited references; reference
-restoration changed only the manuscript file, not the eight approved figure
-binaries or the archived analysis release. The archived `v0.1.0` Figure 1-9
+The final v11 manuscript contains 104 sequentially cited references;
+manuscript-only revisions did not change the eight approved figure binaries or
+the archived analysis release. The archived `v0.1.0` Figure 1-9
 references remain unchanged in the sibling
 `main_figures` directory. Do not use the archived numbering to verify the
 current eight-figure manuscript.
