@@ -1,6 +1,6 @@
 # Current Figure 8 derived source data
 
-These three files support the current Human Genomics Figure 8 without
+These three files support the current Scientific Reports Figure 8 without
 redistributing raw molecular-dynamics trajectories, topologies, checkpoints or
 server logs.
 
