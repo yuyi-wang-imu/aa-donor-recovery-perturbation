@@ -120,7 +120,7 @@ MD5 `c54383bbd520f980095dedfe5334c156`).
       final package. The v4 submission PNGs are pixel-identical to these frozen
       references and carry the final 300 dpi metadata; the frozen repository
       copies retain their validated original PNG encoding.
-- [x] Replace `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` with the exact final v4
+- [x] Replace `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` with the exact final v7
       16-file Scientific Reports inventory after all files passed review.
 - [x] Run `verify_scientific_reports_submission_assets.py --inspect-workbooks`
       against a clean copy of the final package and confirm strict
@@ -129,7 +129,7 @@ MD5 `c54383bbd520f980095dedfe5334c156`).
 - [x] Rebuild `MANIFEST.tsv` last, run all repository validators, review the
       staged diff, and confirm author authorization before commit and push.
 
-The final v4 checksum mapping was prepared and validated locally on 2026-08-26.
+The final v7 checksum mapping was prepared and validated locally on 2026-08-27.
 The repository's frozen publication-reference binaries were intentionally left
 unchanged because the v4 figures are pixel-identical and differ only in PNG
 metadata. The author explicitly authorized the Scientific Reports repository
