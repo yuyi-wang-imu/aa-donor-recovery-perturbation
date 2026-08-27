@@ -57,8 +57,12 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
   metadata from the cited public GEO studies and review it under applicable
   data-use and privacy requirements.
 - Prepared receptor/ligand structures and exact pose-visualization project files.
-- Raw molecular-dynamics topology, checkpoint, energy and trajectory files
-  (`*.tpr`, `*.cpt`, `*.edr`, `*.xtc`, `*.trr`, `*.dcd`, `*.nc`).
+- Raw molecular-dynamics topology, checkpoint, energy and trajectory files are
+  not stored in GitHub because of their size. The complete saved 0-100 ns
+  production records for five ligand-containing complexes and one HIF1A-ARNT
+  apo reference are distributed in a separate, file-level documented Zenodo
+  dataset: <https://doi.org/10.5281/zenodo.22131869>. Unused `.trr`, benchmark
+  and temporary trajectories are not part of that public dataset.
 - Secrets, credentials, API tokens, private keys, local `.env` files, personal
   paths, model weights, caches, and generated output directories.
 
@@ -68,9 +72,10 @@ The repository provides a current-manuscript reference and
 submission-verification layer, retains the archived `v0.1.0` replay, and
 supports scientific recomputation wherever legal, public, or author-reviewed
 inputs can be staged. It is not a self-contained from-raw capsule for every
-analysis. Author-prepared structures, licensed source exports, raw MD
-trajectories, official model assets, and reviewed participant design staging
-remain external. Exact transfer-package hashes were recorded after final asset
+analysis. Licensed source exports, official model assets and reviewed
+participant design staging remain external. The six MD production records are
+available through the companion dataset DOI above rather than GitHub. Exact
+transfer-package hashes were recorded after final asset
 generation and visual approval. Current boundaries are recorded in
 `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`; archived boundaries remain in
 `REPRODUCIBILITY_MATRIX.tsv`.

@@ -85,6 +85,8 @@ The source code and supporting files are maintained at
 - `config/`: parameters and external-input staging template.
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
+- `MD_DATASET.md`: immutable companion-dataset DOI, six-system inventory and
+  dataset-to-figure mapping for the complete saved molecular-dynamics records.
 - `reference_outputs/`: publication figures used as regression-test references.
 - `reference_outputs/current_manuscript/`: the eight current main-figure
   regression references plus the prior Human Genomics graphical abstract,
@@ -145,7 +147,9 @@ Reproducibility is reported in four layers and the distinction is mandatory:
    tables are forbidden package extras. The package is not copied into GitHub.
 2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
    from the repository-distributed time series, C-alpha RMSF and final-20-ns
-   summaries. Raw trajectories, topologies and checkpoints are excluded.
+   summaries. Raw trajectories, topologies and checkpoints are not stored in
+   GitHub; the complete saved 0-100 ns records are archived in the companion
+   Zenodo dataset at <https://doi.org/10.5281/zenodo.22131869>.
 3. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
@@ -273,8 +277,10 @@ The recorded model SHA-256 was
 ## Inputs not redistributed
 
 Licensed database exports, prepared docking structures, model weights,
-official third-party source snapshots, private participant design metadata,
-and raw/topology/trajectory MD files are excluded. The journal supplementary
+official third-party source snapshots and private participant design metadata
+are excluded. Large raw/topology/trajectory MD files are excluded from GitHub
+but archived in the companion Zenodo dataset
+<https://doi.org/10.5281/zenodo.22131869>. The journal supplementary
 workbooks are verified as separate publication assets rather than duplicated
 into GitHub; this avoids treating archived database rows in the submission
 workbook as a license to redistribute the underlying source export. Included
@@ -289,9 +295,12 @@ The current manuscript uses Figure 1-8. Exact current references are stored in
 `reference_outputs/current_manuscript/`; source and access boundaries are in
 `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`. Figure 8 is rerenderable from the
 current five-complex derived tables and reproduces the submitted geometry to
-the documented pixel tolerance. Figure 7 is retained as an exact final-image
-reference because prepared receptor, ligand, pose and visualization assets are
-not redistributed. Supplementary Figures S1-S16 are verified within the
+the documented pixel tolerance. The final source tables for Supplementary
+Figures S14-S16 are also distributed under `derived_data/molecular_dynamics/`.
+The six complete saved 0-100 ns trajectory packages are archived separately at
+<https://doi.org/10.5281/zenodo.22131869>. Figure 7 is retained as an exact
+final-image reference because prepared docking-visualization assets are not
+redistributed. Supplementary Figures S1-S16 are verified within the
 separately held Scientific Reports composite supplementary-information PDF
 using the current submission-asset verifier.
 
@@ -330,9 +339,11 @@ Software availability information for manuscript reporting:
   documented in `environment/`, `config/input_paths.example.tsv`, and
   `DATA_AND_LICENSES.md`.
 - License: BSD-3-Clause for repository-authored code.
-- Restrictions: external software, data, models, licensed databases, prepared
-  structures and raw molecular-dynamics trajectories retain their own access
-  terms and are not redistributed here.
+- Restrictions: external software, models, licensed databases and prepared
+  docking-visualization projects retain their own access terms. Large
+  molecular-dynamics files are not committed to GitHub; their run-specific
+  public archive and file-level rights statements are at
+  <https://doi.org/10.5281/zenodo.22131869>.
 
 The DOI identifies the archived `v0.1.0` release. Subsequent maintenance on
 the default branch does not alter that archived release or its DOI. The current

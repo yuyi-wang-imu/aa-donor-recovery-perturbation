@@ -11,7 +11,7 @@ GSE247531_CD34_metadata	strict CD34 WGCNA	Participant and timepoint metadata	/pa
 GSE247531_BM_counts	bone-marrow RPCA; computational perturbation	Bone-marrow single-cell counts staged from GSE247531	/path/to/GSE247531_BMcounts.Rdata.gz	public GEO input
 docking_receptors	docking matrix	Prepared receptor PDBQT directory	/path/to/receptors	author-prepared; not redistributed
 docking_ligands	docking matrix	Prepared ligand PDBQT directory	/path/to/ligands	author-prepared; not redistributed
-md_trajectories	MD trajectory analysis	Five topology and trajectory sets	/path/to/md_systems	large author-generated files; not redistributed
+md_trajectories	MD trajectory analysis	Six production packages: five ligand-complex and one apo-reference topology/trajectory sets	/path/to/md_systems	large author-generated files; archived at https://doi.org/10.5281/zenodo.22131869 rather than GitHub
 GSE247531_CD34_double_gzip	Geneformer balanced-input preparation	Public GSE247531 CD34 count archive used by the public preparation script	/path/to/GSE247531_CD34counts.Rdata.gz	public GEO input; not redistributed
 GSE247531_CD34_design	Geneformer balanced-input preparation	Participant/timepoint design table with the required documented columns	/path/to/GSE247531_CD34_design_table.tsv	derived metadata; release only after author privacy review
 geneformer_source_dir	Geneformer perturbation	Official Geneformer source snapshot containing V2 dictionaries	/path/to/Geneformer	third-party Apache-2.0 source; obtain from official repository

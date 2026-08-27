@@ -1,8 +1,9 @@
 # Current Figure 8 derived source data
 
 These three files support the current Scientific Reports Figure 8 without
-redistributing raw molecular-dynamics trajectories, topologies, checkpoints or
-server logs.
+placing multi-gigabyte molecular-dynamics trajectories, topologies, checkpoints
+or server logs in GitHub. The complete saved 0-100 ns system records are
+archived separately at <https://doi.org/10.5281/zenodo.22131869>.
 
 - `Figure8_five_candidates_time_series_source.tsv.gz` contains 10,001 frames
   from 0 to 100 ns for each of five ligand-containing complexes and four

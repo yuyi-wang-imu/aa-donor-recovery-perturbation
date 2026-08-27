@@ -17,7 +17,9 @@ strict_wgcna	modules_including_grey	27	modules
 docking	receptors	6	proteins
 docking	ligands	23	compounds
 docking	matrix_runs	138	receptor-ligand combinations
-molecular_dynamics	systems	5	representative complexes
+molecular_dynamics	systems	6	five ligand-containing complexes plus one apo reference
+molecular_dynamics	ligand_complexes	5	Geneformer-aligned candidate complexes
+molecular_dynamics	apo_references	1	matched exploratory HIF1A-ARNT apo reference
 molecular_dynamics	duration	100	ns per system
 scTenifoldKnk	candidates	10	prespecified genes
 scTenifoldKnk	matched_controls	200	20 per candidate
@@ -30,4 +32,4 @@ geneformer	common_seed	20260802	perturbation and bootstrap workflows
 geneformer	bootstrap_replicates	2000	donor bootstrap
 geneformer	device	CUDA	GPU used in recorded run
 geneformer	torch_version	2.4.1+cu118	recorded server runtime
-molecular_dynamics	total_duration	500	ns across five 100 ns systems
+molecular_dynamics	total_duration	600	ns across six 100 ns systems
