@@ -2,8 +2,8 @@
 
 This repository contains reproducible analysis code, configuration files,
 selected derived source tables, and publication-regression tests supporting the
-manuscript *Donor-Aware Longitudinal Transcriptomics and Bidirectional
-Geneformer Perturbation Prioritize Recovery-Aligned Genes in Aplastic Anemia*.
+manuscript *Donor-aware transcriptomics and bidirectional Geneformer
+perturbation prioritize compound-associated targets in aplastic anemia*.
 The workflow separates traceable candidate provenance from recovery-aligned
 model evidence. It integrates prescription-derived candidate construction,
 CD34+ hematopoietic transcriptomics, participant-aware co-expression analysis,
@@ -39,6 +39,22 @@ model-based prioritization rather than experimental gene editing; docking
 scores are not biochemical affinities; and single 100 ns trajectories do not
 establish direct target engagement, inhibition, or therapeutic activity.
 
+## Current submission alignment
+
+The current submission is a regular Research article for **BMC Pharmacology
+and Toxicology**. Its exact 17-file inventory and SHA-256 values are recorded
+in `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`; the complete alignment
+and data-access boundary are documented in
+`BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md`.
+
+The issued archive remains Zenodo v0.1.0,
+<https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
+issued for the complete molecular-dynamics production records. The retained
+six-system records (13.2 GB; 600 ns total) are available on reasonable request
+from Wendurige (`wendurige@imu.edu.cn`) and will be provided to editors and
+reviewers during peer review. Prior Human Genomics and Scientific Reports
+verification files are retained only as historical regression records.
+
 ## Version and publication-asset boundary
 
 Release `v0.1.0` is the immutable software snapshot archived at Zenodo and
@@ -48,7 +64,7 @@ traceability. Maintenance commits on the default branch, including the
 2026-08-20 manuscript-structure alignment, do not alter the archived ZIP, tag,
 or DOI.
 
-The current Scientific Reports transfer manuscript uses eight main figures:
+The current BMC Pharmacology and Toxicology manuscript uses eight main figures:
 CD34+/WGCNA;
 bone-marrow single-cell context; candidate annotation and sensitivity; the
 three-herb/compound/candidate network; donor recovery plus Geneformer;
@@ -62,8 +78,8 @@ Table S8, and the complete docking screen is Supplementary Fig. S11 and
 Supplementary Table S9. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
-Scientific Reports does not use the prior graphical abstract, and the two
-standalone main-table files are not transfer-package assets; their information
+The current BMC submission omits the optional prior graphical abstract, and the
+two standalone main-table files are not submission-package assets; their information
 is retained in the manuscript or supplementary information.
 The archived replay tables and reference images distributed in `v0.1.0` retain
 their original Figure 1-9 and Figure S1-S10 numbering. Files such as
@@ -85,25 +101,27 @@ The source code and supporting files are maintained at
 - `config/`: parameters and external-input staging template.
 - `environment/`: recorded software versions and install specifications.
 - `derived_data/`: selected figure source tables; no raw trajectories or model weights.
-- `MD_DATASET.md`: immutable companion-dataset DOI, six-system inventory and
-  dataset-to-figure mapping for the complete saved molecular-dynamics records.
+- `MD_DATASET.md`: six-system inventory and request-based access statement for
+  the complete saved molecular-dynamics records; no companion DOI has been issued.
 - `reference_outputs/`: publication figures used as regression-test references.
 - `reference_outputs/current_manuscript/`: the eight current main-figure
   regression references plus the prior Human Genomics graphical abstract,
-  which is retained for provenance but excluded from the Scientific Reports
-  package.
+  which is retained for provenance; the optional visual abstract is omitted
+  from the current BMC package.
 - `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`: current Figure 1-8 source and
   access boundaries.
 - `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`: current publication replay
   versus scientific recomputation.
-- `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: exact current submission-package
-  inventory for the visually approved 16-file Scientific Reports package.
+- `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`: exact current 17-file BMC
+  submission-package inventory.
+- `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: historical 16-file Scientific
+  Reports transfer inventory retained for regression only.
 - `SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv`: exact planned 16-file transfer
   inventory, final byte sizes, SHA-256 values and verification status.
 - `CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv`: strict first-citation
   Figure S1-S16 order, prior-package source number and verification scope.
-- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`: Scientific Reports
-  Supplementary Table S1-S10 renumbering and source-workbook provenance.
+- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`: current BMC Supplementary
+  Table S1-S10 numbering and source-workbook provenance.
 - `FIGURE_SOURCE_MAP.tsv`: archive-specific Figure 1-9 and supplementary
   source mapping for the archived `v0.1.0` replay.
 - `REPRODUCIBILITY_MATRIX.tsv`: publication replay versus scientific recomputation.
@@ -140,16 +158,18 @@ the scientific analyses.
 Reproducibility is reported in four layers and the distinction is mandatory:
 
 1. **Current submission verification** checks the separately held flat
-   16-file Scientific Reports package against exact byte sizes and SHA-256
-   values, verifies Figure 1-8 dimensions and resolution metadata, verifies the
-   composite `Supplementary_Information.pdf`, and inspects the five
-   Supplementary Table workbooks. The graphical abstract and standalone main
-   tables are forbidden package extras. The package is not copied into GitHub.
+   17-file BMC Pharmacology and Toxicology package against exact byte sizes and
+   SHA-256 values, verifies Figure 1-8 dimensions and resolution metadata,
+   verifies the two supplementary-figure PDFs, and inspects the five
+   supplementary-table workbooks. The optional visual abstract and standalone
+   main-table files are omitted. The package is not copied into GitHub.
 2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
    from the repository-distributed time series, C-alpha RMSF and final-20-ns
    summaries. Raw trajectories, topologies and checkpoints are not stored in
-   GitHub; the complete saved 0-100 ns records are archived in the companion
-   Zenodo dataset at <https://doi.org/10.5281/zenodo.22131869>.
+   GitHub; six complete saved 0-100 ns records (13.2 GB; 600 ns total) are
+   available on reasonable request from Wendurige (`wendurige@imu.edu.cn`),
+   including to editors and reviewers during peer review. No separate public
+   DOI has been issued for these records.
 3. **Archived publication replay** rebuilds the `v0.1.0` Figure 1-9 layouts, independent
    Figure S8-S10 outputs, and the eight-page Figure S1-S8 regression package
    from repository-distributed derived tables and approved publication
@@ -161,19 +181,12 @@ Reproducibility is reported in four layers and the distinction is mandatory:
    obtained GEO files, reviewed design metadata, official model assets,
    prepared structural inputs, or licensed database exports.
 
-To verify the current submission package, run:
-
-```powershell
-$submissionPackage = $env:PUBLICATION_SUBMISSION_PACKAGE
-if (-not $submissionPackage) { throw "Set PUBLICATION_SUBMISSION_PACKAGE to the flat submission-package directory." }
-py -3 -B scripts/publication_tables/verify_scientific_reports_submission_assets.py `
-  "$submissionPackage" `
-  --inspect-workbooks
-```
-
-The prior `verify_current_submission_assets.py` remains available to audit the
-historical Human Genomics package; it must not be used to approve the current
-Scientific Reports transfer.
+The current BMC package inventory is frozen in
+`BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`. The historical
+`verify_current_submission_assets.py` and
+`verify_scientific_reports_submission_assets.py` scripts remain available for
+their named prior-package audits; neither should be used as the sole approval
+test for the current BMC package.
 
 To rerender the current Figure 8 from the packaged derived tables, run the
 following command from the repository root with a new output directory:
@@ -187,9 +200,9 @@ $figure8Output = Join-Path $env:TEMP ("AA_current_Figure8_" + (Get-Date -Format 
 
 The prior 16-page figure-only PDF is retained as a source-stage asset outside
 the repository. The R helper below applies the previously reviewed visual-only
-corrections before those pages are reordered and relabelled for the Scientific
-Reports composite supplementary-information file. It is not, by itself, the
-final Scientific Reports supplement.
+corrections before those pages are reordered and relabelled. It is a historical
+packaging helper, not by itself either of the two final BMC supplementary-
+figure PDFs.
 
 ```powershell
 $supplementOutput = Join-Path $env:TEMP ("AA_current_supplement_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
@@ -278,9 +291,11 @@ The recorded model SHA-256 was
 
 Licensed database exports, prepared docking structures, model weights,
 official third-party source snapshots and private participant design metadata
-are excluded. Large raw/topology/trajectory MD files are excluded from GitHub
-but archived in the companion Zenodo dataset
-<https://doi.org/10.5281/zenodo.22131869>. The journal supplementary
+are excluded. Large raw/topology/trajectory MD files are excluded from GitHub.
+Six complete saved 0-100 ns production records (13.2 GB; 600 ns total) are
+available on reasonable request from Wendurige (`wendurige@imu.edu.cn`),
+including to editors and reviewers during peer review; no separate public DOI
+has been issued. The journal supplementary
 workbooks are verified as separate publication assets rather than duplicated
 into GitHub; this avoids treating archived database rows in the submission
 workbook as a license to redistribute the underlying source export. Included
@@ -297,12 +312,12 @@ The current manuscript uses Figure 1-8. Exact current references are stored in
 current five-complex derived tables and reproduces the submitted geometry to
 the documented pixel tolerance. The final source tables for Supplementary
 Figures S14-S16 are also distributed under `derived_data/molecular_dynamics/`.
-The six complete saved 0-100 ns trajectory packages are archived separately at
-<https://doi.org/10.5281/zenodo.22131869>. Figure 7 is retained as an exact
+The six complete saved 0-100 ns trajectory packages are available by reasonable
+request as documented in `MD_DATASET.md`. Figure 7 is retained as an exact
 final-image reference because prepared docking-visualization assets are not
 redistributed. Supplementary Figures S1-S16 are verified within the
-separately held Scientific Reports composite supplementary-information PDF
-using the current submission-asset verifier.
+separately held current BMC Additional-file PDFs using the recorded package
+inventory and internal quality-control reports.
 
 The archived `v0.1.0` references remain available for historical regression:
 
@@ -341,9 +356,9 @@ Software availability information for manuscript reporting:
 - License: BSD-3-Clause for repository-authored code.
 - Restrictions: external software, models, licensed databases and prepared
   docking-visualization projects retain their own access terms. Large
-  molecular-dynamics files are not committed to GitHub; their run-specific
-  public archive and file-level rights statements are at
-  <https://doi.org/10.5281/zenodo.22131869>.
+  molecular-dynamics files are not committed to GitHub; six complete saved
+  production records are available by reasonable request as documented in
+  `MD_DATASET.md`. No separate public DOI has been issued for them.
 
 The DOI identifies the archived `v0.1.0` release. Subsequent maintenance on
 the default branch does not alter that archived release or its DOI. The current

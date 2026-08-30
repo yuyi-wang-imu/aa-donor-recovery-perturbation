@@ -40,15 +40,18 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 ## Not redistributed
 
 - The complete publication supplementary workbooks are not duplicated into GitHub.
+  `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv` records the current BMC
+  Pharmacology and Toxicology submission inventory. The historical
   `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` and
   `scripts/publication_tables/verify_scientific_reports_submission_assets.py`
-  verify the separately held Scientific Reports transfer files without
+  verify the separately held prior Scientific Reports transfer files without
   republishing their database-derived rows as source exports.
   `PUBLICATION_ASSET_CHECKSUMS.tsv` and the archived verifiers retain the
   corresponding `v0.1.0` and prior-submission regression records.
 - The prior Human Genomics graphical abstract is retained only as a provenance
-  record and is excluded from the Scientific Reports transfer package. Its
-  documented third-party source licenses do not transfer ownership of the
+  record. A visual abstract is optional for the current BMC Pharmacology and
+  Toxicology submission and has been omitted from its package. The documented
+  third-party source licenses do not transfer ownership of the
   original photographs to this repository.
 - TCMSP, SwissTargetPrediction, OMIM, GeneCards, TTD, DisGeNET, bibliographic,
   or other licensed/raw database exports. Derived associations must be reviewed
@@ -58,11 +61,13 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
   data-use and privacy requirements.
 - Prepared receptor/ligand structures and exact pose-visualization project files.
 - Raw molecular-dynamics topology, checkpoint, energy and trajectory files are
-  not stored in GitHub because of their size. The complete saved 0-100 ns
-  production records for five ligand-containing complexes and one HIF1A-ARNT
-  apo reference are distributed in a separate, file-level documented Zenodo
-  dataset: <https://doi.org/10.5281/zenodo.22131869>. Unused `.trr`, benchmark
-  and temporary trajectories are not part of that public dataset.
+  not stored in GitHub because of their size. Six complete saved 0-100 ns
+  production records (five ligand-containing complexes and one HIF1A-ARNT apo
+  reference; 13.2 GB and 600 ns total) are retained by the authors and are
+  available on reasonable request from Wendurige (`wendurige@imu.edu.cn`),
+  including to editors and reviewers during peer review. No separate public
+  DOI has been issued for these records. Unused `.trr`, benchmark and temporary
+  trajectories are outside the retained production-record inventory.
 - Secrets, credentials, API tokens, private keys, local `.env` files, personal
   paths, model weights, caches, and generated output directories.
 
@@ -74,7 +79,8 @@ supports scientific recomputation wherever legal, public, or author-reviewed
 inputs can be staged. It is not a self-contained from-raw capsule for every
 analysis. Licensed source exports, official model assets and reviewed
 participant design staging remain external. The six MD production records are
-available through the companion dataset DOI above rather than GitHub. Exact
+available by reasonable request as described above rather than through GitHub.
+Exact
 transfer-package hashes were recorded after final asset
 generation and visual approval. Current boundaries are recorded in
 `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`; archived boundaries remain in

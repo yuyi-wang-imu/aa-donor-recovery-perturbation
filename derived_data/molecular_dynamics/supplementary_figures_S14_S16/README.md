@@ -1,12 +1,14 @@
 # Supplementary Figures S14-S16 derived source data
 
 This directory contains the minimal derived numeric source tables used for
-Supplementary Figures S14-S16 in the Scientific Reports manuscript. These are
+Supplementary Figures S14-S16 in the current BMC Pharmacology and Toxicology
+manuscript. These are
 panel-level analysis outputs, not raw trajectories. Multi-gigabyte
 molecular-dynamics trajectories, topologies, checkpoints and production logs
-are not committed to GitHub; the complete saved 0-100 ns records are archived
-in the companion Zenodo dataset at
-<https://doi.org/10.5281/zenodo.22131869>.
+are not committed to GitHub; six complete saved 0-100 ns records (13.2 GB;
+600 ns total) are available on reasonable request from Wendurige
+(`wendurige@imu.edu.cn`) and to editors and reviewers during peer review. No
+separate public DOI has been issued for these records.
 
 Frame-level time series span 0-100 ns at 0.01-ns (10-ps) intervals. A complete
 single-system series therefore contains 10,001 frames. The paired S16 time-series

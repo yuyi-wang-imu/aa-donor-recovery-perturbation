@@ -1,9 +1,9 @@
 # Prior graphical-abstract image provenance
 
 This record documents the 920 x 300-pixel graphical abstract prepared for the
-prior Human Genomics submission. Scientific Reports does not accept graphical
-abstracts for this article type, so this image is excluded from the Scientific
-Reports transfer package and retained here only for provenance and audit.
+prior Human Genomics submission. A visual abstract is optional for the current
+BMC Pharmacology and Toxicology Research Article; it has been omitted from the
+current submission package and is retained here only for provenance and audit.
 
 The prior image uses the exact manuscript title:
 

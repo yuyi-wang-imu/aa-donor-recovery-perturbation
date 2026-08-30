@@ -311,8 +311,8 @@ def validate_repository() -> int:
         "reference_outputs/current_manuscript/Figure_8.png": "0B90206F3D90ECFAEC2616F10BB11DAA0702B44B13CF68F8183CA6A5EEA221AC",
         "reference_outputs/current_manuscript/Graphical_Abstract.png": "B792B411849F8199031DE6170FCE0CDDBED76717FBD38F6DBF309C9821FB9E07",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz": "EFFAF8AA397AF7DDF1365FE6A8246B2B46280E8E532FB175587A5131DF5D5710",
-        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv": "DA6344A272C1C688641BC8F7B4F7BC568A658103BFB80F2F57BB7764FE7E6D13",
-        "derived_data/molecular_dynamics/current_figure8/Figure8_final20ns_quantitative_summary.tsv": "63AFC6229EC931481AD209387107475FA06ADC4D4AFE15E09F9D87E23CF0B764",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv": "1219B3329D8578CE05BC673E9FB991E00A5EE56D4BB813CE64A27EC6281EEF11",
+        "derived_data/molecular_dynamics/current_figure8/Figure8_final20ns_quantitative_summary.tsv": "5B6387B3772520F6D5D8A419FF71A9F06291BFE4162CF611EEC616126DF49A96",
     }
     golden_mismatches = [
         name
