@@ -136,3 +136,29 @@ metadata. The author explicitly authorized the Scientific Reports repository
 update on 2026-08-26. The archived Zenodo version DOI, files and tag remain
 unchanged; only the existing record metadata may identify the live transfer
 branch and final manuscript-asset mapping.
+
+## Simulated-editor v5 BMC alignment (2026-09-02)
+
+- [x] Preserve the immutable Zenodo v0.1.0 tag, ZIP, version DOI
+      `10.5281/zenodo.21837457`, and archived commit `b850d7e6...`.
+- [x] State that the old DOI does not contain later manuscript-specific commits
+      or the 13.2 GB molecular-dynamics production-record inventory.
+- [x] Clarify the 18 SwissTargetPrediction compounds versus 23 structurally
+      tractable docking ligands and state that the database compounds were not
+      chemically verified in an administered formulation.
+- [x] Record the matched-background negative calibration results and retain the
+      five genes as exploratory directional candidates.
+- [x] Document the editor/reviewer request route for complete MD production
+      records without claiming that those files are public or archived.
+- [ ] Freeze the final v5 manuscript, cover letter and any revised Additional
+      file after visual QA.
+- [ ] Regenerate `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv` from the
+      frozen v5 package and rebuild `MANIFEST.tsv` last.
+- [ ] Run `scripts/run_workflow.py --check` and
+      `scripts/validate_repository.py` on the staged v5 branch.
+- [ ] Review the exact Git diff and obtain author confirmation of the commit
+      hash before pushing or merging to the public default branch.
+- [ ] If the Zenodo public metadata is updated, change metadata only and verify
+      that DOI `10.5281/zenodo.21837457`, version v0.1.0 and its archived ZIP
+      remain unchanged. Do not claim that metadata editing changes archive
+      contents.

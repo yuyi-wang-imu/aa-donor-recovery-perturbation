@@ -2,12 +2,17 @@
 
 The complete saved production records underlying Figure 8 and Supplementary
 Figures S14-S16 are not stored in GitHub because the retained six-system
-inventory is 13.2 GB. They are available on reasonable request from Wendurige
-(`wendurige@imu.edu.cn`) and will be provided to editors and reviewers during
-peer review. No separate public DOI has been issued for these records.
+inventory is 13.2 GB. Editors and peer reviewers may request the complete
+retained files through the institutional corresponding-author route
+(Wendurige, `wendurige@imu.edu.cn`) for verification of the reported analyses.
+Requests should identify the manuscript and requested systems; transfer will
+use an institutionally approved secure method appropriate to the file size.
+No separate public DOI has been issued for these records.
 
 The existing software DOI <https://doi.org/10.5281/zenodo.21837457> remains the
-immutable `v0.1.0` code and derived-data snapshot.
+immutable `v0.1.0` code and derived-data snapshot. It does not contain the
+13.2 GB production-record inventory or subsequent manuscript-specific branch
+maintenance.
 
 ## Dataset scope
 

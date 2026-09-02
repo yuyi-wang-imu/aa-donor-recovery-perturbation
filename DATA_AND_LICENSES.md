@@ -63,11 +63,15 @@ weights, dictionary snapshots, or a vendored Geneformer checkout.
 - Raw molecular-dynamics topology, checkpoint, energy and trajectory files are
   not stored in GitHub because of their size. Six complete saved 0-100 ns
   production records (five ligand-containing complexes and one HIF1A-ARNT apo
-  reference; 13.2 GB and 600 ns total) are retained by the authors and are
-  available on reasonable request from Wendurige (`wendurige@imu.edu.cn`),
-  including to editors and reviewers during peer review. No separate public
-  DOI has been issued for these records. Unused `.trr`, benchmark and temporary
-  trajectories are outside the retained production-record inventory.
+  reference; 13.2 GB and 600 ns total) are retained by the authors. Editors and
+  peer reviewers may request them through the institutional corresponding-
+  author route (Wendurige, `wendurige@imu.edu.cn`) for verification of the
+  reported analyses. Requests should identify the manuscript and requested
+  systems; transfer will use an institutionally approved secure method
+  appropriate to the file size. No separate public DOI has been issued for
+  these records, and the existing Zenodo v0.1.0 DOI does not contain them.
+  Unused `.trr`, benchmark and temporary trajectories are outside the retained
+  production-record inventory.
 - Secrets, credentials, API tokens, private keys, local `.env` files, personal
   paths, model weights, caches, and generated output directories.
 

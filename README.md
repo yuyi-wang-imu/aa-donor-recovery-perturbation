@@ -4,11 +4,13 @@ This repository contains reproducible analysis code, configuration files,
 selected derived source tables, and publication-regression tests supporting the
 manuscript *Donor-aware transcriptomics and bidirectional Geneformer
 perturbation prioritize compound-associated targets in aplastic anemia*.
-The workflow separates traceable candidate provenance from recovery-aligned
-model evidence. It integrates prescription-derived candidate construction,
+The workflow separates traceable candidate provenance from healthy-directed
+longitudinal model evidence. It integrates candidate construction from
+structurally specified database compounds associated with herbs recurrent in
+published aplastic-anemia prescriptions,
 CD34+ hematopoietic transcriptomics, participant-aware co-expression analysis,
-bone-marrow single-cell context, donor-aware longitudinal recovery-axis
-analysis, paired in silico deletion and overexpression with Geneformer,
+bone-marrow single-cell context, a donor-aware healthy-directed longitudinal
+transcriptomic trajectory, paired in silico deletion and overexpression with Geneformer,
 scTenifoldKnk, docking, and molecular dynamics.
 
 ## Evidence hierarchy and current manuscript alignment
@@ -16,20 +18,32 @@ scTenifoldKnk, docking, and molecular dynamics.
 The current manuscript follows this prespecified evidence order:
 
 1. Mining 390 aplastic-anemia prescription records identified a recurrent
-   *Ecliptae Herba*-*Cuscutae Semen*-*Ligustri Lucidi Fructus* pattern.
-2. Exact matching of 472 standardized compound-associated genes to 1,529
+   *Ecliptae Herba*-*Cuscutae Semen*-*Ligustri Lucidi Fructus* pattern. The
+   database compounds associated with these herbs were not chemically
+   quantified or verified in an administered formulation.
+2. Eighteen compounds had retained SwissTargetPrediction records, whereas 23
+   unique structurally tractable ligands entered docking. Exact matching of
+   472 standardized compound-associated genes to 1,529
    aplastic-anemia-associated genes defined 126 starting candidates.
 3. CD34+ expression, participant-aware WGCNA, bone-marrow single-cell context,
    independent expression context, and prespecified multi-source criteria
    prioritized 30 candidates and selected ten genes before model perturbation.
 4. All 17 donors with pretreatment and latest-follow-up profiles moved toward
-   the healthy reference on the primary 5,000-gene recovery axis (median
-   displacement, 0.362; exact two-sided sign-test P = 1.53 x 10^-5).
+   the healthy reference on the primary 5,000-gene trajectory (median
+   displacement, 0.362; exact two-sided sign-test P = 1.53 x 10^-5). This is a
+   follow-up-associated molecular trajectory, not a validated clinical
+   recovery endpoint.
 5. Geneformer reproduced the healthy-directed change in 14 of 15
-   baseline-to-six-month donor pairs. Five candidates--TOP2A, KIT,
-   GSK3B, HIF1A, and SYK--showed the prespecified deletion-away and
-   overexpression-toward-health pattern; TOP2A and GSK3B received the strongest
-   donor-level and expression-matched support.
+   baseline-to-six-month donor pairs; simpler expression-centroid and ridge
+   baselines were positive for all 15 donors. Geneformer was used for
+   candidate-specific perturbation rather than to claim superior detection of
+   the shared trajectory. Five candidates--TOP2A, KIT, GSK3B, HIF1A, and
+   SYK--met the pooled directional sign criterion. Only TOP2A and GSK3B had
+   donor-bootstrap intervals excluding zero, and neither remained significant
+   after matched-background multiplicity correction (both BH-adjusted q =
+   0.317; pooled matched-null P = 0.570). The five genes are therefore reported
+   as directionally coherent exploratory candidates rather than validated
+   therapeutic targets.
 
 scTenifoldKnk, docking, and molecular dynamics are downstream,
 hypothesis-generating analyses. They did not contribute to candidate selection
@@ -42,17 +56,21 @@ establish direct target engagement, inhibition, or therapeutic activity.
 ## Current submission alignment
 
 The current submission is a regular Research article for **BMC Pharmacology
-and Toxicology**. Its exact 17-file inventory and SHA-256 values are recorded
-in `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`; the complete alignment
-and data-access boundary are documented in
+and Toxicology**. The simulated-editor v5 candidate retains the same 17-file
+submission structure. The final v5 byte sizes and SHA-256 values must replace
+the v4 entries in `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv` only after
+all manuscript and supplementary edits pass visual and structural QA. The
+alignment and data-access boundary are documented in
 `BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md`.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
 issued for the complete molecular-dynamics production records. The retained
-six-system records (13.2 GB; 600 ns total) are available on reasonable request
-from Wendurige (`wendurige@imu.edu.cn`) and will be provided to editors and
-reviewers during peer review. Prior Human Genomics and Scientific Reports
+six-system records (13.2 GB; 600 ns total) are not part of that DOI. Editors
+and peer reviewers may request them through the institutional corresponding-
+author route (Wendurige, `wendurige@imu.edu.cn`) for verification of the
+reported analyses; transfer will use an institutionally approved secure method
+appropriate to the file size. Prior Human Genomics and Scientific Reports
 verification files are retained only as historical regression records.
 
 ## Version and publication-asset boundary
