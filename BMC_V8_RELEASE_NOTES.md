@@ -7,3 +7,5 @@ This update adds the outcome-blind ranking, six-month-only trajectory, determini
 The manuscript contains 103 continuous references with no uncited entries or undefined citation numbers. Word formatting uses Times New Roman consistently, true subscript runs in equations, gene-symbol italics in gene contexts, and first-line indentation for prose paragraphs; the abbreviation list remains intentionally flush.
 
 Zenodo version DOI `10.5281/zenodo.21837457` and tag `v0.1.0` remain unchanged. They correspond to archived commit `b850d7e6a6141962d3a2d38021d0780e3c5907a1`; this default-branch update is later maintenance and is not retroactively contained in the archived ZIP.
+
+The Git content commit that introduced the v8 source-data, sensitivity-analysis, and validation update is `2ed0d32a5e2f284eeb0608da282e117559829bc7`. The following metadata-only commit records that immutable content identifier.
