@@ -1,0 +1,5 @@
+scenario,dropped_components,top30_overlap_n,top30_jaccard,top10_overlap_n,spearman_rank_vs_formal,core10_retained_top30_n,rank_TOP2A,rank_GSK3B,rank_KIT,rank_HIF1A,rank_SYK
+formal_all_components,none,30,1.0,10,1.0,10,12,24,7,6,11
+drop_explicit_recovery_only,score_AA_direction_recovery,28,0.875,8,0.9919730033745782,10,10,23,7,6,11
+drop_recovery_and_pathology_trait,score_AA_direction_recovery;score_module_pathology_importance,23,0.6216216216216216,7,0.931782527184102,10,13,12,18,11,5
+drop_all_module_and_recovery_features,score_WGCNA_module_strength;score_module_pathology_importance;score_AA_direction_recovery,20,0.5,6,0.7987851518560181,8,36,9,40,10,7

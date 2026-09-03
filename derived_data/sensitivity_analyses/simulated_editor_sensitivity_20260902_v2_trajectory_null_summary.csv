@@ -1,0 +1,3 @@
+null_type,iterations,observed_median_shift,null_median_shift_mean,null_median_shift_q025,null_median_shift_q975,one_sided_empirical_p_median,observed_n_positive,null_n_positive_q025,null_n_positive_q975,one_sided_empirical_p_n_positive
+anchor_label_permutation,2000,0.3623599695609638,-0.018178118269309984,-0.36801192373899394,0.3628609269593014,0.025987006496751622,17,4.0,12.0,0.0004997501249375312
+gene_weight_permuted_axis,2000,0.3623599695609638,-0.002672015415734466,-0.012215517417120967,0.00651496271891229,0.0004997501249375312,17,4.0,11.0,0.0004997501249375312

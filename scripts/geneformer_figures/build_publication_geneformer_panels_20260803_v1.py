@@ -369,7 +369,7 @@ def panel_s9e():
     pivot = donor_bidir.pivot(index="subject", columns="gene", values="bidirectional_score_min_of_arms")
     order = candidate.sort_values("bidirectional_score_min_of_arms", ascending=False)["candidate"].tolist()
     pivot = pivot.reindex(columns=order).sort_index()
-    fig, ax = make_panel("E", "Donor-by-candidate bidirectional effects", left=0.17, bottom=0.27, top=0.82)
+    fig, ax = make_panel("e", "Donor-by-candidate bidirectional effects", left=0.17, bottom=0.27, top=0.82)
     vmax = float(np.nanmax(np.abs(pivot.to_numpy())))
     im = ax.imshow(pivot.to_numpy(), aspect="auto", cmap="RdBu_r", vmin=-vmax, vmax=vmax,
                    interpolation="nearest")
@@ -377,9 +377,12 @@ def panel_s9e():
     ax.set_yticks(np.arange(len(pivot.index)), pivot.index)
     ax.set_xlabel("Candidate gene")
     ax.set_ylabel("Donor")
-    cax = fig.add_axes([0.80, 0.18, 0.15, 0.025])
+    # Keep the colour key above the plotting area.  The earlier lower-right
+    # placement crossed the rotated CD38/TERT tick labels after the six-panel
+    # layout was reduced for the supplementary-information page.
+    cax = fig.add_axes([0.75, 0.845, 0.20, 0.025])
     cb = fig.colorbar(im, cax=cax, orientation="horizontal")
-    cb.set_label("Bidirectional score", fontsize=5.3)
+    cb.ax.set_title("Bidirectional score", fontsize=5.3, pad=1.5)
     cb.ax.tick_params(labelsize=5, length=2)
     for spine in ax.spines.values():
         spine.set_linewidth(0.5)

@@ -91,6 +91,10 @@ def validate_repository() -> int:
         "CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv",
         "SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv",
         "GITHUB_ZENODO_RELEASE_CHECKLIST.md",
+        "BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md",
+        "BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv",
+        "BMC_V8_DATA_AND_CODE_AVAILABILITY.md",
+        "BMC_V8_RELEASE_NOTES.md",
         "WORKFLOW_ORDER.tsv",
         "config/analysis_parameters.tsv",
         "config/input_paths.example.tsv",
@@ -130,6 +134,11 @@ def validate_repository() -> int:
         "scripts/publication_tables/verify_submission_assets.py",
         "scripts/publication_tables/verify_current_submission_assets.py",
         "scripts/publication_tables/verify_scientific_reports_submission_assets.py",
+        "scripts/sensitivity_analyses/README.md",
+        "scripts/sensitivity_analyses/run_simulated_editor_sensitivity_20260902_v1.py",
+        "scripts/sensitivity_analyses/run_baseline_only_wgcna_20260902_v1.R",
+        "scripts/sensitivity_analyses/summarize_baseline_only_wgcna_mapping_20260902_v1.py",
+        "scripts/sensitivity_analyses/build_simulated_editor_sensitivity_manifest_20260902_v1.py",
         "derived_data/molecular_dynamics/Figure_7_five_system_md_source_data_20260725_v5_pbc_audited.csv",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_time_series_source.tsv.gz",
         "derived_data/molecular_dynamics/current_figure8/Figure8_five_candidates_ca_rmsf_source.tsv",
@@ -148,6 +157,10 @@ def validate_repository() -> int:
         "derived_data/publication_intermediates/README.md",
         "reference_outputs/README.md",
         "reference_outputs/current_manuscript/README.md",
+        "derived_data/sensitivity_analyses/README.md",
+        "derived_data/sensitivity_analyses/Additional_file_9_Sensitivity_Analysis_Source_Data.xlsx",
+        "derived_data/targeted_docking/README.md",
+        "derived_data/targeted_docking/Additional_file_8_Targeted_Docking_Source_Data.xlsx",
     ]
     required.extend(
         f"reference_outputs/main_figures/Figure_{number}.png"
@@ -426,6 +439,47 @@ def validate_repository() -> int:
         for row in current_assets
     ):
         fail("Invalid current submission-asset size or SHA-256 entry")
+
+    with (ROOT / "BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv").open(
+        "r", encoding="utf-8-sig", newline=""
+    ) as handle:
+        bmc_assets = list(csv.DictReader(handle, delimiter="\t"))
+    expected_bmc_names = {
+        "Manuscript.docx",
+        "Cover_Letter.docx",
+        *(f"Figure_{index}.png" for index in range(1, 9)),
+        "Additional_file_1_Supplementary_Figures_S1-S8.pdf",
+        "Additional_file_2_Supplementary_Table_S1.xlsx",
+        "Additional_file_3_Supplementary_Tables_S2-S7.xlsx",
+        "Additional_file_4_Supplementary_Figures_S9-S16.pdf",
+        "Additional_file_5_Supplementary_Table_S8.xlsx",
+        "Additional_file_6_Supplementary_Table_S9.xlsx",
+        "Additional_file_7_Supplementary_Table_S10.xlsx",
+        "Additional_file_8_Targeted_Docking_Source_Data.xlsx",
+        "Additional_file_9_Sensitivity_Analysis_Source_Data.xlsx",
+    }
+    actual_bmc_names = {row.get("filename", "") for row in bmc_assets}
+    if len(bmc_assets) != 19 or actual_bmc_names != expected_bmc_names:
+        missing = sorted(expected_bmc_names - actual_bmc_names)
+        extra = sorted(actual_bmc_names - expected_bmc_names)
+        fail(f"BMC v8 submission-asset mismatch: missing={missing}, extra={extra}")
+    expected_bmc_roles = {
+        "manuscript": 1,
+        "cover_letter": 1,
+        "main_figure": 8,
+        "additional_file": 9,
+    }
+    observed_bmc_roles = {
+        role: sum(row.get("package_role") == role for row in bmc_assets)
+        for role in expected_bmc_roles
+    }
+    if observed_bmc_roles != expected_bmc_roles:
+        fail(f"Unexpected BMC v8 submission roles: {observed_bmc_roles}")
+    if any(
+        len(row.get("sha256", "")) != 64 or int(row.get("bytes", "0")) <= 0
+        for row in bmc_assets
+    ):
+        fail("Invalid BMC v8 submission-asset size or SHA-256 entry")
     current_asset_by_name = {row["filename"]: row for row in current_assets}
     transfer_plan_by_name = {row["filename"]: row for row in transfer_plan}
     for filename, row in current_asset_by_name.items():

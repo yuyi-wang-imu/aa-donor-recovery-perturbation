@@ -1,0 +1,11 @@
+gene,baseline_module,original42_module,module_match_exact,best_overlap_original42_module,best_overlap_jaccard,best_overlap_n,best_overlap_recovers_candidate_original_module
+CDK6,blue,turquoise,False,turquoise,0.498893805309735,451.0,True
+PARP1,darkgreen,turquoise,False,turquoise,0.044205495818399,37.0,True
+KIT,blue,turquoise,False,turquoise,0.498893805309735,451.0,True
+SYK,purple,royalblue,False,royalblue,0.25615763546798,52.0,True
+HIF1A,blue,turquoise,False,turquoise,0.498893805309735,451.0,True
+TOP2A,lightcyan,darkred,False,darkred,0.545454545454545,54.0,True
+CA2,magenta,midnightblue,False,midnightblue,0.435233160621762,84.0,True
+CD38,yellow,lightcyan,False,brown,0.412420382165605,259.0,False
+GSK3B,,purple,,,,,False
+TERT,,,,,,,False

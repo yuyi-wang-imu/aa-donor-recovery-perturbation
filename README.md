@@ -56,12 +56,13 @@ establish direct target engagement, inhibition, or therapeutic activity.
 ## Current submission alignment
 
 The current submission is a regular Research article for **BMC Pharmacology
-and Toxicology**. The simulated-editor v5 candidate retains the same 17-file
-submission structure. The final v5 byte sizes and SHA-256 values must replace
-the v4 entries in `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv` only after
-all manuscript and supplementary edits pass visual and structural QA. The
-alignment and data-access boundary are documented in
-`BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md`.
+and Toxicology**. The visually audited simulated-editor v8 candidate contains
+19 files: one manuscript, one cover letter, eight main figures, and nine
+Additional files. Its frozen byte sizes and SHA-256 values are recorded in
+`BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`. The alignment and
+data-access boundary are documented in
+`BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md` and
+`BMC_V8_DATA_AND_CODE_AVAILABILITY.md`.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
@@ -91,9 +92,10 @@ Supplementary Figures S1-S16 and Supplementary Tables S1-S10 are renumbered in
 strict first-citation order. In that transfer numbering, the
 prescription/candidate-construction workflow is Supplementary Fig. S3, the
 Geneformer extensions are Supplementary Figs. S8-S9 and Supplementary Table
-S7, scTenifoldKnk sensitivity is Supplementary Fig. S10 and Supplementary
-Table S8, and the complete docking screen is Supplementary Fig. S11 and
-Supplementary Table S9. The current
+S8, scTenifoldKnk sensitivity is Supplementary Fig. S10 and Supplementary
+Table S9, and the complete docking screen is Supplementary Figs. S11-S13 and
+Supplementary Table S10. Additional files 8 and 9 provide the targeted-docking
+and new sensitivity-analysis source workbooks. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
 The current BMC submission omits the optional prior graphical abstract, and the
@@ -130,7 +132,7 @@ The source code and supporting files are maintained at
   access boundaries.
 - `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`: current publication replay
   versus scientific recomputation.
-- `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`: exact current 17-file BMC
+- `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`: exact current 19-file BMC
   submission-package inventory.
 - `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: historical 16-file Scientific
   Reports transfer inventory retained for regression only.
@@ -176,10 +178,10 @@ the scientific analyses.
 Reproducibility is reported in four layers and the distinction is mandatory:
 
 1. **Current submission verification** checks the separately held flat
-   17-file BMC Pharmacology and Toxicology package against exact byte sizes and
+   19-file BMC Pharmacology and Toxicology package against exact byte sizes and
    SHA-256 values, verifies Figure 1-8 dimensions and resolution metadata,
-   verifies the two supplementary-figure PDFs, and inspects the five
-   supplementary-table workbooks. The optional visual abstract and standalone
+   verifies the two supplementary-figure PDFs, and inspects the seven
+   supplementary-table/source-data workbooks. The optional visual abstract and standalone
    main-table files are omitted. The package is not copied into GitHub.
 2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
    from the repository-distributed time series, C-alpha RMSF and final-20-ns

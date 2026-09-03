@@ -1,0 +1,13 @@
+metric	value
+n_profiles	23
+n_unique_participants	23
+n_HD	4
+n_SAA_baseline	19
+n_selected_genes	5000
+n_baseline_modules_including_grey	24
+fixed_power	18
+reestimated_powerEstimate	NA
+shared_genes_with_original42	4591
+adjusted_rand_index_vs_original42	0.304414427993934
+candidate10_exact_module_match_n	0
+elapsed_seconds	78.3258521556854

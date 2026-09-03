@@ -1,0 +1,7 @@
+case_id,display,core_100ns_timeseries_present,ca_rmsf_present,final20ns_summary_present,thermodynamic_qc_temperature_pressure_density_present,protein_sasa_qc_present,paired_apo_comparator_present,extended_interface_pocket_qc_present,complete_raw_trajectory_archived_in_repository,replicate_trajectories_present,interpretive_limit
+TOP2A_sesamin,TOP2A–sesamin,True,True,True,True,True,False,False,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
+GSK3B_linarin,GSK3B–linarin,True,True,True,False,False,False,False,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
+KIT_3O_Methylorobol,KIT–3′-O-methylorobol,True,True,True,False,False,False,False,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
+HIF1A_ARNT_butin_exploratory,HIF1A–ARNT–butin†,True,True,True,False,False,True,True,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
+SYK_isofucosterol,SYK–isofucosterol,True,True,True,False,False,False,False,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
+HIF1A_ARNT_apo,HIF1A–ARNT apo,True,True,False,False,True,True,True,False,False,single-trajectory descriptive support; no binding free energy or inferential claim
