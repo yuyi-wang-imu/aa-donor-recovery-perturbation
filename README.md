@@ -63,14 +63,17 @@ establish direct target engagement, inhibition, or therapeutic activity.
 ## Current submission alignment
 
 The current submission is a regular Research article for **BMC Pharmacology
-and Toxicology**. The v18 targeted bibliographic and terminology revision contains
+and Toxicology**. The v19 targeted bibliographic and evidence revision contains
 19 files: one manuscript, one cover letter, eight main figures, and nine
 Additional files. Its frozen byte sizes and SHA-256 values are recorded in
 `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`. The alignment and
 data-access boundary are documented in
 `BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md` and
 `BMC_V18_REVISION_NOTES.md`. The v8 analysis-content commit remains unchanged;
-v18 changes reference metadata, reference numbering and two evidence labels only.
+v18 changed reference metadata, reference numbering and two evidence labels only.
+The v19 follow-up corrects the TOP2A literature statement to in vitro drug
+sensitivity, without claiming an association with clinical outcome. See
+`BMC_V19_REVISION_NOTES.md`. No analysis outputs or candidate ranks changed.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
