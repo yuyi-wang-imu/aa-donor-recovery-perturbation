@@ -448,21 +448,21 @@ def validate_repository() -> int:
         "Manuscript.docx",
         "Cover_Letter.docx",
         *(f"Figure_{index}.png" for index in range(1, 9)),
-        "Additional_file_1_Supplementary_Figures_S1-S8.pdf",
-        "Additional_file_2_Supplementary_Table_S1.xlsx",
-        "Additional_file_3_Supplementary_Tables_S2-S7.xlsx",
-        "Additional_file_4_Supplementary_Figures_S9-S16.pdf",
-        "Additional_file_5_Supplementary_Table_S8.xlsx",
-        "Additional_file_6_Supplementary_Table_S9.xlsx",
-        "Additional_file_7_Supplementary_Table_S10.xlsx",
-        "Additional_file_8_Targeted_Docking_Source_Data.xlsx",
-        "Additional_file_9_Sensitivity_Analysis_Source_Data.xlsx",
+        "Additional_file_1_Supplementary_Table_S1.xlsx",
+        "Additional_file_2_Supplementary_Tables_S2-S7.xlsx",
+        "Additional_file_3_Supplementary_Table_S8.xlsx",
+        "Additional_file_4_Supplementary_Table_S9.xlsx",
+        "Additional_file_5_Targeted_Docking_Source_Data.xlsx",
+        "Additional_file_6_Supplementary_Figures_S1-S8.pdf",
+        "Additional_file_7_Sensitivity_Analysis_Source_Data.xlsx",
+        "Additional_file_8_Supplementary_Figures_S9-S16.pdf",
+        "Additional_file_9_Supplementary_Table_S10.xlsx",
     }
     actual_bmc_names = {row.get("filename", "") for row in bmc_assets}
     if len(bmc_assets) != 19 or actual_bmc_names != expected_bmc_names:
         missing = sorted(expected_bmc_names - actual_bmc_names)
         extra = sorted(actual_bmc_names - expected_bmc_names)
-        fail(f"BMC v8 submission-asset mismatch: missing={missing}, extra={extra}")
+        fail(f"BMC v18 submission-asset mismatch: missing={missing}, extra={extra}")
     expected_bmc_roles = {
         "manuscript": 1,
         "cover_letter": 1,
@@ -474,12 +474,12 @@ def validate_repository() -> int:
         for role in expected_bmc_roles
     }
     if observed_bmc_roles != expected_bmc_roles:
-        fail(f"Unexpected BMC v8 submission roles: {observed_bmc_roles}")
+        fail(f"Unexpected BMC v18 submission roles: {observed_bmc_roles}")
     if any(
         len(row.get("sha256", "")) != 64 or int(row.get("bytes", "0")) <= 0
         for row in bmc_assets
     ):
-        fail("Invalid BMC v8 submission-asset size or SHA-256 entry")
+        fail("Invalid BMC v18 submission-asset size or SHA-256 entry")
     current_asset_by_name = {row["filename"]: row for row in current_assets}
     transfer_plan_by_name = {row["filename"]: row for row in transfer_plan}
     for filename, row in current_asset_by_name.items():

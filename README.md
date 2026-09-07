@@ -2,8 +2,8 @@
 
 This repository contains reproducible analysis code, configuration files,
 selected derived source tables, and publication-regression tests supporting the
-manuscript *Donor-aware transcriptomics and bidirectional Geneformer
-perturbation prioritize compound-associated targets in aplastic anemia*.
+manuscript *Donor-aware transcriptomic perturbation prioritizes compound-associated
+targets aligned with hematopoietic recovery in aplastic anemia*.
 The workflow separates traceable candidate provenance from healthy-directed
 longitudinal model evidence. It integrates candidate construction from
 structurally specified database compounds associated with herbs recurrent in
@@ -45,6 +45,13 @@ The current manuscript follows this prespecified evidence order:
    as directionally coherent exploratory candidates rather than validated
    therapeutic targets.
 
+The scTenifoldKnk network input combines 959 HSPC-marker-class and 1,369
+megakaryocyte-marker-class cells; it is not an HSPC-only network. Geneformer
+V2-104M is documented by Chen et al. (2026),
+<https://doi.org/10.1038/s43588-026-00972-4>, alongside the original Geneformer
+paper. Carbonic anhydrase I erythroid-marker evidence is not treated as direct
+support for CA2 function in aplastic anemia.
+
 scTenifoldKnk, docking, and molecular dynamics are downstream,
 hypothesis-generating analyses. They did not contribute to candidate selection
 or ranking.
@@ -56,13 +63,14 @@ establish direct target engagement, inhibition, or therapeutic activity.
 ## Current submission alignment
 
 The current submission is a regular Research article for **BMC Pharmacology
-and Toxicology**. The visually audited simulated-editor v8 candidate contains
+and Toxicology**. The v18 targeted bibliographic and terminology revision contains
 19 files: one manuscript, one cover letter, eight main figures, and nine
 Additional files. Its frozen byte sizes and SHA-256 values are recorded in
 `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`. The alignment and
 data-access boundary are documented in
 `BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md` and
-`BMC_V8_DATA_AND_CODE_AVAILABILITY.md`.
+`BMC_V18_REVISION_NOTES.md`. The v8 analysis-content commit remains unchanged;
+v18 changes reference metadata, reference numbering and two evidence labels only.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
@@ -94,8 +102,10 @@ prescription/candidate-construction workflow is Supplementary Fig. S3, the
 Geneformer extensions are Supplementary Figs. S8-S9 and Supplementary Table
 S8, scTenifoldKnk sensitivity is Supplementary Fig. S10 and Supplementary
 Table S9, and the complete docking screen is Supplementary Figs. S11-S13 and
-Supplementary Table S10. Additional files 8 and 9 provide the targeted-docking
-and new sensitivity-analysis source workbooks. The current
+Supplementary Table S10. Additional files 5 and 7 provide the targeted-docking
+and sensitivity-analysis source workbooks. The current table-to-file mapping is
+recorded in `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`; supplementary
+figures are in Additional files 6 and 8. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
 The current BMC submission omits the optional prior graphical abstract, and the
