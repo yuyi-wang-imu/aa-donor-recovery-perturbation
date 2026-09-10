@@ -62,15 +62,16 @@ establish direct target engagement, inhibition, or therapeutic activity.
 
 ## Current submission alignment
 
-The current submission package is a regular Research Article prepared for
-**PLOS ONE**. It contains 38 separately uploaded files: one manuscript, one
-cover letter, eight main figures, 16 supporting figures, ten supporting tables,
-and two supporting-data workbooks. Exact byte sizes and SHA-256 values are
-recorded in `PLOS_ONE_ASSET_CHECKSUMS.tsv`; the file roles and data-access
-boundary are documented in `PLOS_ONE_SUBMISSION_ALIGNMENT.md`. This journal-
-format conversion changed file organization, figure format, captions, and
-cross-reference style only. It did not change analysis outputs or candidate
-ranks.
+The manuscript is being prepared as an Original Paper for
+**Molecular Genetics and Genomics**. This is a preparation status, not a claim
+of submission, peer review or acceptance. Journal-format adaptation includes
+author-year citations, an alphabetized reference list, a 239-word abstract,
+embedded main figures and journal-specific declarations. It does not change
+analysis outputs or candidate ranks. See `MGG_SUBMISSION_ALIGNMENT.md`.
+
+The earlier PLOS ONE preparation records, including
+`PLOS_ONE_ASSET_CHECKSUMS.tsv` and `PLOS_ONE_SUBMISSION_ALIGNMENT.md`, are
+retained as historical records and are not the MGG asset manifest.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
@@ -91,7 +92,7 @@ traceability. Maintenance commits on the default branch, including the
 2026-08-20 manuscript-structure alignment, do not alter the archived ZIP, tag,
 or DOI.
 
-The current PLOS ONE manuscript uses eight main figures:
+The manuscript uses eight main figures:
 CD34+/WGCNA;
 bone-marrow single-cell context; candidate annotation and sensitivity; the
 three-herb/compound/candidate network; donor recovery plus Geneformer;
