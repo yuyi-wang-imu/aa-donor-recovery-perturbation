@@ -62,18 +62,15 @@ establish direct target engagement, inhibition, or therapeutic activity.
 
 ## Current submission alignment
 
-The current submission is a regular Research article for **BMC Pharmacology
-and Toxicology**. The v19 targeted bibliographic and evidence revision contains
-19 files: one manuscript, one cover letter, eight main figures, and nine
-Additional files. Its frozen byte sizes and SHA-256 values are recorded in
-`BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`. The alignment and
-data-access boundary are documented in
-`BMC_PHARMACOLOGY_TOXICOLOGY_SUBMISSION_ALIGNMENT.md` and
-`BMC_V18_REVISION_NOTES.md`. The v8 analysis-content commit remains unchanged;
-v18 changed reference metadata, reference numbering and two evidence labels only.
-The v19 follow-up corrects the TOP2A literature statement to in vitro drug
-sensitivity, without claiming an association with clinical outcome. See
-`BMC_V19_REVISION_NOTES.md`. No analysis outputs or candidate ranks changed.
+The current submission package is a regular Research Article prepared for
+**PLOS ONE**. It contains 38 separately uploaded files: one manuscript, one
+cover letter, eight main figures, 16 supporting figures, ten supporting tables,
+and two supporting-data workbooks. Exact byte sizes and SHA-256 values are
+recorded in `PLOS_ONE_ASSET_CHECKSUMS.tsv`; the file roles and data-access
+boundary are documented in `PLOS_ONE_SUBMISSION_ALIGNMENT.md`. This journal-
+format conversion changed file organization, figure format, captions, and
+cross-reference style only. It did not change analysis outputs or candidate
+ranks.
 
 The issued archive remains Zenodo v0.1.0,
 <https://doi.org/10.5281/zenodo.21837457>. No separate public DOI has been
@@ -82,8 +79,8 @@ six-system records (13.2 GB; 600 ns total) are not part of that DOI. Editors
 and peer reviewers may request them through the institutional corresponding-
 author route (Wendurige, `wendurige@imu.edu.cn`) for verification of the
 reported analyses; transfer will use an institutionally approved secure method
-appropriate to the file size. Prior Human Genomics and Scientific Reports
-verification files are retained only as historical regression records.
+appropriate to the file size. Prior submission verification files are retained
+only as historical regression records.
 
 ## Version and publication-asset boundary
 
@@ -94,24 +91,22 @@ traceability. Maintenance commits on the default branch, including the
 2026-08-20 manuscript-structure alignment, do not alter the archived ZIP, tag,
 or DOI.
 
-The current BMC Pharmacology and Toxicology manuscript uses eight main figures:
+The current PLOS ONE manuscript uses eight main figures:
 CD34+/WGCNA;
 bone-marrow single-cell context; candidate annotation and sensitivity; the
 three-herb/compound/candidate network; donor recovery plus Geneformer;
 scTenifoldKnk; representative docking hypotheses; and molecular dynamics.
-Supplementary Figures S1-S16 and Supplementary Tables S1-S10 are renumbered in
+Supporting Figures S1-S16 and Supporting Tables S1-S10 are numbered in
 strict first-citation order. In that transfer numbering, the
-prescription/candidate-construction workflow is Supplementary Fig. S3, the
-Geneformer extensions are Supplementary Figs. S8-S9 and Supplementary Table
-S8, scTenifoldKnk sensitivity is Supplementary Fig. S10 and Supplementary
-Table S9, and the complete docking screen is Supplementary Figs. S11-S13 and
-Supplementary Table S10. Additional files 5 and 7 provide the targeted-docking
-and sensitivity-analysis source workbooks. The current table-to-file mapping is
-recorded in `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`; supplementary
-figures are in Additional files 6 and 8. The current
+prescription/candidate-construction workflow is S3 Fig, the Geneformer
+extensions are S8-S9 Figs and S8 Table, scTenifoldKnk sensitivity is S10 Fig
+and S9 Table, and the complete docking screen is S11-S13 Figs and S10 Table.
+S11 Data and S12 Data provide the targeted-docking and sensitivity-analysis
+source workbooks. The current table-to-file mapping is recorded in
+`CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`. The current
 structural follow-up reports five ligand-containing 100 ns trajectories plus a
 matched 100 ns HIF1A-ARNT apo reference (600 ns total).
-The current BMC submission omits the optional prior graphical abstract, and the
+The current PLOS ONE package omits the optional prior graphical abstract, and the
 two standalone main-table files are not submission-package assets; their information
 is retained in the manuscript or supplementary information.
 The archived replay tables and reference images distributed in `v0.1.0` retain
@@ -138,22 +133,23 @@ The source code and supporting files are maintained at
   the complete saved molecular-dynamics records; no companion DOI has been issued.
 - `reference_outputs/`: publication figures used as regression-test references.
 - `reference_outputs/current_manuscript/`: the eight current main-figure
-  regression references plus the prior Human Genomics graphical abstract,
-  which is retained for provenance; the optional visual abstract is omitted
-  from the current BMC package.
+  regression references plus a prior graphical abstract retained for
+  provenance; the optional visual abstract is omitted from the current package.
 - `CURRENT_MANUSCRIPT_FIGURE_SOURCE_MAP.tsv`: current Figure 1-8 source and
   access boundaries.
 - `CURRENT_MANUSCRIPT_REPRODUCIBILITY_MATRIX.tsv`: current publication replay
   versus scientific recomputation.
-- `BMC_PHARMACOLOGY_TOXICOLOGY_ASSET_CHECKSUMS.tsv`: exact current 19-file BMC
-  submission-package inventory.
+- `PLOS_ONE_ASSET_CHECKSUMS.tsv`: exact current 38-file PLOS ONE upload
+  inventory.
+- `PLOS_ONE_SUBMISSION_ALIGNMENT.md`: current PLOS ONE file roles and evidence
+  boundaries.
 - `CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv`: historical 16-file Scientific
   Reports transfer inventory retained for regression only.
 - `SCIENTIFIC_REPORTS_TRANSFER_ASSET_PLAN.tsv`: exact planned 16-file transfer
   inventory, final byte sizes, SHA-256 values and verification status.
 - `CURRENT_MANUSCRIPT_SUPPLEMENTARY_FIGURE_MAP.tsv`: strict first-citation
   Figure S1-S16 order, prior-package source number and verification scope.
-- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`: current BMC Supplementary
+- `CURRENT_MANUSCRIPT_SUPPLEMENTARY_TABLE_MAP.tsv`: current Supporting
   Table S1-S10 numbering and source-workbook provenance.
 - `FIGURE_SOURCE_MAP.tsv`: archive-specific Figure 1-9 and supplementary
   source mapping for the archived `v0.1.0` replay.
@@ -191,11 +187,11 @@ the scientific analyses.
 Reproducibility is reported in four layers and the distinction is mandatory:
 
 1. **Current submission verification** checks the separately held flat
-   19-file BMC Pharmacology and Toxicology package against exact byte sizes and
-   SHA-256 values, verifies Figure 1-8 dimensions and resolution metadata,
-   verifies the two supplementary-figure PDFs, and inspects the seven
-   supplementary-table/source-data workbooks. The optional visual abstract and standalone
-   main-table files are omitted. The package is not copied into GitHub.
+   38-file PLOS ONE package against exact byte sizes and SHA-256 values,
+   verifies Fig 1-Fig 8 TIFF dimensions and 300 dpi metadata, verifies the 16
+   one-page supporting-figure PDFs, and opens the 12 supporting-table/data
+   workbooks. The optional visual abstract and standalone main-table files are
+   omitted. The package is not copied into GitHub.
 2. **Current Figure 8 replay** rerenders the five-candidate 100 ns comparison
    from the repository-distributed time series, C-alpha RMSF and final-20-ns
    summaries. Raw trajectories, topologies and checkpoints are not stored in
