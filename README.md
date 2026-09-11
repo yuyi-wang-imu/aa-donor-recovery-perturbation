@@ -62,12 +62,17 @@ establish direct target engagement, inhibition, or therapeutic activity.
 
 ## Current submission alignment
 
-The manuscript is being prepared as an Original Paper for
+The manuscript is being prepared as a Research article for
 **Molecular Genetics and Genomics**. This is a preparation status, not a claim
 of submission, peer review or acceptance. Journal-format adaptation includes
 author-year citations, an alphabetized reference list, a 239-word abstract,
 embedded main figures and journal-specific declarations. It does not change
 analysis outputs or candidate ranks. See `MGG_SUBMISSION_ALIGNMENT.md`.
+
+The 38-file MGG upload-source manifest is `MGG_ASSET_CHECKSUMS.tsv`.
+`CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv` is a historical pre-MGG manifest,
+not the checksum list for the current MGG draft. Upload completion is not
+final submission, peer review, or acceptance.
 
 The earlier PLOS ONE preparation records, including
 `PLOS_ONE_ASSET_CHECKSUMS.tsv` and `PLOS_ONE_SUBMISSION_ALIGNMENT.md`, are

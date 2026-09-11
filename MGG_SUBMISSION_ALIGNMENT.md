@@ -3,7 +3,8 @@
 Updated 11 September 2026.
 
 The current journal-format adaptation targets Molecular Genetics and Genomics,
-Original Paper. The preparation is not a completed submission or an acceptance.
+Research (the submission-system article type). The preparation is not a
+completed submission or an acceptance.
 The PLOS ONE adaptation remains historical; only one journal may have the
 manuscript under consideration at a time.
 
@@ -20,9 +21,19 @@ journal-format preparation are not retroactively included in that archive.
 Full MD production records are not included in this DOI; see MD_DATASET.md
 and the manuscript data-availability statement for the access boundary.
 
-The MGG file manifest will be added after final visual and cross-reference
-checks. Historical asset manifests must not be used as the current MGG
-checksums.
+The 38 upload-source files are listed in MGG_ASSET_CHECKSUMS.tsv. They were
+uploaded to the MGG draft on 11 September 2026; final submission has not been
+performed. This manifest identifies local upload sources, not independently
+downloaded server copies. Historical manifests, including the generically
+named CURRENT_MANUSCRIPT_ASSET_CHECKSUMS.tsv, are not the current MGG list.
+
+The current package includes an annotation-only Fig. 6 input-label correction
+to HSPC plus megakaryocyte reference network, aligned with the documented
+mixed input. The corresponding rendering-script labels are corrected too.
+No analysis values or candidate ranks change. The manuscript also corrects
+the GROMACS 2024.6 Manual bibliographic year to 2025, its publication year,
+and repairs figure references, typography and supplementary-data citations.
+These later documentation changes are not contained in the v0.1.0 DOI.
 
 Official instructions:
 https://link.springer.com/journal/438/submission-guidelines

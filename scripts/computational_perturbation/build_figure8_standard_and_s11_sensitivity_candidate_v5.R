@@ -403,7 +403,7 @@ panel_a <- ggplot() +
   ) +
   annotate(
     "label", x = 3.35, y = 1,
-    label = "CD34\u207a HSPC\nreference network",
+    label = "HSPC + megakaryocyte\nreference network",
     size = 2.45, linewidth = 0.3,
     color = ink, fill = "#E8F3EF"
   ) +
@@ -586,7 +586,7 @@ main_figure <- (
   plot_layout(heights = c(0.55, 2.9, 1.65)) +
   plot_annotation(
     title = "Computational single-gene perturbation reveals downstream network responses",
-    subtitle = "Standard scTenifoldKnk analysis of ten prespecified candidates in the CD34\u207a HSPC network",
+    subtitle = "Standard scTenifoldKnk analysis of ten prespecified candidates in the combined HSPC and megakaryocyte network",
     theme = theme(
       plot.title = element_text(
         face = "bold", size = 12.8, color = ink,
